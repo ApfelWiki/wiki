@@ -1,0 +1,103 @@
+div#wikilog {
+	margin-top: 10px;
+	margin-left: 18px;
+	font-size: smaller;
+}
+table.calendar-outer { border: 0; border-spacing: 10px; }
+td.calendar-outer { vertical-align: top; }
+table.calendar-inner {
+    border: 2px solid #abd5d6;
+    border-collapse: collapse;
+}
+#wikitext table.calendar-inner caption {
+    text-align: center;
+    font-weight: bold;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+table.calendar-inner th {
+	background-color: #eeeeee;
+    border: 1px dotted #abd5d6;
+    width: 2.2em;
+    font-weight: normal;
+    padding: 2px;
+}
+table.calendar-inner td {
+    border: 1px dotted #abd5d6;
+    text-align: center;
+    padding: 3px;
+}
+td.calendar-today-entry {
+	background-color: #ffff00;
+}
+td.calendar-today-noentry { 
+	background-color: #ffc3c3;
+}
+td.calendar-entry {
+	background-color: #c3ffc3;
+}
+td.calendar-noentry {
+	background-color: #ffeedd;
+}
+#wikitext a.nonexistent-date  { 
+	background: transparent;
+	text-decoration: none;
+}
+#wikitext a.nonexistent-date:link  { 
+	color: #FF2222;
+	border-bottom: none;
+}
+#wikitext a.nonexistent-date:visited  { 
+	color: #FF2222;
+}
+#wikitext a.nonexistent-date:hover {
+	color: #444444;
+}
+form.calendarpub {
+	margin-top: 10px;
+	margin-left: 40px;
+}
+p.datetrail {
+	font-size: smaller;
+}
+p.wikiloghome {
+	margin-bottom: 0px;
+}
+p.right {
+	text-align: right;
+}
+p.center {
+	text-align: center;
+}
+ul.loglist {
+	list-style: circle;
+}
+.currentmonth {
+    background-color: yellow;
+}
+td.prompt {
+	text-align: right;
+	vertical-align: top;
+	font-size: smaller; 
+	font-weight: bold;
+	color: maroon;
+	padding-top: 5px;
+}
+div#diary { 
+	border-bottom: 2px solid #9999FF;
+	margin-top: 7px;
+	margin-bottom: 10px;
+}
+div#message { 
+	margin-top: 10px;
+	border-top: 2px solid #9999FF;
+	padding-top: 10px;
+}
+p.today { margin-top: 20px; }
+span.daynumber {
+    float: left;
+    font-size: 200%;
+    line-height: 1.0em;
+    margin-right: 0.2em;
+}
+div.dayentry { margin-left: 40px; }

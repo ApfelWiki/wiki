@@ -1,0 +1,39 @@
+/* styling of commentbox entries */
+#message { clear:both; }
+.messagehead, .journalhead {
+            margin:1em 0 0 0;
+            padding:0 0 0 3px;
+            border:1px solid #ccc;
+            }
+.messageitem, .journalitem {
+            margin:0;
+            padding:3px;
+            border-left:1px solid #ccc;
+            border-right:1px solid #ccc;
+            border-bottom:1px solid #ccc;
+            }
+.messagehead { background:#f0f0f0; }
+/*use the following if message head should be same as message item */
+/* .messagehead { background:#eef; border-bottom:none; } */
+.messageitem { background:#f7f7f7; }
+.journalhead { background:#ffc; }
+.journalitem { background:#ffe; }
+
+.diaryhead h4 { border-bottom:1px solid #ccc;
+            margin-bottom:1px; }
+* html .diaryhead h4 { margin-bottom:0; }
+.diaryitem {background:#ffe;
+            margin:0;
+            padding:3px;
+            border-left:1px solid #ccc;
+            border-right:1px solid #ccc;
+            border-bottom:1px solid #ccc;
+            }
+.messagehead h5, .messagedate h4, .journalhead h5, .journaldate h4,
+.diaryhead h4 { margin:0.25em 0 0 0; }
+
+.commentbutton { margin:0 0 0 5px;
+                padding:0 3px }
+.commenttext { width:100%;
+               margin:0 0 3px 0 }
+em.access { font-style:normal; color:#FF2222;}

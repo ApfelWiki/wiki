@@ -1,0 +1,34 @@
+/*
+
+//
+// Copyright (C) Julian I. Kamil <julian.kamil@gmail.com>
+// No warranty is provided.  Use at your own risk.
+//
+// Commercial support is available through ESV Media Group
+// who can be reached at: http://www.ESV-i.com/.
+//
+// Name: simple.css
+// Author: Julian I. Kamil <julian.kamil@gmail.com>
+// Created: 2005-05-18
+// Description:
+//     This is a simple skin for PmWiki. Please see:
+//         http://www.madhckr.com/project/PmWiki/SimpleSkin
+//     for a live example and doumentation.
+//
+// $Id: simple-ie.css,v 1.2 2005/08/17 20:15:13 julian Exp $
+//
+// History:
+//     2005-05-18  jik  Created.
+//     2005-08-16  jik  Simplified and cleaned up.
+//
+
+*/
+
+tr.vspace td { height: 8px; }
+.content-mat { padding: 15px 15px 0px 30px; }
+
+#main { border-bottom: none; }
+
+#popupmenu li.over { background: #444; color: #eec; }
+#popupmenu li.over ul { display: block; margin-top: 10px; background: url(image/aqua-blue.png) }
+#popupmenu li ul li { width: 160px; text-align: left; }

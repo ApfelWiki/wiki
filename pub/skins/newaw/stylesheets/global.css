@@ -1,0 +1,293 @@
+/* ### GENERAL ### */
+* { margin: 0px; padding: 0px; }
+html, body { font-family: Tahoma; font-size: 12px; color: #545454; }
+input, select, textarea { font-family: Tahoma; font-size: 12px; color: #666; }
+body { background: #d4d5d7; }
+img { border: 0px; display: inline-block; }
+a {outline: none;}
+ul,ol { margin-left:20px; }
+
+/* ### GLOBAL CLASSES ### */
+.clear { clear: both; height: 1px; }
+/* ### WRAPPER ### */
+#wrapper { position: relative; display: block; width: 100%; min-height: 100%; }
+
+/* ### MAIN CONTAINER ### */
+#mainCntr { margin: 0 auto; width: 890px; }
+
+	/* ### HEADER CONTAINER ### */
+	#headerCntr { position: relative; width: 890px; height: 72px; background: url('../images/headerBg.gif') repeat-y -15px 0px; }
+	#headerCntr h1 { position: absolute; top: 20px; left: 20px; }
+	#headerCntr h1 a { display: block; width: 180px; height: 43px; text-indent: -9999px; background: url('../newaw.png') no-repeat; }
+	
+		/* ### MENU CONTAINER ### */
+		#menuCntr { position: absolute; top: 35px; right: 0px; width: 450px; }
+		#menuCntr ul { margin-left:0px; overflow: hidden; width: 450px; list-style: none; }
+		#menuCntr li { padding-right: 20px; float: right; display: inline; }
+		#menuCntr li a { text-decoration: none; color: #000; }
+		#menuCntr li a:hover { text-decoration: underline; }
+		#menuCntr li.selected a { font-weight: bold; }
+#searchbox {border:none;
+vertical-align:middle;
+		#search fieldset { padding-bottom: 10px; position: relative; }
+				#search fieldset input#search-field { background: none; border: 0 none; padding: 0; color: #9ba9b1; font-size: 12px; width: 130px; }
+				#search fieldset input#searchsubmit { position: absolute; top: 5px; right: 2px; }
+
+} 
+
+	
+	/* ### CONTENT CONTAINER ### */
+	#contentCntr { width: 890px; background: url('../images/contentBg.gif') repeat-y; }
+	#contentCntr div.cTop { overflow: hidden; width: 890px; background: url('../images/contentTop.gif') no-repeat top; }
+	#contentCntr .head { padding-left: 20px; padding-right: 20px; padding-top: 10px; margin-left: 34px; margin-bottom: 0px; margin-right: 34px; margin-top: 0px; width: 782px; height: 60px; font: 18px 'Helvetica', Arial; color: #333; background: url('../images/titleBg.gif') no-repeat; }
+	
+	
+	#wikiactions {
+float:right;
+bottom: auto;
+    font-family: sans-serif;
+    font-size: 11px;
+    color: #7A7A78;
+    text-align: right;
+}
+
+#wikiactions a, #wikiactions a:visited{ 
+text-decoration: none; color: #666;
+}
+
+#wikiactions a:hover {
+	text-decoration: underline;
+}
+#wikiactions a:active {
+	color: #333;
+	}
+	
+#pagetitle { vertical-align: top;}
+
+#pagetitle a, #pagetitle a:visited{ 
+text-decoration: none; color:black;
+}
+
+#pagetitle a:hover {
+	text-decoration: underline;
+}
+#pagetile a:active {
+	color: #333;
+	}
+	
+	 #groupname {
+
+  font-size: 60%;
+ 
+  }
+  
+  #pagename { padding-bottom: 0px; font-size: 120%;}
+
+	#contentCntr h1 {  width: 782px; height: 36px; font: 18px 'Helvetica', Arial; color: #333; }
+	#contentCntr h1 span { font: 14px 'Helvetica', Arial; color: #8b8b8b; }
+	
+			
+		/* ### SERVICE BOX ### */
+		.serviceBox { padding: 0px 35px 20px 55px; overflow: hidden; width: 780px; }
+		.serviceBox div.text { float: left; width: 520px; }
+		.serviceBox div.test { float: right;  width: 220px; }
+		.serviceBox p { padding-bottom: 10px; line-height: 18px; }
+		.serviceBox h2 { padding-bottom: 10px; font: 18px 'Helvetica', Arial; color: #333; }
+		.serviceBox h3 { padding: 15px 0px 10px 0px; font: 14px 'Helvetica', Arial; color: #2a4145; }
+		.serviceBox div.test ul { list-style: none; }
+		.serviceBox div.test li { margin-bottom: 10px; padding-bottom: 10px; line-height: 18px; font-style: italic; border-bottom: 1px solid #dad9d9; }
+		.serviceBox div.test li strong { display: block; font-style: normal; font-size: 11px; }
+		
+		
+		/* ### CONTACT BOX ### */
+		.contactBox { padding: 0px 35px 30px 55px; overflow: hidden; width: 780px; }
+		.contactBox div.form { float: left; width: 320px; }
+		.contactBox div.adres { float: right;  width: 380px; }
+		.contactBox h3 { padding-bottom: 10px; font: 18px 'Helvetica', Arial; color: #333; }
+		.contactBox address { padding-top: 10px; line-height: 18px; font-style: normal; }
+		.contactBox p { padding-bottom: 20px; line-height: 18px; }
+		.contactBox fieldset { overflow: hidden; width: 320px; border: 0px; }
+		.contactBox input.field { margin-bottom: 10px; padding: 4px 5px 0px 5px; float: left; width: 168px; height: 22px; border: 1px solid #9b9b9b; background: #f9f9f9; }
+		.contactBox label { margin-bottom: 10px; padding-left: 15px; float: left; width: 125px; height: 28px; line-height: 28px; }
+		.contactBox label.large { margin-bottom: 5px; padding: 0px; width: 320px; }
+		.contactBox textarea { margin-bottom: 15px; padding: 4px 5px 4px 5px; width: 308px; height: 120px; border: 1px solid #9b9b9b; background: #f9f9f9; }
+		.contactBox input.submit { padding-bottom: 2px; width: 69px; height: 28px; cursor: pointer; color: #fff; border: 0px; background: url('../images/submitBg.gif') no-repeat; }
+	
+	/* ### FOOTER CONTAINER ### */
+	#footerCntr { padding: 44px 35px 40px 35px; overflow: hidden; width: 820px; background: url('../images/footerBg.gif') no-repeat; }
+	#footerCntr p { float: left; width: 300px; font-size: 11px; }
+	#footerCntr p.right { float: right; text-align: right; }
+	#footerCntr a { text-decoration: none; color: #666; }
+	#footerCntr a:hover { color: #333; }
+	
+	.groupfooter {
+ border-top: solid silver 1px;
+ border-spacing: 0px;
+ padding:4px;
+ margin-top:0.5em;
+ margin-bottom:-2em;
+ font-size: x-small;
+ width:100%; 
+ }
+ 
+ table.groupfooter_ext {
+ width:100%;
+ border: solid silver 1px;
+ border-spacing: 0px;
+ padding:0px;
+ margin-top:0.5em;
+ margin-bottom:-1em;
+ font-size: smaller;
+ background-color:#eee;
+ width:100%; 
+ }
+table .groupfooter_ext_mo { background-color:#aaa; color:white;	padding:2px; font-weight:bold; }
+table.groupfooter_ext td { padding:2px 4px; }
+table.groupfooter_ext .createlinktext { border-bottom:none; }
+
+/* ------ Linkformatierungen ------- */
+
+a { color: #002bb8;
+	text-decoration: none;
+}
+
+
+a:visited {
+	color: #5a3696;
+}
+a:hover {
+	text-decoration: underline;
+}
+a:active {
+	color: rgb(255,153,51);
+}
+
+
+
+a.createlinktext {
+	color: #ba0000;
+}
+
+a.createlinktext:visited {
+	color: #a55858;
+}
+
+
+a.urllink {
+	color: #002bb8;
+	background: url(external.png) right center no-repeat;
+     padding-right: 12px;
+}
+a[href ^="mailto:"] {
+    background: url("mail_icon.gif") center right no-repeat;
+    padding-right: 18px;
+}
+
+a[href ^="webcal://"] {
+    background: transparent;
+     padding-right: 0px;
+}
+
+a[href ^="aim:"] {
+    background: none;
+    padding-right: 18px;
+}
+
+a[href ^="gopher://"] {
+    background: url(external.png) center right no-repeat;
+    padding-right: 13px;
+}
+a[href ^="https://"]{
+    background: url("lock_icon.gif") center right no-repeat;
+    padding-right: 16px;
+}
+
+a[href ^="news://"] {
+    background: url("news_icon.png") center right no-repeat;
+    padding-right: 18px;
+}
+a[href ^="ftp://"]{
+    background: url("file_icon.gif") center right no-repeat;
+    padding-right: 18px;
+}
+a[href ^="irc://"]{
+    background: url("discussionitem_icon.gif")  center right no-repeat;
+    padding-right: 18px;
+}
+a.urllink[href ="http://www.apfelwiki.de"] {
+        background: transparent;
+        padding-right: 0px;
+}
+
+a.urllink[href ="http://apfelwiki.de"] {
+        background: transparent;
+        padding-right: 0px;
+}
+
+strong {
+	/*font-size: 0.9em;*/
+	font-weight: bolder;
+}
+
+em {
+	font-style: italic;
+}
+
+code {
+	font-size: 1em;
+}
+
+pre {
+	margin-top: 4px;
+	font-size: 12px;
+	color: #444444;
+	/*background-color: #effef1;*/
+	border: thin solid silver;
+	padding: 10px;
+}
+
+.a { margin-left:4ex; }
+
+/* Edit Box */
+
+#wikiedit form { margin:0px; }
+#wikiedit textarea {color: black; width:98%; }
+.indent { margin-left:40px; }
+#wikiedit {margin:10px;}
+
+input, textarea {
+ color: #111111;
+  border: 1px solid rgb(216,210,195);
+  background: rgb(244,244,244);
+  margin: 3px;
+  padding: 2px;
+}
+
+input:focus, textarea:focus {
+  background: rgb(250,250,250);
+}
+
+form label.left {
+  margin-right: .3em;
+  vertical-align: middle;
+  float: left;
+  width: 7em;
+  text-align: right;
+  padding: .1em;
+}
+
+form div.right {
+  margin-left: 7.4em;
+}
+
+form {
+  line-height: 140%;
+}
+
+fieldset {
+  border: 1px solid rgb(216,210,195);
+  color: rgb(166,140,83);
+  font-weight: bold;
+  width: auto;
+  border: none;
+}

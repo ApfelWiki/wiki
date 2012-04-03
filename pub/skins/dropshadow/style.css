@@ -1,0 +1,485 @@
+/*
+ * PmWiki DropShadow skin
+ * @requires PmWiki 2.2
+ *
+ * Examples at: http://pmwiki.com/Cookbook/DropShadow and http://skins.solidgone.com/
+ * Original by http://www.briangardner.com/themes/dropshadow-wordpress-theme.htm
+ * Copyright (c) 2007 David Gilbert
+ * Dual licensed under the MIT and GPL licenses:
+ *	 http://www.opensource.org/licenses/mit-license.php
+ *	 http://www.gnu.org/licenses/gpl.html
+*/
+body{
+	background: #FFF url(images/bg.gif) top center no-repeat;
+	color: #333;
+	font-size: 11px;
+	font-family: Verdana, Helvetica, Sans-Serif;
+	margin: 0 auto 0;
+	padding: 0;
+	}
+#wrap{
+	background: #FFF;
+	width: 720px;
+	margin: 0 auto 0;
+	padding: 0;
+	}
+
+/***********************************************
+*	Hyperlinks
+************************************************/
+a, a:visited{
+	text-decoration: none;
+	}
+a:hover	{
+	text-decoration: underline;
+	}
+
+/***********************************************
+*	Header
+************************************************/
+#header {
+	width: 820px;
+	height: 100%;
+	margin: 0 auto 0;
+	padding: 0;
+	}
+#header .sitetitle {float:left}
+#header .sitetitle a{display: block}
+#header .sitetag {float: left; clear: left; width:100%}
+
+#header .sitetitle {margin:0;}
+#siteheader{
+	width: 450px;
+	color: #FFF;
+	float: left;
+	margin: 0;
+	padding: 20px 0 0 0;
+	}
+#siteheader p{
+	margin-top: 0;
+	}
+#siteheader a, #siteheader a:visited{
+	font-family: Times New Roman, Helvetica, Sans-Serif;
+	font-size: 28px;
+	text-decoration: none;
+	font-weight: normal;
+	padding: 0;
+	margin: 0;
+	}
+#siteheader a:hover{
+	text-decoration: none;
+	}
+#siteheader .sitelogo{
+	float: left;
+	margin-right: 10px;
+	}
+#siteheader .siteheader{
+	float: left;
+	}
+#siteheader p{
+	margin: 0;
+	}
+#header .headerright{
+	float: right;
+	text-align: right;
+	margin: 0;
+	padding: 50px 0 0 0;
+	}
+#header .headerright li{
+	display: inline;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	}
+#header .headerright ul{
+	margin: 0;
+	padding: 5px 10px 5px 10px;
+	}
+#header .headerright a, #header .headerright a:visited{
+	color: #FFF;
+	font-weight: bold;
+	margin: 0;
+	padding: 5px 10px 5px 10px;
+	text-decoration: none;
+	}
+#header .headerright a:hover{
+	text-decoration: none;
+	}
+#header .headerright li a.createlink{
+	display:none;
+	}
+
+/***********************************************
+*	Content
+************************************************/
+#content{
+	width: 780px;
+	margin: 0 auto 0;
+	padding: 0;
+	}
+#content p{
+	padding: 0 0 15px 0;
+	margin: 0;
+	line-height: 18px;
+	}
+#content a.pagegroup{
+	display: block;
+	margin-top: 10px;
+	font-size: 90%;
+	color: #444;
+	}
+#content h1, #commentblock h2, #content h2 {
+	margin-top: 0;
+	padding-bottom: 1px;
+	border-bottom: 2px solid #444;
+	}
+#content h2{
+	margin-top: 0;
+	}
+#content h1, #commentblock h2, #content h2 {
+	color: #333;
+	font-size: 24px;
+	font-family: Times New Roman, Verdana, Arial, Sans-Serif;
+	font-weight: normal;
+	padding: 2px 0;
+	margin: 0 0 15px 0;
+	border-bottom: 1px solid #C0C0C0;
+	}
+#content h1 a, #content h2 a{
+	color: #333;
+	text-decoration: none;
+	}
+#content h1 a:hover, #content h2 a:hover {
+	text-decoration: none;
+	}
+#content p img{
+	float: left;
+	border: none;
+	margin-right: 15px;
+	margin-bottom: 10px;
+	}
+#content img.wp-smiley{
+	float: none;
+	border: none;
+	padding: 0;
+	margin: 0;
+	}
+#content img.wp-wink{
+	float: none;
+	border: none;
+	padding: 0;
+	margin: 0;
+	}
+#contentleft{
+	float: left;
+	width: 500px;
+	margin: 0;
+	padding: 0;
+	}
+#contentleft ol{
+	margin: 0 0 0 20px;
+	padding: 0 0 10px 0;
+	}
+#contentleft ol li{
+	margin: 0 0 0 20px;
+	padding: 0 0 5px 0;
+	}
+#contentleft ul{
+	list-style-type: square;
+	margin: 0 0 0 20px;
+	padding: 0 0 10px 0;
+	}
+#contentleft ul li{
+	list-style-type: square;
+	margin: 0 0 0 20px;
+	padding: 0 0 5px 0;
+	}
+blockquote, .blockquote, pre{
+	margin: 0 25px 15px 25px;
+	padding: 0 20px 0 20px;
+	background: #E8E8E8;
+	border-top: 2px solid #000000;
+	border-bottom: 1px solid #000000;
+	}
+#content blockquote p, #content .blockquote p{
+	margin: 0 0 10px 0;
+	padding: 10px 0 0 0;
+	}
+.postmeta{
+	width: 500px;
+	border-top: 1px solid #C0C0C0;
+	padding: 5px 0 0 0;
+	margin: 30px 0 50px 0;
+	}
+.postmetaleft{
+	float: left;
+	width: 290px;
+	margin: 0;
+	padding: 0;
+	}
+.postmetaright{
+	float: right;
+	width: 208px;
+	text-align: right;
+	margin: 0;
+	padding: 0;
+	}
+
+/***********************************************
+*	Right Sidebar
+************************************************/
+#r_sidebar{
+	color: #FFF;
+	float: right;
+	width: 250px;
+	margin: 0;
+	padding: 10px 0 20px 0;
+	}
+#r_sidebar h2, #r_sidebar .sidehead{
+	background: #444;
+	color: #FFF;
+	font-size: 11px;
+	font-family: Verdana, Helvetica, Sans-Serif;
+	font-weight: bold;
+	padding: 10px 0 10px 10px;
+	margin: 10px 0 0 0;
+	text-transform: uppercase;
+	border: none;
+	}
+#r_sidebar h2 a, #r_sidebar .sidehead a{
+	color: #FFF;
+	}
+#r_sidebar h2 a:hover, #r_sidebar .sidehead a:hover{
+	text-decoration: none;
+	}
+#r_sidebar ul{
+	list-style: none;
+	margin: 0 0 5px 0;
+	padding: 0;
+	}
+#sidebar li, #r_sidebar li{
+	margin: 0;
+	display:inline;
+	}
+#sidebar li {
+	display: block;
+	padding: 5px 10px 5px 10px;
+	background: #444;
+	border-top: 1px solid #C0C0C0;
+	}
+#sidebar li a{
+	color: #FFF;
+	text-decoration: none;
+	margin: 0;
+	}
+#sidebar p{
+	background: #444;
+	padding: 0 10px 10px 10px;
+	margin: 0;
+	line-height: 17px;
+	}
+.search{
+	background: #444;
+	margin: 0 0 5px 0;
+	padding: 0 10px 10px 10px;
+	}
+.pageactions{
+	padding: 5px 5px;
+	}
+#Actions .pageactions ul{
+	text-align: right;
+	}
+#Actions .pageactions ul li a{
+	color: #444;
+	background: none;
+	display: inline;
+	padding: 0 1px;
+	border: none;
+	}
+#Actions .pageactions ul li a:hover{
+	color: #444;
+	text-decoration: underline;
+	}
+
+/***********************************************
+*	Footer Background
+************************************************/
+#footerbg{
+	background: #555;
+	}
+
+/***********************************************
+*	Footer
+************************************************/
+#footerbg{
+	background: #333 url(images/bg2.gif) no-repeat top;
+	}
+#footer{
+	background: #333 url(images/bg2.gif) no-repeat top;
+	color: #FFF;
+	width: 960px;
+	margin: 0 auto 0;
+	padding: 90px 0 20px 0;
+	text-align: center;
+	}
+#footer a, #footer a:visited{
+	text-decoration: none;
+	}
+#footer a:hover{
+	text-decoration: underline;
+	}
+
+#credits{
+	color: #999;
+	}
+#credits a{
+	color: #2F757F !important;
+	}
+
+/***********************************************
+*	Search Form
+************************************************/
+#searchdiv{
+	margin: 0;
+	padding: 0;
+	}
+#searchform{
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	}
+.searchButton, .searchBox{
+	color: #333;
+	font-size: 11px;
+	font-family: Verdana, Helvetica, Sans-Serif;
+	padding: 2px;
+	margin: 0;
+	border: 1px solid #C0C0C0;
+	}
+.searchButton{
+	width: 30px;
+	padding: 1px;
+	}
+.searchBox{
+	background: #EFEFEF url(images/search.gif);
+	width: 170px;
+	}
+
+/***********************************************
+*	Comments
+************************************************/
+#commentblock{
+	width: 450px;
+	background: #E8E8E8;
+	color: #000000;
+	float: left;
+	padding: 20px 20px 10px 20px;
+	margin: 10px 0 0 0;
+	border-top: 2px solid #000000;
+	border-bottom: 1px solid #000000;
+	}
+#commentblock ol{
+	list-style-type: square;
+	margin: 0 0 0 0;
+	padding: 0 0 10px 0;
+	}
+.commentdate{
+	font-size: 12px;
+	padding-left: 0;
+	}
+#commentlist li p{
+	margin-bottom: 8px;
+	line-height: 20px;
+	padding: 0;
+	}
+.commentname{
+	color: #333;
+	margin: 0;
+	padding: 5px 5px 5px 0;
+	}
+.commentinfo{
+	clear: both;
+	}
+.commenttext{
+	clear: both;
+	margin: 3px 0 20px 0;
+	padding: 20px 10px 5px 10px;
+	width: 390px;
+	display: block;
+	background: #FFF url(images/comment.gif) no-repeat top;
+	}
+.commenttext-admin{
+	clear: both;
+	margin: 3px 0 20px 0;
+	padding: 20px 10px 5px 10px;
+	width: 390px;
+	background: #FFF url(images/comment.gif) no-repeat top;
+	}
+#commentsformheader{
+	padding-left: 0;
+	}
+#commentsform{
+	text-align: center;
+	margin: 0;
+	padding: 0;
+	}
+#commentsform form{
+	text-align: left;
+	margin: 0;
+	}
+#commentsform p{
+	margin: 0;
+	}
+#comment-text{
+	width: 99%;
+	}
+p.comments_link  img{
+	margin: 0;
+	padding: 0;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+	}
+
+/***********************************************
+*	PmWiki
+************************************************/
+pre{
+	overflow: auto;
+	width: 82%;
+	}
+.diffbox{
+	width:100% !important;
+	}
+.difftime, .diffrestore, .difftype{
+	font-size: 90% !important;
+	}
+#text{
+	height:300px;
+	width:99%;
+	font-size:110%;
+	}
+.page-navigation{clear:both; padding:20px 0}
+.blogit-next-entries a, .blogit-previous-entries a {font-size:130%; font-weight: bold;}
+.blogit-next-entries a {float:right;}
+.blogit-previous-entries a {float:left;}
+.blogit-listmore {text-align:right;}
+.blogit-readmore {
+	display: block;
+	margin-top: 10px;
+	padding-bottom: 10px;
+	font-weight: bold;
+	}
+#wikiedit form img, #searchform fieldset {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	}
+#navigation .createlink { display: none; }
+.wikimessage {
+	color: red;
+	font-weight: bold;
+	font-size: 110%;
+	}
+#wikitext .quickref p {padding: 0}

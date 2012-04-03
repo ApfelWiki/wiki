@@ -1,0 +1,708 @@
+html, body {
+	margin: 0px;
+	padding: 0px;
+	font-family: "Lucida Grande", Lucida, Verdana, sans-serif;
+	font-size: 0.9em;
+	color: black;
+}
+
+
+/* @group Header */
+
+#wikiheader {
+	display: block;
+	width: 100%;
+	padding: 0px;
+	margin: 0px;
+	height: 50px;
+	border: 1px solid silver;
+	background: url(background.png) repeat-x;
+}
+
+#wikiheader a {
+	text-decoration: none;
+}
+
+.wikiheadleft {
+	float: left;
+	text-align: left;
+	padding-left: 10px;
+	padding-top: 14px;
+}
+
+.wikiheadcenter {
+	position: absolute;
+	top: 1px;
+	margin-left: 40%;
+}
+
+.wikiheadbuttons {
+	position: absolute;
+	top: 14px;
+	margin-left: 150px;
+}
+
+.wikiheadbuttons a {
+	float:left;
+	display:block;
+	text-decoration: none;
+	margin-right: 16px;
+	width:22px;
+	height:22px;
+	background: url(wiki_button_bg.png) no-repeat;
+	padding-top:4px;
+	padding-left:3px;
+}
+
+.wikiheadbuttons a:hover {
+	background: url(wiki_button_bg_hover.png) no-repeat;
+}
+
+.wikiheadright {
+	text-decoration: none;
+	float: right;
+	margin-right: 10px;
+	margin-top: 8px;
+}
+
+/* @end */
+
+/* @group Body */
+
+#wikicontent {
+	position: absolute;
+	top: 70px;
+	line-height: 1.25em;
+	width: 97%;
+	margin-top: 0;
+	clear: both;
+	padding-left: 15px;
+	padding-top: 10px;
+}
+
+#wikibody {
+	width: 100%;
+}
+
+#pageheader {
+	display: block;
+	position: absolute;
+	top: 52px;
+	width: 100%;
+	padding: 0px;
+	margin: 0px;
+	height: 20px;
+	background: url(aqua.png);
+	clear: both;
+}
+
+.pageheadright {
+	text-decoration: none;
+	float: right;
+	padding-top: 2px;
+}
+
+.pageheadright a {
+	text-decoration: none;
+	margin-right: 16px;
+}
+
+
+
+.pageheadleft {
+	text-decoration: none;
+	float: left;
+	padding-top: 2px;
+	margin-left: 10px;
+	color: black;
+}
+
+.groupfooter {
+	display: block;
+	width: 100%;
+	padding-top: 5px;
+	margin: 0px;
+	height: 30px;
+	border: 1px solid silver;
+	background: url(background.png);
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+
+
+
+/* @end */
+
+/
+
+* @end */
+
+/* @group Suchfeld */
+
+.wikisearch {
+	padding-left: 25px;
+}
+
+.searchbox {
+	width: 140px;
+	margin-top: 8px;
+	margin-left: 0px;
+	background: white url(lupe.png) no-repeat right;
+	text-align: left;
+	padding-right: 17px;
+}
+
+.searchbutton {
+	display: none;
+}
+
+/* @end */
+
+/* @group Frage und Antwort */
+
+p.q {
+	border-top: 1px  #9999FF;
+	padding: 5px;
+	background: transparent repeat-x url(background.gif);
+	border: 1px solid silver;
+	margin: 10px 0px 5px 0px;
+}
+
+p.answer {
+	margin: 8px 0px 0px 0px;
+}
+
+/* @end */
+
+/* @group Verlauf */
+
+.diffbox {
+	border-top: 0px;
+	border-left: 1px silver solid;
+	border-right: 1px silver solid;
+	border-bottom: 1px silver solid;
+	width: 100%;
+}
+
+.diffauthor {
+	font-weight: bold;
+}
+
+.diffchangesum {
+	font-weight: bold;
+}
+
+.difftime {
+	font-family: helvetica,verdana,sans-serif;
+	font-size: 80%;
+	background: transparent repeat-x url(aqua.gif);
+	border-bottom: 1px silver solid;
+}
+
+.difftype {
+	clear: both;
+	font-family: helvetica,verdana,sans-serif;
+	font-size: 80%;
+	font-weight: bold;
+}
+
+.diffadd {
+	padding-left: 5px;
+	border-bottom: 1px silver solid;
+}
+
+.diffdel {
+	padding-left: 5px;
+	color: #7A7A78;
+}
+
+.diffrestore {
+	clear: both;
+	font-family: helvetica, verdana,sans-serif;
+	font-size: 80%;
+	margin: 0.5em 0em 1.5em 0em;
+}
+
+/* @end */
+
+/* @group Überschriften */
+
+h1 {
+	padding-bottom: 2px;
+	padding-top: 2px;
+	text-transform: uppercase;
+	font-size: 1.25em;
+	color: #039;
+	padding-bottom: 2px;
+}
+
+h2 {
+	padding-bottom: 2px;
+	padding-top: 2px;
+	text-transform: uppercase;
+	font-size: 1.25em;
+	color: #039;
+	padding-bottom: 2px;
+}
+
+h1 a, h2 a{
+	color: #039;
+	padding-bottom: 2px;
+	text-decoration:underline;
+}
+
+h3 {
+	text-indent: 0em;
+	margin-top: 0.25em;
+	margin-bottom: 0.15em;
+	letter-spacing: 0px;
+	color: #222222;
+	text-align: left;
+	font-weight: bold;
+	font-size: 1.05em;
+}
+
+h4 {
+	text-indent: 0em;
+	margin-top: 0.2em;
+	margin-bottom: 0.1em;
+	letter-spacing: 0px;
+	color: #222222;
+	text-align: left;
+	font-weight: bold;
+	font-size: 1.025em;
+}
+
+hr {
+	height: 1px;
+	border: none;
+	color: silver;
+	background-color: silver;
+}
+
+/* @end */
+
+/* @group Gästebuch */
+
+.messagehead {
+	margin: 0;
+	padding: 0 0 0 3px;
+	border: 1px solid silver;
+}
+
+.messageitem {
+	margin: 0;
+	padding: 3px;
+	border-left: 1px solid silver;
+	border-right: 1px solid silver;
+	border-bottom: 1px solid silver;
+}
+
+.messagehead {
+	background: url(/pub/skins/standard/aqua.png);
+}
+
+/*use the following if message head should be same as message item */
+
+/* .messagehead { background:#eef; border-bottom:none; } */
+
+.messageitem {
+	background: white;
+}
+
+.commentbutton {
+	margin: 0 0 0 5px;
+	padding: 0 3px
+}
+
+.commenttext {
+	width: 100%;
+	margin: 0 0 3px 0
+}
+
+/* @end */
+
+/* @group Sonstiges */
+
+pre {
+	margin-top: 4px;
+	font-size: 12px;
+	color: #444444;
+	padding: 10px;
+}
+
+td.prompt {
+	text-align: right;
+	vertical-align: top;
+	font-size: smaller;
+	font-weight: bold;
+	color: maroon;
+	padding-top: 5px;
+}
+
+div#diary {
+	border-bottom: 2px solid #9999FF;
+	margin-top: 7px;
+	margin-bottom: 10px;
+}
+
+div#message {
+	margin-top: 10px;
+	border-top: 2px solid #9999FF;
+	padding-top: 10px;
+}
+
+hr.footnote {
+	width: 30%;
+	text-align: left;
+}
+
+div.footnote {
+	width: 150px;
+	border-bottom: 1px solid blue;
+	margin-bottom: 5px;
+}
+
+p.footnote {
+	text-indent: -1em;
+	margin-right: 3em;
+	margin-left: 3em;
+	margin-top: 0em;
+	margin-bottom: 1em;
+	font-size: smaller;
+}
+
+p.right {
+	text-align: right;
+}
+
+p.center {
+	text-align: center;
+}
+
+/* @end */
+
+/* @group Links */
+
+a {
+	color: black;
+	text-decoration: underline;
+}
+
+a:visited {
+	color: #707070;
+}
+
+a:hover {
+	color: #002bb8;
+	text-decoration:none;
+}
+
+a:active {
+	color: rgb(255,153,51);
+}
+
+a.createlinktext {
+	color: #ba0000;
+}
+
+a.createlinktext:visited {
+	color: #a55858;
+}
+
+a.urllink {
+	color: black;
+	background: url(external_bw.png) right center no-repeat;
+	padding-right: 12px;
+}
+
+a.urllink:hover {
+	color: #002bb8;
+	background: url(external.png) right center no-repeat;
+	text-decoration:none;
+}
+
+a[href ^="mailto:"] {
+	background: url("mail_icon_bw.png") center right no-repeat;
+	padding-right: 18px;
+}
+
+a[href ^="mailto:"]:hover {
+	color: #002bb8;
+	background: url("mail_icon.gif") center right no-repeat;
+	text-decoration:none;
+}
+
+a[href ^="webcal://"] {
+	background: transparent;
+	padding-right: 0px;
+}
+
+a[href ^="aim:"] {
+	background: none;
+	padding-right: 18px;
+}
+
+a[href ^="gopher://"] {
+	background: url(external.png) center right no-repeat;
+	padding-right: 13px;
+}
+
+a[href ^="https://"] {
+	background: url("lock_icon.gif") center right no-repeat;
+	padding-right: 16px;
+}
+
+a[href ^="news://"] {
+	background: url("news_icon.png") center right no-repeat;
+	padding-right: 18px;
+}
+
+a[href ^="ftp://"] {
+	background: url("file_icon.gif") center right no-repeat;
+	padding-right: 18px;
+}
+
+a[href ^="irc://"] {
+	background: url("discussionitem_icon.gif")  center right no-repeat;
+	padding-right: 18px;
+}
+
+a.urllink[href ="http://www.apfelwiki.de"] {
+	background: transparent;
+	padding-right: 0px;
+}
+
+a.urllink[href ="http://apfelwiki.de"] {
+	background: transparent;
+	padding-right: 0px;
+}
+
+strong {
+	
+
+/*font-size: 0.9em;*/
+	font-weight: bolder;
+}
+
+em {
+	font-style: italic;
+}
+
+code {
+	font-size: 1em;
+}
+
+pre {
+	margin-top: 4px;
+	font-size: 12px;
+	color: #444444;
+	
+
+/*background-color: #effef1;*/
+	border: thin solid silver;
+	padding: 10px;
+}
+
+.a {
+	margin-left: 4ex;
+}
+
+.rightbar {
+	border: 1px solid silver;
+	font-size: 9pt;
+	padding: 15px;
+	margin: 5px;
+	background: #fefaeb;
+	display: block;
+	line-height: 1.5em;
+}
+
+.rightbar h2 {
+	margin-top: 0.5em;
+}
+
+.rightbar .wikiloghome {
+	font-size: x-small;
+}
+
+.rightbar .loglist {
+	list-style: disc;
+	font-size: x-small;
+}
+
+.rightbar li {
+	list-style: none;
+	margin-left: -5ex;
+}
+
+.leftbar {
+	border-right: 1px solid #cecece;
+	font-size: 9pt;
+	padding: 1em;
+	min-width: 150px;
+}
+
+.leftbar .wikiloghome {
+	font-size: x-small;
+}
+
+.leftbar .loglist {
+	list-style: disc;
+	font-size: x-small;
+}
+
+.leftbar a[href ^="webcal://"] {
+	background: transparent;
+	padding-right: 0px;
+	float: right;
+}
+
+.leftbar h2 {
+	margin-top: 0.5em;
+}
+
+.leftbar li {
+	margin-left: -5ex;
+}
+
+#rightbar2 {
+	border: 1px solid #cecece;
+	background-color: #333333;
+	color: #FF9933;
+	font-size: x-small;
+	padding: 1em;
+}
+
+#rightbar2 .wikiloghome {
+	font-size: x-small;
+}
+
+#rightbar2 .loglist {
+	list-style: disc;
+	font-size: x-small;
+}
+
+#rightbar2 li {
+	margin-left: -3ex;
+}
+
+#rightbar2 a {
+	color: #FFFFFF;
+}
+
+#rightbar2 a.createlinktext {
+	color: #FFCCCC;
+}
+
+.indent {
+	margin-left: 4ex;
+}
+
+#hundredmillion {
+	width: 100%;
+	vertical-align: middle;
+	text-align: center;
+	font-size: 35px;
+	font-family: 'Lucida Grande', LucidaGrande, Lucida, Helvetica, Arial, sans-serif;
+	font-weight: bolder;
+	line-height: normal;
+	padding: 4px 1em 4px 1em;
+	text-shadow: gray 0em 0em 0.1em;
+	border: 1px solid silver;
+	color: white;
+	background: #9feb62;
+}
+
+#hundredmilliontext {
+	font-weight: bolder;
+	font-size: 10px;
+	text-align: center;
+	padding-top: 5px;
+	text-shadow: none;
+	color: black;
+}
+
+#tabelle_uebersicht_innenrahmen td {
+	border: 1px solid #cecece;
+}
+
+#tabelle_uebersicht_innenrahmen ul {
+	border: 1px  #cecece;
+	list-style: none;
+}
+
+#tabelle_uebersicht_doppelrahmen ul {
+	border: 1px  #cecece;
+	list-style: none;
+}
+
+#tabelle_uebersicht_doppelrahmen table {
+	border: 1px solid #cecece;
+}
+
+#tabelle_uebersicht_doppelrahmen td {
+	border: 1px dotted #cecece;
+}
+
+ul img {
+	border: 1px  #cecece;
+	padding-top: 2px;
+	vertical-align: -8px;
+}
+
+.sourcecode {
+	background-color: #eef;
+	border: #666 1px solid;
+	padding: 1em;
+}
+
+.spotlight {
+	padding: 15px;
+	margin: 5px;
+	padding: 10px;
+	background: #eff2f3;
+	border: 1px solid silver;
+	display: block;
+	line-height: 1.5em;
+}
+
+.spotlight img {
+	float: right;
+	border: 1px solid silver;
+	margin: 5px;
+	height: 80px;
+}
+
+.spotlight2 {
+	padding: 10px;
+	border: 1px solid silver;
+	display: block;
+}
+
+.spotlight2 img {
+	float: right;
+	border: 1px solid silver;
+	margin: 5px;
+}
+
+.achtung {
+	padding: 10px;
+	background: #ffdcb9;
+	border: 1px solid #cc9999;
+	display: block;
+}
+
+.taste {
+	padding: 1px 8px 0px 1px;
+	border-width: 1px 2px 2px 1px;
+	border-style: solid;
+	background: #faf6f6;
+	color: #333;
+	border-color: #edd #baa #baa #eed;
+	font-family: Courier, Courier New, mono;
+	font-size: 90%;
+	font-weight: bold;
+}
+
+/* @end */

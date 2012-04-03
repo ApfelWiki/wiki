@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+ <head>
+  <title>
+   $WikiTitle - $Group - $Title
+  </title>
+   <meta http-equiv='Content-Language' content='de' />
+  <meta name='MSSmartTagsPreventParsing' content='true' />
+  <meta http-equiv='Content-Style-Type' content='text/css' />
+  <meta name="description" content="ApfelWiki Mac OS Apple $Title"/>
+  <meta name="robots" content="index,follow"/>
+  <meta http-equiv="pics-label" content='(pics-1.1 "http://www.icra.org/ratingsv02.html" l gen true for "http://apfelwiki.de" r (nz 1 vz 1 lz 1 oz 1 cb 1) gen true for "http://www.apfelwiki.de" r (nz 1 vz 1 lz 1 oz 1 cb 1))' />
+       <link rel="shortcut icon" href="$PubDirUrl/skins/standard/favicon.ico" />
+		<link rel="alternate" type="application/rss+xml" title="ApfelWiki RSS" href="http://apfelwiki.de/index.php/Main/RecentChanges?action=rss" />
+		  <!--HeaderText-->
+   <link rel='stylesheet' href='$PubDirUrl/skins/test/local.css' type='text/css' media='all'/>
+ </head>
+  <body>
+  
+<!--PageHeaderFmt-->  
+      
+            
+<div id='wikibody'>
+ <div id='wikiheader'>
+      <div id='wikiheadleft'>
+        <a href='$ScriptUrl' title='$[$WikiTitle Home]'><img src="$PubDirUrl/skins/test/newaw.png" alt="ApfelWiki.de"/></a>
+    </div>
+    
+    <div id='wikiheadright'>     
+      <div id='search'>
+      	<form id='searchform' action='$ScriptUrl'>
+      	<fieldset>
+          	<input type='hidden' name='n' value='$FullName' />
+    	  	<input type='hidden' name='action' value='search' />
+	      	<input id='searchbox' type="search" accesskey='f' name='q' value=''/>
+	      	</fieldset>
+    	</form> 
+    	</div>
+    	 </div>
+    
+   
+</div>
+
+   
+       
+         <div id='breadcrumbs'>
+            <span style="float: left;">
+            <a href="$ScriptUrl/$Group">$Group</a> / <a href="$PageUrl">$Title</a>
+            </span>
+            <span id='wikiactions' style="float: right;">
+                <a href='$PageUrl?action=edit' accesskey='$[ak_edit]' title='Diese Seite bearbeiten ...'>$[Edit Page]</a> &middot;
+                <!--function:MarkForDeleteLink--> &middot;
+                <a href="$PageUrl?action=upload">$[Upload]</a> &middot;
+                <a href="$PageUrl?action=rename">$[Rename]</a> | 
+                <a href="$PageUrl?action=print" rel="external">$[Print]</a> &middot;
+                <a href="$PageUrl?action=sendmail">$[Send]</a> | 
+                <a href="$PageUrl?action=diff" accesskey='$[ak_history]' >$[Page History]</a> &middot;
+                <a href='$PageUrl?action=search&amp;q=link%3D$FullName'>$[Backlinks]</a>
+            </span>
+             <div class="clearer"></div>
+        </div>	
+    
+
+		<div id='wikicontent'>
+          <!--PageText-->
+      </div>
+       <div class="clearer"></div>
+       <div id="groopfooter">
+       $GroupFooterFmt
+       </div>
+</div>
+</div>
+
+<div id='fussleiste">
+<!--PageFooterFmt-->
+</div>
+
+ <div id="menubar">
+                <div>
+                    <span  style="float: right;">
+                    <a href="$ScriptUrl/$[Main/AllRecentChangesShort]" accesskey='$[ak_recentchanges]' title="Letzte &Auml;nderungen">$[Changes]</a> &middot;
+         <a href="$ScriptUrl/$[Main/NeueSeite]">$[New Page]</a> 
+          <!--function:FavoritesTemplateLink-->              
+                    </span>
+                    <a href='$ScriptUrl/$[ApfelWiki/Impressum]'>$[Imprint]</a> <a href='$ScriptUrl/$[ApfelWiki/Datenschutz]'>Datenschutz</a>
+                </div>
+               
+            </div>
+
+  </body>
+</html>
+

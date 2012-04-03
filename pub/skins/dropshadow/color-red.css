@@ -1,0 +1,10 @@
+a, a:visited, #content h1 a:hover{
+	color: #D64108;
+	}
+#siteheader a, #siteheader a:visited, #siteheader a:hover, #footer a, #footer a:visited,
+#r_sidebar h2 a:hover, #r_sidebar .sidehead a:hover{
+	color: #D64108;
+	}
+#sidebar li.sfhover, #r_sidebar ul li a:hover, .headerright a:hover{
+	background: #D64108;
+	}

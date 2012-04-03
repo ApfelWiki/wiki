@@ -1,0 +1,142 @@
+body {
+    margin: 0px; padding: 0px; 
+    background-color: #fff; color: #666;
+    font: 10pt Georgia;
+    line-height: 20px;
+}
+
+table { border-collapse: collapse; margin: 12px auto; }
+table tr td { border: 0px solid #ddd; padding: 4px 6px; vertical-align: top; }
+form { margin: 0px; padding: 0px; }
+hr { border: 0px; height: 1px; background-color: #ccc; color: #ccc; }
+p { margin: 0px; padding: 0px; }
+
+ul { margin: 0px 24px; padding: 0px; list-style: disc outside; }
+ul ul { margin-top: 0px; padding-top: 0px; list-style: circle outside; }
+ul ul ul { margin-top: 0px; padding-top: 0px; list-style: square outside; }
+
+a { text-decoration:none; color: #002bb8; }
+a:visited { text-decoration:none; color: #002bb8; }
+a:hover { text-decoration:underline; color: #002bb8; }
+a:active { color: #002bb8; }
+
+.vspace { margin: 4px; }
+p.vspace { padding: 3px; }
+.content-mat { padding: 14px 15px 10px 30px; margin: auto; background: none; }
+.clearer{ clear: both; display: block;  margin: 0px; padding: 0px; height: 0px; line-height: 1px; font-size: 0px; }
+.borderless-table tr td { border: none }
+
+#header { width: 770px; height: 90px; margin: 10px auto 0px auto; text-align: left; }
+#header #page-title { color: #ddd; font: 18pt Georgia; font-weight: bold; padding: 20px 8px 8px 30px; }
+#header #page-subtitle { color: #aaa; font: 10pt Georgia; font-weight: bold; padding: 0px 8px 8px 30px; }
+#header a { color: #ddd; }
+
+#main { 
+    width: 770px; margin: 0px auto; 
+    background: url(image/Box-Middle.jpg) repeat-y top center; 
+    border-bottom: 1px solid transparent; 
+}
+
+#main h1 { font-size: 12pt; margin: 0px; padding: 0px;}
+#main h2 { font-size: 11pt; margin: 0px; padding: 0px;}
+#main h3 { font-size: 10pt; margin: 0px; padding: 0px;}
+#main h4 { font-size:  9pt; margin: 0px; padding: 0px;}
+
+#content { float: left; width: 712px;  text-align: left; border: 1px solid #00f; }
+
+#footer {
+font: Helvetica;
+    background: url(image/Box-Bottom.jpg) no-repeat top center; 
+    width: 770px; height: 40px;
+    border: 1px none #ccc; 
+    margin: 0px auto; padding: 0px 0px 8px 0px;
+}
+
+#copyright {font: Helvetica; margin: 0px 12px 0px 11px; padding: 2px 0px; border-top: 1px solid #ddd; font-size: 8pt; }
+
+#main #menubar {
+    font: Helvetica;
+    margin: 0px 11px 0px 11px;
+    padding: 0px 10px 0px 11px;
+    border-bottom: 1px solid #e8e8e8;
+    background: url(image/aqua.png);
+    text-align: left;
+    font-size: 10px;
+}
+
+#menubar ul { margin: 0px; padding: 0px; }
+#menubar ul li {font-weight:bold; list-style: none; display: inline; text-indent: 0px; text-align: left; padding-right: 8px; }
+#menubar a {font: Helvetica; color: #666; }
+
+#popupmenu a {font-weight:bold; color: #666; }
+#popupmenu a:hover {color: #666; }
+#popupmenu li:hover { background: url(image/aqua-blue.png);color: white;}
+#popupmenu li:hover ul {display: block; margin-top: 10px;}
+#popupmenu ul {background: url(image/menue.png); padding: 0px; margin: 0px; list-style: none; }
+#popupmenu ul li {padding-left: 6px; margin: 0px; float: left; position: relative; border: 1px none #f00; }
+
+#popupmenu li ul {
+    display: none;
+    position: absolute;
+    top: 1em;
+    left: -26px;
+    width: 100px;
+    border-bottom: 1px solid silver;
+    padding-top: 2px;
+    padding-bottom: 6px;
+}
+
+#popupmenu li ul li {
+    display: block;
+    clear: both;
+    padding: 0px;
+    margin: 0px;
+    padding-right: 8px;
+    padding-left: 8px;
+    float: left;
+    color: #aaa;
+}
+
+#popupmenu li ul li:hover {background:url(image/menue.png); color: #666; }
+
+#text { margin-top: 12px; margin-bottom: 12px;  }
+
+#gaestebuch {align:left; border:0px}
+
+/* styling of commentbox entries */
+.messagehead, .journalhead { 
+            margin:0;
+            padding:0 0 0 3px;
+            border:1px solid silver;
+            }
+.messageitem, .journalitem {
+            margin:0;
+            padding:3px;
+            border-left:1px solid silver;
+            border-right:1px solid silver;
+            border-bottom:1px solid silver;
+            }
+.messagehead { background: url(image/aqua.png; }
+/*use the following if message head should be same as message item */
+/* .messagehead { background:#eef; border-bottom:none; } */
+.messageitem { background:white; }
+.journalhead { background:white; }
+.journalitem { background:white; }
+
+.diaryhead h4 { border-bottom:1px solid #999; 
+            margin-bottom:1px; }
+* html .diaryhead h4 { margin-bottom:0; }
+.diaryitem {background:#ffc;
+            margin:0;
+            padding:3px;
+            border-left:1px solid #999;
+            border-right:1px solid #999;
+            border-bottom:1px solid #999;
+            }
+.messagehead h5, .messagedate h4, .journalhead h5, .journaldate h4,
+.diaryhead h4 { margin:0.25em 0 0 0; }
+
+.commentbutton { margin:0 0 0 5px; 
+                padding:0 3px }
+.commenttext { width:100%; 
+               margin:0 0 3px 0 }

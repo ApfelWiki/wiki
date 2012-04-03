@@ -1,0 +1,12 @@
+# ignore these  
+briefkasten/
+cache/
+local/config_local.php
+wiki.d/
+
+# never ignore (directories with)
+!empty
+!.htaccess
+
+# OS X System Files
+.DS_Store*

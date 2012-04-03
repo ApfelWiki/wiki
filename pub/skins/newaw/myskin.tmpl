@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
+<head>
+
+	<title>$WikiTitle {$Group} - {$Titlespaced}</title>
+
+	 <meta http-equiv='Content-Language' content='de' />
+  <meta name='MSSmartTagsPreventParsing' content='true' />
+  <meta http-equiv='Content-Style-Type' content='text/css' />
+  <meta name="description" content="ApfelWiki Mac OS Apple $Title"/>
+  <meta name="robots" content="index,follow"/>
+  <meta http-equiv="pics-label" content='(pics-1.1 "http://www.icra.org/ratingsv02.html" l gen true for "http://apfelwiki.de" r (nz 1 vz 1 lz 1 oz 1 cb 1) gen true for "http://www.apfelwiki.de" r (nz 1 vz 1 lz 1 oz 1 cb 1))' />	<meta name="keywords" content="key, words" />	
+  <script src="/mint/?js" type="text/javascript"></script>
+  <link rel="shortcut icon" href="$PubDirUrl/skins/newaw/favicon.ico" />
+		<link rel="alternate" type="application/rss+xml" title="ApfelWiki RSS" href="http://apfelwiki.de/index.php/Main/RecentChanges?action=rss" />
+				
+	<link rel="stylesheet" href="$SkinDirUrl/stylesheets/global.css" type="text/css" /	
+		
+	<!--[if lte IE 6]>
+		<script type="text/javascript" src="javascripts/pngfix.js"></script>
+		<script type="text/javascript" src="javascripts/ie6.js"></script>
+
+		<link rel="stylesheet" href="stylesheets/ie6.css" type="text/css" />
+	<![endif]-->
+	<!--HTMLHeader-->
+
+</head>
+
+<body>
+
+<!--  / WRAPPER \ -->
+<div id="wrapper">
+	
+	<!--  / MAIN CONTAINER \ -->
+	<div id="mainCntr">
+		
+		<!--  / HEADER CONTAINER \ -->
+		<!--PageHeaderFmt-->
+		<div id="headerCntr">
+
+			<h1><a href='$ScriptUrl' title='$[$WikiTitle Home]'>ApfelWiki</a></h1>
+			
+			<!--  / MENU CONTAINER \ -->
+			<div id="menuCntr">
+
+				<ul>
+					<li><form id='searchform' action='$ScriptUrl'>
+        				  	<input type='hidden' name='n' value='$FullName' />
+    					  	<input type='hidden' name='action' value='search' />
+	   					   	<input id='searchbox' type="search" accesskey='f' name='q' value=''/>
+   				 	</form></li>
+   				 	<li><a href="http://twitter.com/apfelwiki">twitter</a></li>
+					<li><a href="/forum">forum</a></li>
+					<li class="selected"><a href="'$ScriptUrl'">wiki</a></li>
+					
+				</ul>
+							</div>
+			<!--  \ MENU CONTAINER / -->
+
+		</div>
+		<!--/PageHeaderFmt-->
+		<!--  \ HEADER CONTAINER / -->
+		
+		<!--  / CONTENT CONTAINER \ -->
+		<div id="contentCntr">
+			<div class="cTop">
+			<div class='head'>
+			 <span id='wikiactions' style="float: right;">
+                <a href='$PageUrl?action=edit' accesskey='$[ak_edit]' title='Diese Seite bearbeiten ...' rel='nofollow'>$[Edit Page]</a> &middot;
+        <a href="$PageUrl?action=diff" accesskey='$[ak_history]' rel='nofollow'>$[Page History]</a> &middot;
+        <a href="$PageUrl?action=sendmail" rel='nofollow'>$[Send]</a> | 
+        <a href="$ScriptUrl/$[Main/AllRecentChangesShort]" accesskey='$[ak_recentchanges]' title="Letzte &Auml;nderungen" rel='nofollow'>$[Changes]</a> &middot;
+         <a href="$ScriptUrl/$[Main/NeueSeite]" rel='nofollow'>$[New Page]</a> 
+         <!--function:FavoritesTemplateLink-->
+            </span>
+
+            <span id='pagetitle' style="float: left;">
+            <div id='groupname'><a href="$ScriptUrl/$Group">$Group</a> &raquo;</div>   
+            </span>
+            <br/>
+             <span id='pagetitle' style="float: left;">
+            <div id='pagename'><a href="$PageUrl">$Title</a></div> 
+             </span>
+                      <div class="clearer"></div>
+        </div>	
+
+			
+			
+				<!--  / SERVICE BOX \ -->
+				<div class="serviceBox">
+
+					<!--PageText-->
+					
+
+				</div>
+				<!--  \ SERVICE BOX / -->
+				
+			</div>
+		</div>
+		<!--  \ CONTENT CONTAINER / -->
+		
+		
+		
+		<!--  / FOOTER CONTAINER \ -->
+		
+		<div id="footerCntr">
+<!--PageFooterFmt-->
+			<p class="left">&copy; 2010 - Apfel<strong>Wiki</strong></p>
+
+			<p class="right"><a href='$ScriptUrl/$[ApfelWiki/Impressum]'>$[Imprint]</a> - <a href='$ScriptUrl/$[ApfelWiki/Datenschutz]'>Datenschutz</a></p>
+<!--/PageFooterFmt-->
+		</div>
+		<!--  \ FOOTER CONTAINER / -->
+		
+	</div>
+	<!--  \ MAIN CONTAINER / -->
+	
+</div>
+<!--  \ WRAPPER / -->
+
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<FilesMatch "\.(php|html|htm|css|js|txt)$">
+SetOutputFilter DEFLATE
+</FilesMatch>
+
+<Files wiki>
+    SetHandler application/x-httpd-php
+</Files>
+
+RewriteEngine on
+RewriteRule ^wiki/(.*)$ /$1 [R=301,NC,L]
+
+rewritecond %{http_host} ^apfelwiki.de [nc]
+rewriterule ^(.*)$ http://www.apfelwiki.de/$1 [L,R=301] 
+RewriteRule ^wiki/(.*)$ / [L]
+
+RewriteRule (.*)suchen=(.*) http://www.apfelwiki.de/ApfelWiki/YahooSearch?q=$2
+#Sperren fuer Apfelwiki.de
+order allow,deny
+allow from all
+deny from 141.89.96.195 
+deny from .tr
+deny from .br
+deny from .ru
+deny from .cn
+deny from .us
+deny from 85.98.0.0/17
+
+
+
+
+# The rewrite base will be the document root.
+RewriteBase /
+
+# Send requests without parameters to pmwiki.php.
+RewriteRule ^$           index.php  [L]
+# Send requests to pmwiki.php, appending the query string part.
+RewriteRule ^([^/a-z].*) index.php?n=$1  [QSA,L]
+
+
+
+
+ErrorDocument 403 http://www.apfelwiki.de/Site/Forbidden
+ErrorDocument 404 http://www.apfelwiki.de/Site/PageNotFound

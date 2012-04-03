@@ -1,0 +1,10 @@
+a, a:visited, #content h1 a:hover{
+	color: #FF6600;
+	}
+#siteheader a, #siteheader a:visited, #siteheader a:hover, #footer a, #footer a:visited,
+#r_sidebar h2 a:hover, #r_sidebar .sidehead a:hover{
+	color: #FF6600;
+	}
+#sidebar li.sfhover, #r_sidebar ul li a:hover, .headerright a:hover{
+	background: #FF6600;
+	}

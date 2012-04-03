@@ -1,0 +1,12 @@
+version=pmwiki-2.0.6 ordered=1 urlencoded=1
+agent=Mozilla/5.0 (Macintosh; U; PPC Mac OS X Mach-O; en-US; rv:1.8b5) Gecko/20051008 Camino/1.0a1+
+author=Schlaefer
+host=84.185.171.100
+name=Main.Sandkasten
+rev=1
+targets=
+text=%25lfloat height=50px%25 Attach:sandbox_gross_locked.gif%0aHier im Sandkasten kann nach belieben die Wikisyntax ausgetestet werden. Die Seite wird nach 15 Minuten automatisch wieder gelöscht. %0a%0aViel Spaß beim Testen!%0a%0a----
+time=1128927187
+author:1128927187=Schlaefer
+diff:1128927187:1128927187:=1,6d0%0a%3c %25lfloat height=50px%25 Attach:sandbox_gross_locked.gif%0a%3c Hier im Sandkasten kann nach belieben die Wikisyntax ausgetestet werden. Die Seite wird nach 15 Minuten automatisch wieder gelöscht. %0a%3c %0a%3c Viel Spaß beim Testen!%0a%3c %0a%3c ----%0a\ No newline at end of file%0a
+host:1128927187=84.185.171.100
