@@ -1,5 +1,5 @@
 <?php if (!defined('PmWiki')) exit();
-/*  Copyright 2004-2006 Patrick R. Michaud (pmichaud@pobox.com)
+/*  Copyright 2004-2011 Patrick R. Michaud (pmichaud@pobox.com)
     This file is part of PmWiki; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published
     by the Free Software Foundation; either version 2 of the License, or
@@ -21,7 +21,7 @@ SDV($RefCountTimeFmt," <small>%Y-%b-%d %H:%M</small>");
 SDV($HandleActions['refcount'], 'HandleRefCount');
 
 function PrintRefCount($pagename) {
-  global $GroupPattern,$NamePattern,$PageRefCountFmt,$RefCountTimeFmt;
+  global $GroupPattern,$NamePattern,$PageRefCountFmt,$RefCountTimeFmt, $ScriptUrl;
   $pagelist = ListPages();
   $grouplist = array();
   foreach($pagelist as $pname) {
@@ -36,27 +36,27 @@ function PrintRefCount($pagename) {
   $tlist = isset($_REQUEST['tlist']) ? $_REQUEST['tlist'] : array('all');
   $flist = isset($_REQUEST['flist']) ? $_REQUEST['flist'] : array('all');
   $whichrefs = @$_REQUEST['whichrefs'];
-  $showrefs = @$_REQUEST['showrefs'];
+  $showrefs = (@$_REQUEST['showrefs']=='checked')? "checked='checked'" : '';
   $submit = @$_REQUEST['submit'];
 
   echo FmtPageName($PageRefCountFmt,$pagename);
-  echo "<form method='post'><input type='hidden' action='refcount'>
+  echo FmtPageName("<form method='post' action='{\$PageUrl}'><input type='hidden' name='action' value='refcount'/>
     <table cellspacing='10'><tr><td valign='top'>Show
-    <br><select name='whichrefs'>";
+    <br/><select name='whichrefs'>",$pagename);
   foreach($wlist as $w)
-    echo "<option ",($whichrefs==$w) ? 'selected' : ''," value='$w'>$w\n";
-  echo "</select></td><td valign='top'> page names in group<br>
-    <select name='tlist[]' multiple size='4'>";
+    echo "<option ",($whichrefs==$w) ? 'selected="selected"' : ''," value='$w'>$w</option>\n";
+  echo "</select></td><td valign='top'> page names in group<br/>
+    <select name='tlist[]' multiple='multiple' size='4'>";
   foreach($grouplist as $g=>$t)
-    echo "<option ",in_array($g,$tlist) ? 'selected' : ''," value='$g'>$t\n";
-  echo "</select></td><td valign='top'> referenced from pages in<br>
-    <select name='flist[]' multiple size='4'>";
+    echo "<option ",in_array($g,$tlist) ? 'selected="selected"' : ''," value='$g'>$t</option>\n";
+  echo "</select></td><td valign='top'> referenced from pages in<br/>
+    <select name='flist[]' multiple='multiple' size='4'>";
   foreach($grouplist as $g=>$t)
-    echo "<option ",in_array($g,$flist) ? 'selected' : ''," value='$g'>$t\n";
+    echo "<option ",in_array($g,$flist) ? 'selected="selected"' : ''," value='$g'>$t</option>\n";
   echo "</select></td></tr></table>
-    <p><input type='checkbox' name='showrefs' value='checked' $showrefs>
+    <p><input type='checkbox' name='showrefs' value='checked' $showrefs/>
       Display referencing pages
-    <p><input type='submit' name='submit' value='Search'></form><p><hr>";
+    </p><p><input type='submit' name='submit' value='Search'/></p></form><hr/>";
 
   if ($submit) {
     foreach($pagelist as $pname) {

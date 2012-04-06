@@ -1,5 +1,5 @@
 <?php if (!defined('PmWiki')) exit();
-/*  Copyright 2004-2010 Patrick R. Michaud (pmichaud@pobox.com)
+/*  Copyright 2004-2011 Patrick R. Michaud (pmichaud@pobox.com)
     This file is part of PmWiki; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published
     by the Free Software Foundation; either version 2 of the License, or
@@ -90,6 +90,40 @@ function AsSpacedUTF8($text) {
 }
 
 
+SDVA($MarkupExpr, array(
+  'substr'  => 'call_user_func_array("utf8string", $args)',
+  'strlen'  => 'utf8string($args[0], "strlen")',
+  'ucfirst' => 'utf8string($args[0], "ucfirst")',
+  'ucwords' => 'utf8string($args[0], "ucwords")',
+  'tolower' => 'utf8string($args[0], "tolower")',
+  'toupper' => 'utf8string($args[0], "toupper")',
+));
+
+function utf8string($str, $start=false, $len=false) { # strlen+substr++ combo for UTF-8
+  global $CaseConversions;
+  static $lower;
+  if (!@$lower) $lower = implode('|', array_keys($CaseConversions));
+  $ascii = preg_match('/[\\x80-\\xFF]/', $str)? 0:1;
+  switch ((string)$start) {
+    case 'ucfirst': return $ascii ? ucfirst($str) :
+      preg_replace("/^($lower)/e", '$GLOBALS["CaseConversions"]["$1"]', $str);
+    case 'ucwords': return $ascii ? ucwords($str) :
+      preg_replace("/(^|\\s+)($lower)/e", '"$1".$GLOBALS["CaseConversions"]["$2"]', $str);
+    case 'tolower': return $ascii ? strtolower($str) : utf8fold($str);
+    case 'toupper': return $ascii ? strtoupper($str) : utf8toupper($str);
+  }
+  if ($ascii) {
+    if ($start==='strlen') return strlen($str);
+    if ($len===false) return substr($str, $start);
+    return substr($str, $start, $len);
+  }
+  $letters = preg_split("/([\\x00-\\x7f]|[\\xc2-\\xdf].|[\\xe0-\\xef]..|[\\xf0-\\xf4]...)/", 
+              $str, -1, PREG_SPLIT_DELIM_CAPTURE | PREG_SPLIT_NO_EMPTY);
+  if ($start==='strlen') return count($letters);
+  if ($len===false) return implode('', array_slice($letters, $start));
+  return implode('', array_slice($letters, $start, $len));
+}
+
 ##   Conversion tables.  
 ##   $CaseConversion maps lowercase utf8 sequences to 
 ##   their uppercase equivalents.  The table was derived from [1].
@@ -137,7 +171,7 @@ SDV($CaseConversions, array(
     "\xc4\xa5" => "\xc4\xa4",  "\xc4\xa7" => "\xc4\xa6",
     "\xc4\xa9" => "\xc4\xa8",  "\xc4\xab" => "\xc4\xaa",
     "\xc4\xad" => "\xc4\xac",  "\xc4\xaf" => "\xc4\xae",
-    "\xc4\xb1" => "I",  "\xc4\xb3" => "\xc4\xb2",
+    "\xc4\xb1" => "I",         "\xc4\xb3" => "\xc4\xb2",
     "\xc4\xb5" => "\xc4\xb4",  "\xc4\xb7" => "\xc4\xb6",
     "\xc4\xba" => "\xc4\xb9",  "\xc4\xbc" => "\xc4\xbb",
     "\xc4\xbe" => "\xc4\xbd",  
@@ -598,5 +632,3 @@ SDV($StringFolding, array(
     "\xd5\x94" => "\xd6\x84",  "\xd5\x95" => "\xd6\x85",
     "\xd5\x96" => "\xd6\x86",  "\xd6\x87" => "\xd5\xa5\xd6\x82"
   ));  
-
-

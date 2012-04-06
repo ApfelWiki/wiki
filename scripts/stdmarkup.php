@@ -1,5 +1,5 @@
 <?php if (!defined('PmWiki')) exit();
-/*  Copyright 2004-2010 Patrick R. Michaud (pmichaud@pobox.com)
+/*  Copyright 2004-2011 Patrick R. Michaud (pmichaud@pobox.com)
     This file is part of PmWiki; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published
     by the Free Software Foundation; either version 2 of the License, or
@@ -54,7 +54,7 @@ Markup('{$var}', '>$[phrase]',
 
 # invisible (:textvar:...:) definition
 Markup('textvar:', '<split',
-  '/\\(:\\w[-\\w]*:(?!\\)).*?:\\)/s', '');
+  '/\\(: *\\w[-\\w]* *:(?!\\)).*?:\\)/s', '');
 
 ## handle relative text vars in includes
 if (IsEnabled($EnableRelativePageVars, 1)) 
@@ -280,12 +280,7 @@ Markup('[[|#', '<[[|',
   "/(?>\\[\\[([^|\\]]+))\\|\\s*#\\s*\\]\\]/e",  
   "Keep(MakeLink(\$pagename,PSS('$1'),'['.++\$MarkupFrame[0]['ref'].']'),'L')");
 
-## [[target |+]] title links
-Markup('[[|+', '<[[|',
-  "/(?>\\[\\[([^|\\]]+))\\|\\s*\\+\\s*]]/e",
-  "Keep(MakeLink(\$pagename, PSS('$1'),
-                 PageVar(MakePageName(\$pagename,PSS('$1')), '\$Title')
-                ),'L')");
+## [[target |+]] title links moved inside LinkPage()
 
 ## bare urllinks 
 Markup('urllink','>[[',
