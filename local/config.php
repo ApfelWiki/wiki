@@ -41,7 +41,7 @@
 	$RCLinesMax = 2000;
 ## Beschraenkung der Seitenhistorie auf ein Jahr
 	$DiffKeepDays = 360;
-## Php 5.2.x Modifikationen f�r RecentChanges etc.
+## Php 5.2.x Modifikationen für RecentChanges etc.
 	ini_set('pcre.backtrack_limit', 1000000);
 	ini_set('pcre.recursion_limit', 1000000);
 
@@ -375,9 +375,6 @@ Diese Seite wurde am $now von [[~$Author]] als [[ApfelWiki.Loeschkandidaten#$Ful
 ## Rezensionen (Wertung und Sortierung)
 	include_once("cookbook/rezensionen.php");
 
-## Favoriten in der Befehlszeile
-	include_once("cookbook/favorites.php");
-
 ## automatische Wiederherstellen von Seiten nach einer bestimmten Zeit
 	$AutoRestoreKeep = 900;						# keep edits for 15 minutes (900 seconds)
 	include_once("cookbook/autorestore.php");
@@ -415,11 +412,11 @@ Diese Seite wurde am $now von [[~$Author]] als [[ApfelWiki.Loeschkandidaten#$Ful
 ## Ausgabe des title statt name falls definiert
 	$FPLByGroupIFmt = "<dd><a href='\$PageUrl'>\$Title</a></dd>\n";
 
-## TraceTrail f�r eine Anzeige der zuletzt besuchten Seiten
+## TraceTrail für eine Anzeige der zuletzt besuchten Seiten
 
 	include_once("cookbook/tracetrail2.php");
 
-## Vorlagenmen�
+## Vorlagenmenü
 	$LinkPageCreateFmt = "<a class='createlinktext' rel='nofollow' href='\$LinkUrl'>\$LinkText</a>";
 
 ?>
