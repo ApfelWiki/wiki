@@ -1,5 +1,5 @@
-<?php
-/*  Copyright 2004 Patrick R. Michaud (pmichaud@pobox.com)
+<?php if (!defined('PmWiki')) exit();
+/*  Copyright 2004-2011 Patrick R. Michaud (pmichaud@pobox.com)
     This file is part of PmWiki; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published
     by the Free Software Foundation; either version 2 of the License, or
@@ -11,9 +11,11 @@
     handles the conversion of pagenames from utf-8 (sent by browsers)
     into iso-8859-2 if needed.  
 */
-  global $HTTPHeaders, $pagename, $KeepToken;
+  global $HTTPHeaders, $pagename, $KeepToken, $Charset, $DefaultPageCharset;
 
   $HTTPHeaders[] = "Content-Type: text/html; charset=iso-8859-2;";
+  $Charset = "ISO-8859-2";
+  SDVA($DefaultPageCharset, array('ISO-8859-1'=>$Charset));
 
   $KeepToken = "\263\263\263";
 

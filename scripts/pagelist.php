@@ -189,6 +189,7 @@ function MakePageList($pagename, $opt, $retpages = 1) {
   SDVA($MakePageListOpt, array('list' => 'default'));
   $opt = array_merge((array)$MakePageListOpt, (array)$opt);
   if (!@$opt['order'] && !@$opt['trail']) $opt['order'] = 'name';
+  $opt['order'] = preg_replace('/[^-\\w:$]+/', ',', $opt['order']);
 
   ksort($opt); $opt['=key'] = md5(serialize($opt));
 
@@ -419,7 +420,7 @@ function PageListSort(&$list, &$opt, $pn, &$page) {
   switch ($opt['=phase']) {
     case PAGELIST_PRE:
       $ret = 0;
-      foreach(preg_split('/[\\s,|]+/', @$opt['order'], -1, PREG_SPLIT_NO_EMPTY) 
+      foreach(preg_split('/[^-\\w:$]+/', @$opt['order'], -1, PREG_SPLIT_NO_EMPTY) 
               as $o) {
         $ret |= PAGELIST_POST;
         $r = '+';

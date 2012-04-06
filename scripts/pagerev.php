@@ -163,14 +163,15 @@ function DiffRenderSource($in, $out, $which) {
     $a = $which? $out : $in;
     return str_replace("\n","<br />",htmlspecialchars(join("\n",$a)));  
   }
+  $countdifflines = abs(count($in)-count($out));
   $lines = $cnt = $x2 = $y2 = array();
   foreach($in as $line) {
-    $tmp = DiffPrepareInline($line);
+    $tmp = $countdifflines>20 ? array($line) : DiffPrepareInline($line);
     if(!$which) $cnt[] = array(count($x2), count($tmp));
     $x2 = array_merge($x2, $tmp);
   }
   foreach($out as $line) {
-    $tmp = DiffPrepareInline($line);
+    $tmp = $countdifflines>20 ? array($line) : DiffPrepareInline($line);
     if($which) $cnt[] = array(count($y2), count($tmp));
     $y2 = array_merge($y2, $tmp);
   }
@@ -199,7 +200,7 @@ function DiffRenderSource($in, $out, $which) {
   $z2[0] = $line.$z2[0];
   foreach ($cnt as $a) $lines[] = implode('', array_slice($z2, $a[0], $a[1]));
   $ret = trim(implode("\n", $lines));
-  $ret = preg_replace('!</(del|ins)> <\1>!', ' ', $ret);
+  $ret = str_replace(array('</del> <del>', '</ins> <ins>'), ' ', $ret);
   return str_replace("\n","<br />",$ret);
 }
 ## Split a line into pieces before passing it through `diff`

@@ -1,4 +1,8 @@
-name=Site.GroupAttributes
-passwdread=@lock
-passwdedit=@lock
+version=pmwiki-2.2.30 ordered=1 urlencoded=1
+charset=UTF-8
+name=SiteAdmin.GroupAttributes
 passwdattr=@lock
+passwdedit=@lock
+passwdread=@lock
+rev=3
+time=1315674224
