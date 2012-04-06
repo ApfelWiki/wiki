@@ -119,13 +119,7 @@
 ##http://www.pmwiki.org/wiki/Cookbook/SkinChange
 ##Angabe der ueber ?skin=xxx anwaehlbaren Skins
 	$PageSkinList = array(
-			'test' => 'test',
-			'classic' => 'classic',
-			'pmwiki' => 'pmwiki',
-			'standard' => 'standard',
-			'macnemo' => 'macnemo',
-			'schlaefer' => 'schlaefer',
-			'apfelwiki2' => 'apfelwiki2',
+			'apfelwiki' => 'apfelwiki',
 			'newaw' => 'newaw' );
 	include_once("cookbook/skinchange.php");
 
