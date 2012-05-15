@@ -31,8 +31,9 @@ files[3]='favicon.ico'
 directories[0]='cookbook'
 directories[1]='local'
 directories[2]='pub'
-directories[3]='wikilib.d'
-directories[4]='wikirev.d'
+directories[3]='scripts'
+directories[4]='wikilib.d'
+directories[5]='wikirev.d'
 
 ###############################################################################
 # Script Parameters
