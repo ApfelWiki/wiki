@@ -13,7 +13,7 @@
 # server adress
 SERVER='apfelwiki.de'
 # working directory on the server
-WORKDIR=''
+WORKDIR='awtest/'
 # FTP-user
 USER=''
 # password for the ftp-user:
