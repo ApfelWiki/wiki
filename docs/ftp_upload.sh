@@ -14,6 +14,7 @@
 SERVER='apfelwiki.de'
 # working directory on the server
 WORKDIR='awtest/'
+# working directory on the server. Should be `/` or 'awtest/`
 # FTP-user
 USER=''
 # password for the ftp-user:

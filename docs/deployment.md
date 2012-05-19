@@ -30,7 +30,7 @@ herauf geladen. Ist der Ordner `wiki.d` auf dem Server nicht vorhanden, wird er 
 
 Im Kopf des Scriptes ausfüllen:
 
-Zielverzeichnis auf dem Server relativ zum Login-Verzeichnis auf dem Server. Normalerweise leer oder für das Testverzeichnis `awtest/`.
+Zielverzeichnis auf dem Server relativ zum Login-Verzeichnis auf dem Server. Für Produktion `/` oder für das Testverzeichnis `awtest/`.
 
 	WORKDIR="awtest/"
 
