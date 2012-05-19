@@ -97,7 +97,7 @@ for file in ${wiki_d_files[@]}
 			exit 1;
 		fi
 
-		ncftpput -v -u $USER -p $PASSWD $SERVER "$WORKDIR/wiki.d/" "$fileLocation"
+		ncftpput -v -m -u $USER -p $PASSWD $SERVER "${WORKDIR}wiki.d/" "$fileLocation"
 	done		
 
 exit 0
