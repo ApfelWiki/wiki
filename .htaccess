@@ -29,7 +29,7 @@ deny from 85.98.0.0/17
 # Use mod_rewrite to enable "Clean URLs" for a PmWiki installation.
 RewriteEngine On
 # The rewrite base will be the document root.
-RewriteBase /
+# RewriteBase /
 # Send requests without parameters to pmwiki.php.
 RewriteRule ^$           pmwiki.php  [L]
 # Send requests for index.php to pmwiki.php.
