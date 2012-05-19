@@ -1,4 +1,5 @@
 *
 !.gitignore
 !Site.EditForm
-
+!Main.AllRecentChangesShort
+!Main.NeueSeite

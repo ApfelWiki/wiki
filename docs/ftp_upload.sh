@@ -39,6 +39,8 @@ directories[5]='wikirev.d'
 
 wiki_d_files=(
   'Site.EditForm'
+  'Main.AllRecentChangesShort'
+  'Main.NeueSeite'
   )
 
 ###############################################################################
