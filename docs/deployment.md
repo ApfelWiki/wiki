@@ -18,7 +18,12 @@ Das Skript löscht keine Dateien, sondern lädt hoch und überschreibt vorhanden
 
 - `briefkasten/` (potentiell Dateien auf dem Server vorhanden)
 - `cache/` (wird von PmWiki automatisch angelegt falls nötig)
-- `wiki.d/` (potentiell Dateien auf dem Server vorhanden)
+
+Darüber hinaus werden selektiv einige Dateien aus 
+
+- `wiki.d/` 
+ 
+herauf geladen. Ist der Ordner `wiki.d` auf dem Server nicht vorhanden, wird er neu angelegt (u.U. sind die Schreibrechte korrekt zu setzen).
 
 
 ### Skript konfigurieren ###
