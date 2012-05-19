@@ -27,6 +27,7 @@ files[0]='index.php'
 files[1]='pmwiki.php'
 files[2]='robots.txt'
 files[3]='favicon.ico'
+files[4]='.htaccess'
 
 directories[0]='cookbook'
 directories[1]='local'
