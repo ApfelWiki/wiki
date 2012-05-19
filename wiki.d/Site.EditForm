@@ -1,0 +1,82 @@
+version=pmwiki-2.2.36 ordered=1 urlencoded=1
+agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_4) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1140.0 Safari/537.1
+author=kt007
+charset=UTF-8
+csum=
+host=::1
+name=Site/EditForm
+pageviewcounterdaily=1
+pageviewcounterglobal=285
+pageviewcounterlastupdate=19
+rev=319
+targets=
+text=!$[Editing] {$FullName} %25block class=wikiaction%25%0a(:messages:)%0a%0a%0a(:if e_preview:)%0a!!$[Preview] {$FullName}%0a'''$[Page is unsaved]'''%0a(:e_preview:)%0a----%0a'''$[End of preview -- remember to save]!'''\\%0a[[#top | $[Top] ]]%0a(:if:)%0a(:div id='wikiedit':)%0a(:input e_form:)[[#top]](:e_guibuttons:)\\%0a(:input e_textarea:)\\%0a$[Summary]: (:input e_changesummary:)\\%0a$[Author]: (:input e_author:) (:input e_minorcheckbox:) $[This is a minor edit]\\%0aBitte Zahl eingeben: {$Captcha} (:input captcha:) \\%0a(:input e_savebutton:) (:input e_previewbutton:) (:input e_cancelbutton:)%0a(:input end:)%0a----%0a%25rfloat%25 [-(:input aw_template_switch:)-]%0a(:input aw_template:) %0a[[%3c%3c]]%0a----%0a(:divend:)%0a(:include $[PmWikiDe/EditQuickReference]:)%0a
+time=1311055806
+author:1311055806=kt007
+diff:1311055806:1311055722:=3,4c3,7%0a%3c %0a%3c %0a---%0a> (:if captcha:)%0a> %25green%25Captcha succeeded%25%25%0a> (:else:)%0a> %25red%25Captcha failed%25%25%0a> (:ifend:)%0a
+host:1311055806=85.180.2.148
+author:1311055722=kt007
+diff:1311055722:1311055517:=3,7d2%0a%3c (:if captcha:)%0a%3c %25green%25Captcha succeeded%25%25%0a%3c (:else:)%0a%3c %25red%25Captcha failed%25%25%0a%3c (:ifend:)%0a
+host:1311055722=85.180.2.148
+author:1311055517=kt007
+diff:1311055517:1311055379:=16c16%0a%3c Bitte Zahl eingeben: {$Captcha} (:input captcha:) \\%0a---%0a> Enter value: {$Captcha} (:input captcha:) \\%0a
+host:1311055517=85.180.2.148
+author:1311055379=kt007
+diff:1311055379:1311055350:=
+host:1311055379=85.180.2.148
+author:1311055350=kt007
+diff:1311055350:1311055331:=
+host:1311055350=85.180.2.148
+author:1311055331=kt007
+diff:1311055331:1311054595:=16d15%0a%3c Enter value: {$Captcha} (:input captcha:) \\%0a
+host:1311055331=85.180.2.148
+author:1311054595=kt007
+diff:1311054595:1131712240:=16,26d15%0a%3c (:input form action={*$PageUrl} method=post:)%0a%3c (:input default request=1:)%0a%3c  (:input end:)%0a%3c %0a%3c (:if captcha:)%0a%3c %25green%25Captcha succeeded%25%25%0a%3c (:else:)%0a%3c %25red%25Captcha failed%25%25%0a%3c (:ifend:)%0a
+host:1311054595=85.180.2.148
+author:1131712240=Schlaefer
+diff:1131712240:1131712168:=18c18,19%0a%3c ----%0a---%0a> (:divend:)%0a> (:div style='border:1px silver solid; margin:10px; width:100%25;':)%0a21,22d21%0a%3c [[%3c%3c]]%0a%3c ----%0a23a23%0a> %0a
+host:1131712240=84.185.144.5
+author:1131712168=Schlaefer
+diff:1131712168:1131712107:=19c19%0a%3c (:div style='border:1px silver solid; margin:10px; width:100%25;':)%0a---%0a> (:div style='border:1px silver solid; margin:10px;':)%0a
+host:1131712168=84.185.144.5
+author:1131712107=Schlaefer
+diff:1131712107:1131467241:=18,19c18%0a%3c (:divend:)%0a%3c (:div style='border:1px silver solid; margin:10px;':)%0a---%0a> ----%0a21a21,22%0a> [[%3c%3c]]%0a> ----%0a23d23%0a%3c %0a
+host:1131712107=84.185.144.5
+author:1131467241=Schlaefer
+diff:1131467241:1131467176:=21d20%0a%3c [[%3c%3c]]%0a
+host:1131467241=84.185.145.140
+author:1131467176=Schlaefer
+diff:1131467176:1123796295:=18,21d17%0a%3c ----%0a%3c %25rfloat%25 [-(:input aw_template_switch:)-]%0a%3c (:input aw_template:) %0a%3c ----%0a
+host:1131467176=84.185.145.140
+author:1123796295=kt007
+csum:1123796295=Bearbeite String angepasst
+diff:1123796295:1123669150:=1c1%0a%3c !$[Editing] {$FullName} %25block class=wikiaction%25%0a---%0a> !$[Editing {$FullName}] %25block class=wikiaction%25%0a4c4%0a%3c !!$[Preview] {$FullName}%0a---%0a> !!$[Preview {$FullName}]%0a
+host:1123796295=145.254.195.165
+author:1123669150=Schlaefer
+diff:1123669150:1123669097:=8d7%0a%3c '''$[End of preview -- remember to save]!'''\\%0a
+host:1123669150=84.185.152.77
+author:1123669097=Schlaefer
+diff:1123669097:1123669024:=7a8,12%0a> (:input e_form:)%0a> '''$[End of preview -- remember to save]:''' (:input e_savebutton:)  \\%0a> $[Summary]: (:input e_changesummary:)\\%0a> $[Author]: (:input e_author:) (:input e_minorcheckbox:) $[This is a minor edit]\\%0a> (:input end:)%0a
+host:1123669097=84.185.152.77
+author:1123669024=Schlaefer
+diff:1123669024:1123668910:=10,11d9%0a%3c $[Summary]: (:input e_changesummary:)\\%0a%3c $[Author]: (:input e_author:) (:input e_minorcheckbox:) $[This is a minor edit]\\%0a
+host:1123669024=84.185.152.77
+author:1123668910=Schlaefer
+diff:1123668910:1123660364:=8d7%0a%3c (:input e_form:)%0a10d8%0a%3c (:input end:)%0a
+host:1123668910=84.185.152.77
+author:1123660364=kt007
+csum:1123660364=Savebutton ohne Funktion
+diff:1123660364:1123660251:=8c8%0a%3c '''$[End of preview -- remember to save]:''' (:input e_savebutton:)  \\%0a---%0a> '''$[End of preview -- remember to save]:''' (:input e_savebutton:) (input end:) \\%0a
+host:1123660364=145.254.195.82
+author:1123660251=kt007
+csum:1123660251=korrektur
+diff:1123660251:1123660164:=6d5%0a%3c (:e_preview:)%0a8c7%0a%3c '''$[End of preview -- remember to save]:''' (:input e_savebutton:) (input end:) \\%0a---%0a> '''$[End of preview -- remember to save]:''' (:input e_savebutton:) \\%0a9a9%0a> (:e_preview:)%0a
+host:1123660251=145.254.195.82
+author:1123660164=kt007
+csum:1123660164=test
+diff:1123660164:1123157207:=5a6%0a> (:e_preview:)%0a9d9%0a%3c (:e_preview:)%0a
+host:1123660164=145.254.195.82
+author:1123157207=Schlaefer
+csum:1123157207=test
+diff:1123157207:1123146920:=19a20%0a> %0a
+host:1123157207=192.168.0.3

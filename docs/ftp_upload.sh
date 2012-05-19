@@ -36,6 +36,10 @@ directories[3]='scripts'
 directories[4]='wikilib.d'
 directories[5]='wikirev.d'
 
+wiki_d_files=(
+  'Site.EditForm'
+  )
+
 ###############################################################################
 # Script Parameters
 ###############################################################################
@@ -80,6 +84,20 @@ for directory in ${directories[@]}
 			exit 1;
 		fi
 		ncftpput -R -v -u $USER -p $PASSWD $SERVER "$WORKDIR" "$directoryLocation"
+	done		
+
+# upload wiki.d 
+for file in ${wiki_d_files[@]}
+	do
+
+		fileLocation="$LOCALDIR/wiki.d/$file"
+
+		if [ ! -f "$fileLocation" ]; then
+   		echo "File $fileLocation doesn't exist. Aborting."
+			exit 1;
+		fi
+
+		ncftpput -v -u $USER -p $PASSWD $SERVER "$WORKDIR/wiki.d/" "$fileLocation"
 	done		
 
 exit 0

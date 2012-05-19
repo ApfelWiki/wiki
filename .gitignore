@@ -2,7 +2,6 @@
 briefkasten/
 cache/
 local/config_local.php
-wiki.d/
 
 # never ignore (directories with)
 !empty
