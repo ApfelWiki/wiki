@@ -15,7 +15,9 @@ input, select, textarea {
 
 img { border: 0px; display: inline-block; }
 a {outline: none;}
-ul,ol { margin-left:20px; }
+ul,ol { 
+  margin-left: 1.5em;
+  }
 strong {
   /*font-size: 0.9em;*/
   font-weight: bolder;
@@ -42,23 +44,35 @@ hr {
   margin: 1em 0;
   }
 
+h1, h2, h3, h4, .head, #menuCntr {
+  letter-spacing: 1px;
+  margin-bottom: 0;
+  }
 
 /* ### GLOBAL CLASSES ### */
 .clear { clear: both; height: 1px; }
 /* ### WRAPPER ### */
-#wrapper { position: relative; display: block; width: 100%; min-height: 100%; }
-
-/* ### MAIN CONTAINER ### */
-#mainCntr { margin: 0 auto; width: 890px; }
+#wrapper {
+  position: relative;
+}
 
 /* ### HEADER CONTAINER ### */
-#headerCntr { position: relative; width: 890px; height: 72px; background: url('../images/headerBg.gif') repeat-y -15px 0px; }
-#headerCntr h1 { position: absolute; top: 20px; left: 20px; }
+#headerCntr { 
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+#headerCntr .span-11 { position: relative; }
 #headerCntr h1 a { display: block; width: 180px; height: 43px; text-indent: -9999px; background: url('../newaw.png') no-repeat; }
 
 /* ### MENU CONTAINER ### */
-#menuCntr { position: absolute; top: 35px; right: 0px; width: 450px; }
-#menuCntr ul { margin-left:0px; overflow: hidden; width: 450px; list-style: none; }
+#menuCntr {
+  position: relative;
+  top: 15px;
+  }
+#menuCntr input {
+  margin: 0px;
+  }
+#menuCntr ul { margin-left:0px; overflow: hidden;list-style: none; }
 #menuCntr li { padding-right: 20px; float: right; display: inline; }
 #menuCntr li a { text-decoration: none; color: #000; }
 #menuCntr li a:hover { text-decoration: underline; }
@@ -73,10 +87,22 @@ hr {
 #search fieldset input#searchsubmit { position: absolute; top: 5px; right: 2px; }
 
 /* ### CONTENT CONTAINER ### */
-#contentCntr { width: 890px; background: url('../images/contentBg.gif') repeat-y; }
-#contentCntr div.cTop { overflow: hidden; width: 890px; background: url('../images/contentTop.gif') no-repeat top; }
-#contentCntr .head { padding-left: 20px; padding-right: 20px; padding-top: 10px; margin-left: 34px; margin-bottom: 0px; margin-right: 34px; margin-top: 0px; width: 782px; height: 66px; font: 18px 'Helvetica', Arial; color: #333; background: url('../images/titleBg.gif') no-repeat; }
-
+#contentCntr {
+  background-color: inherit;
+  background: url('../images/contentBg.gif') repeat-y;
+  background-position: 35px 0;
+  }
+#contentCntr div.cTop {
+  overflow: hidden;
+  background: url('../images/contentTop.gif') no-repeat top;
+  background-position: 35px 0;
+}
+#contentCntr .head { 
+  font: 18px 'Helvetica', Arial; color: #333; background: url('../images/titleBg.gif') no-repeat;
+  background-position: 30px 0;
+  height: 66px;
+  padding-top: 9px;
+}
 
 #wikiactions {
   float:right;
@@ -123,7 +149,7 @@ hr {
 
 
 /* ### SERVICE BOX ### */
-.serviceBox { padding: 0px 35px 20px 55px; overflow: hidden; width: 780px; }
+/*.serviceBox { padding: 0px 35px 20px 55px; overflow: hidden; width: 780px; }*/
 .serviceBox div.text { float: left; width: 520px; }
 .serviceBox div.test { float: right;  width: 220px; }
 .serviceBox p { padding-bottom: 10px;}
@@ -149,7 +175,15 @@ hr {
 .contactBox input.submit { padding-bottom: 2px; width: 69px; height: 28px; cursor: pointer; color: #fff; border: 0px; background: url('../images/submitBg.gif') no-repeat; }
 
 /* ### FOOTER CONTAINER ### */
-#footerCntr { padding: 44px 35px 40px 35px; overflow: hidden; width: 820px; background: url('../images/footerBg.gif') no-repeat; }
+#footerCntr { 
+  padding-top: 45px;
+  padding-bottom: 35px;
+  overflow: hidden;
+/*  width: 820px; */
+  background: url('../images/footerBg.gif') no-repeat;
+  background-position: 35px 0
+    ;
+}
 #footerCntr p { float: left; width: 300px; font-size: 11px; }
 #footerCntr p.right { float: right; text-align: right; }
 #footerCntr a { text-decoration: none; color: #666; }
@@ -160,7 +194,6 @@ hr {
   border-spacing: 0px;
   padding:4px;
   margin-top:0.5em;
-  margin-bottom:-2em;
   font-size: x-small;
   width:100%;
 }
@@ -200,6 +233,7 @@ a:active {
 
 a.createlinktext {
   color: #ba0000;
+  border-bottom: none !important;
 }
 a.createlinktext:visited {
   color: #a55858;
@@ -262,4 +296,17 @@ table#main_apfelwiki td {
 }
 table#main_apfelwiki h1, table#main_apfelwiki h2 {
   white-space: nowrap;
+}
+
+.hp-element {
+  border: 1px solid white;
+  padding: 10px 20px;
+  margin: 20px 0;
+  background-color: #E9E9E9;
+  border-radius: 10px;
+  box-shadow: #999 0px 1px 2px;
+}
+
+.hp-element .sectionedit {
+  display: none;
 }
