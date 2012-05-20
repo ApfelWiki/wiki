@@ -1,0 +1,39 @@
+version=pmwiki-2.2.27 ordered=1 urlencoded=1
+agent=Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US) Speedy Spider (http://www.entireweb.com/about/search_tech/speedy_spider/)
+author=Schlaefer
+csum=
+host=88.131.106.22
+name=PmWikiDe/XLPageCookbook
+pageviewcounterdaily=1
+pageviewcounterglobal=218
+pageviewcounterlastupdate=02
+rev=233
+targets=ApfelWiki.Loeschkandidaten
+text=(:nogroupheader:)%0a%0aThis page contains the string mappings to convert `PmWiki's prompts of Cookbook addons into german. %0aTo invoke this page, add in local/config.php file, below the current `XLPage call :%0a%0a [=XLPage('de','PmWikiDe.XLPageCookbook');=]%0a%0aSee also XLPage.%0a%0aAfter local installation, it is better to remove unused addons translations from this page.%0a  [=%0a  ### Images resizing strings%0a  'Upload images' => 'Bild hochladen',%0a  'Image for' => 'Bild für',%0a  'Upload' => 'Hochladen',%0a  'Image to upload:' => 'Bild das geladen wird',%0a  'Image wiki name:' => 'Bildname im Wiki',%0a  'Step 1' => 'Schritt 1',%0a  'Step 2' => 'Schritt 2',%0a  'Image title' => 'Bildtitel',%0a  'Image copyright' => 'Bild Copyright',%0a  'Ok' => 'Ok',%0a  'Cancel' => 'Abbruch',%0a  'Image special instructions' => 'Bildbeschreibung',%0a  'IMGbadtype' => "%3cspan style='color:#ff0000'> - falsche Bildextension%3c/span>",%0a  'ULnotimage' => 'unerlaubtes Bildformat',%0a  'ErrNoResize' => %0a     'Bildgrößenänderung auf diesem Server nicht möglich',%0a  'IMGreload'=>%0a     "Wenn ein falsches Bild gewählt wurde, lade ein neues",%0a%0a  ### Cookbook Total Counter%0a  'statistics' => 'Statistik',%0a  'Page views' => 'Seitenaufrufe',%0a  'Pages' => 'Seiten',%0a  'Percent' => 'Prozent',%0a  'Count' => 'Aufrufe',%0a  'Users' => 'Nutzer',%0a  'Browsers' => 'Browser',%0a  'Operating systems' => 'Betriebssysteme',%0a  'Referers' => 'Aufrufende Seiten',%0a  'Locations' => 'Ort',%0a  'Web bots' => 'Web Bots',%0a  'today' => 'heute',%0a%0a  ### Strings for addon 'Publish wikitrail'%0a  'SearchFor' => '',%0a  'Include this page' => '',%0a  'Publish' => '',%0a  'No pages selected' => '',%0a%0a  ### Strings for addon 'commentbox'%0a  'Comment' => 'Kommentar',%0a  'New entry' => 'Neuer Eintrag',%0a  'Post' => 'Abschicken',%0a  'Reset' => 'Löschen',%0a%0a  ### Strings for addon 'rename'%0a  'Rename' => 'Umbenennen',%0a%0a  ### Strings for addon 'DeleteAction'%0a  'Set new delete password:' => 'Neues "Löschen" Passwort:',%0a%0a  ### Strings for 'LinkPageCreateFmtTooltip'%0a  'page not found - click link to create page' => 'Seite nicht gefunden - Seite durch Anklicken erzeugen',%0a%0a### page rename strings%0a'Add:' => 'Hinzufügen:',%0a'nothing' => 'Nichts',%0a'to any Unqualified Links' => 'zu allen untauglichen Verweisen',%0a'Unqualified Links' => 'Untaugliche Verweise',%0a'new group' => 'Neue Gruppe',%0a'none found' => 'nichts gefunden',%0a%0a###pagetoc strings%0a'On this page...' => 'Inhalt',%0a%0a### PITS strings%0a'Issue#' => 'PITS Nr.',%0a'Created' => 'Erstellt am',%0a%0a### NewPage strings%0a'Group' => 'Gruppe',%0a'Pagename' => 'Seitenname',%0a'NewPage' => 'Seiteninhalt',%0a'submit new page' => 'Neue Seite erstellen',%0a'Please review and make any edits to your issue below, then press 'Save' ' => 'Bitte überprüfen Sie Ihre Eingabe und drücken dann "speichern"',%0a%0a### Section Edit%0a '(Edit Section &#x2193;)' => '(Bearbeiten &#x2193;)',%0a 'Section' => 'Abschnitt',%0a 'of' => 'von',%0a%0a### ImgPopUp%0a 'Zoom Image' => 'Bild vergrößern',%0a 'Upload this image again' => 'Bild erneut hochladen',%0a 'Close window' => 'Fenster schließen',%0a 'Go back' => 'Zurück',%0a%0a### Löschkandidaten%0a 'Week from' => 'Woche vom',%0a 'New Deletion Candidate' => 'Neuer Löschkandidat',%0a 'Delete' => 'Löschen',%0a 'Marked for Deletion' => 'Als Löschkandidat markiert',%0a%0a### YahooSearch%0a 'Next' => 'Weiter',%0a 'Previous' => 'Zurück',  %0a%0a=]
+time=1141978501
+author:1141978501=Schlaefer
+diff:1141978501:1141978376:=44,45c44%0a%3c   'today' => 'heute',%0a%3c %0a---%0a> %0a
+host:1141978501=84.185.155.44
+author:1141978376=Schlaefer
+csum:1141978376=Total Counter Strings
+diff:1141978376:1141464012:minor=32,44d31%0a%3c   ### Cookbook Total Counter%0a%3c   'statistics' => 'Statistik',%0a%3c   'Page views' => 'Seitenaufrufe',%0a%3c   'Pages' => 'Seiten',%0a%3c   'Percent' => 'Prozent',%0a%3c   'Count' => 'Aufrufe',%0a%3c   'Users' => 'Nutzer',%0a%3c   'Browsers' => 'Browser',%0a%3c   'Operating systems' => 'Betriebssysteme',%0a%3c   'Referers' => 'Aufrufende Seiten',%0a%3c   'Locations' => 'Ort',%0a%3c   'Web bots' => 'Web Bots',%0a%3c %0a109c96%0a%3c =]%0a\ No newline at end of file%0a---%0a> =]%0a
+host:1141978376=84.185.155.44
+author:1141464012=Schlaefer
+csum:1141464012=nogroupheader
+diff:1141464012:1132824532:=1,2d0%0a%3c (:nogroupheader:)%0a%3c %0a
+host:1141464012=84.185.143.153
+author:1132824532=Schlaefer
+csum:1132824532=YahooSearch Strings
+diff:1132824532:1132596575:minor=90,93d89%0a%3c ### YahooSearch%0a%3c  'Next' => 'Weiter',%0a%3c  'Previous' => 'Zurück',  %0a%3c %0a
+host:1132824532=84.185.145.198
+author:1132596575=Schlaefer
+csum:1132596575=String für Löschkandidat ergänzt
+diff:1132596575:1132571846:minor=88,89c88%0a%3c  'Marked for Deletion' => 'Als Löschkandidat markiert',%0a%3c %0a---%0a> %0a
+host:1132596575=84.185.154.235
+author:1132571846=Schlaefer
+csum:1132571846=Übersetzungsstrings für Löschkandidaten
+diff:1132571846:1129756945:minor=84,88d83%0a%3c ### Löschkandidaten%0a%3c  'Week from' => 'Woche vom',%0a%3c  'New Deletion Candidate' => 'Neuer Löschkandidat',%0a%3c  'Delete' => 'Löschen',%0a%3c %0a
+host:1132571846=84.185.154.235
+author:1128327621=Schlaefer
+diff:1128327621:1110894981:=50,82d49%0a%3c %0a%3c ### page rename strings%0a%3c 'Add:' => 'Hinzufügen:',%0a%3c 'nothing' => 'Nichts',%0a%3c 'to any Unqualified Links' => 'zu allen untauglichen Verweisen',%0a%3c 'Unqualified Links' => 'Untaugliche Verweise',%0a%3c 'new group' => 'Neue Gruppe',%0a%3c 'none found' => 'nichts gefunden',%0a%3c %0a%3c ###pagetoc strings%0a%3c 'On this page...' => 'Inhalt',%0a%3c %0a%3c ### PITS strings%0a%3c 'Issue#' => 'PITS Nr.',%0a%3c 'Created' => 'Erstellt am',%0a%3c %0a%3c ### NewPage strings%0a%3c 'Group' => 'Gruppe',%0a%3c 'Pagename' => 'Seitenname',%0a%3c 'NewPage' => 'Seiteninhalt',%0a%3c 'submit new page' => 'Neue Seite erstellen',%0a%3c 'Please review and make any edits to your issue below, then press 'Save' ' => 'Bitte überprüfen Sie Ihre Eingabe und drücken dann "speichern"',%0a%3c %0a%3c ### Section Edit%0a%3c  '(Edit Section &#x2193;)' => '(Bearbeiten &#x2193;)',%0a%3c  'Section' => 'Abschnitt',%0a%3c  'of' => 'von',%0a%3c %0a%3c ### ImgPopUp%0a%3c  'Zoom Image' => 'Bild vergrößern',%0a%3c  'Upload this image again' => 'Bild erneut hochladen',%0a%3c  'Close window' => 'Fenster schließen',%0a%3c %0a83a51,56%0a> %0a> !!!Notes%0a> %0a> %0a> !!!Contributors%0a> %0a
+host:1128327621=84.185.149.197

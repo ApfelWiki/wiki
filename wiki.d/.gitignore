@@ -1,5 +1,8 @@
 *
 !.gitignore
-!Site.EditForm
 !Main.AllRecentChangesShort
 !Main.NeueSeite
+!PmWikiDe.XLPage
+!PmWikiDe.XLPageCookbook
+!PmWikiDe.XLPageLocal
+!Site.EditForm
