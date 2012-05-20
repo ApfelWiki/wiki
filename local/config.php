@@ -197,9 +197,6 @@
 	$CategoryGroup = 'Katalog';
 	include_once("cookbook/categoryindex.php");
 
-## pmwiki2 WikiCalendar
-	include_once("cookbook/wikilog.php");
-
 ## http://www.pmwiki.org/wiki/PmWiki/RefCount
 	include_once("scripts/refcount.php");
 
@@ -294,12 +291,6 @@
 ## Markup Spezialitaeten von ApfelWiki
 	include_once("cookbook/apfelwikicustommarkup.php");
 
-## Export der Termine als iCal Datei
-	include_once("cookbook/icalexport.php");
-	$ICalCalendarGroup = "Termine";
-	$ICalCalendarTitle = "ApfelWiki Termine";
-	$ICalFileName = "ApfelWiki";
-
 ## Ermittelt fehlende Seiten (fuer die RightBar)
 	include_once("cookbook/missingwikipages.php");
 
@@ -330,7 +321,6 @@ Diese Seite wurde am $now von [[~$Author]] als [[ApfelWiki.Loeschkandidaten#$Ful
 ## template Einblendung im Bearbeitenmodus
 	if ( $action == 'edit' || $action == 'postnewpage' ) {
 		$AwTemplates = array(
-				'Termine' => "Termine.Vorlage",
 				'Rezension' => "Rezension.Vorlage",
 				'Main' => "Site.Vorlage",
 				'CookBook' => "CookBook.Vorlage",
