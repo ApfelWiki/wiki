@@ -24,7 +24,7 @@ function MissingWikiPagesShortFct(){
     $maxpages = 10;
   	# [performance] Annahme, dass durchschnittlich fuenfmal die Anzahl der Seiten
   	# fuer die $maxpages fehlende Verweise benoetigt wird
-    $numberOfPagesToSearch = 5 * $numberOfPagesToSearch;
+    $numberOfPagesToSearch = 5 * $maxpages;
     // limit search to number of pages available
     $numberOfPagesAvailable = count($pagelist);
     if ( $numberOfPagesAvailable < $numberOfPagesToSearch ) :
