@@ -15,6 +15,7 @@
   <link rel="shortcut icon" href="$PubDirUrl/skins/newaw/favicon.ico" />
 		<link rel="alternate" type="application/rss+xml" title="ApfelWiki RSS" href="http://apfelwiki.de/index.php/Main/RecentChanges?action=rss" />
 				
+	<link rel="stylesheet" href="$SkinDirUrl/stylesheets/blueprint.css" type="text/css" />
 	<link rel="stylesheet" href="$SkinDirUrl/stylesheets/global.css" type="text/css" />
 		
 	<!--[if lte IE 6]>
@@ -33,16 +34,16 @@
 <div id="wrapper">
 	
 	<!--  / MAIN CONTAINER \ -->
-	<div id="mainCntr">
+	<div id="mainCntr" class="">
 		
 		<!--  / HEADER CONTAINER \ -->
 		<!--PageHeaderFmt-->
-		<div id="headerCntr">
-
-			<h1><a href='$ScriptUrl' title='$[$WikiTitle Home]'>ApfelWiki</a></h1>
-			
+		<div id="headerCntr" class="container">
+			<div id="" class="prepend-2 span-10">
+        <h1><a href='$ScriptUrl' title='$[$WikiTitle Home]'>ApfelWiki</a></h1>
+      </div>
 			<!--  / MENU CONTAINER \ -->
-			<div id="menuCntr">
+			<div id="menuCntr" class="span-10 append-2 last">
 
 				<ul>
 					<li><form id='searchform' action='$ScriptUrl'>
@@ -54,7 +55,7 @@
 					<li class="selected"><a href="'$ScriptUrl'">wiki</a></li>
 					
 				</ul>
-							</div>
+      </div>
 			<!--  \ MENU CONTAINER / -->
 
 		</div>
@@ -62,9 +63,9 @@
 		<!--  \ HEADER CONTAINER / -->
 		
 		<!--  / CONTENT CONTAINER \ -->
-		<div id="contentCntr">
-			<div class="cTop">
-			<div class='head'>
+		<div id="contentCntr" class="container">
+			<div class="cTop prepend-1 span-22 append-1 last">
+			<div class="head prepend-1 span-20 append-3 last">
 			 <span id='wikiactions' style="float: right;">
                 <a href='$PageUrl?action=edit' accesskey='$[ak_edit]' title='Diese Seite bearbeiten ...' rel='nofollow'>$[Edit Page]</a> &middot;
         <a href="$PageUrl?action=diff" accesskey='$[ak_history]' rel='nofollow'>$[Page History]</a> &middot;
@@ -86,7 +87,7 @@
 			
 			
 				<!--  / SERVICE BOX \ -->
-				<div class="serviceBox">
+			<div class="serviceBox prepend-1 span-20 append-1 last">
 
 					<!--PageText-->
 					
@@ -101,8 +102,9 @@
 		
 		
 		<!--  / FOOTER CONTAINER \ -->
-		
-		<div id="footerCntr">
+
+    <div class="container">
+			<div id="footerCntr" class="prepend-2 span-20 append-2 last">
 <!--PageFooterFmt-->
 			<p class="left">&copy; 2010 - Apfel<strong>Wiki</strong></p>
 
@@ -110,6 +112,7 @@
 <!--/PageFooterFmt-->
 		</div>
 		<!--  \ FOOTER CONTAINER / -->
+    </div>
 		
 	</div>
 	<!--  \ MAIN CONTAINER / -->
