@@ -291,12 +291,6 @@
 ## Markup Spezialitaeten von ApfelWiki
 	include_once("cookbook/apfelwikicustommarkup.php");
 
-## Export der Termine als iCal Datei
-	include_once("cookbook/icalexport.php");
-	$ICalCalendarGroup = "Termine";
-	$ICalCalendarTitle = "ApfelWiki Termine";
-	$ICalFileName = "ApfelWiki";
-
 ## Ermittelt fehlende Seiten (fuer die RightBar)
 	include_once("cookbook/missingwikipages.php");
 
