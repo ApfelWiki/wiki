@@ -197,9 +197,6 @@
 	$CategoryGroup = 'Katalog';
 	include_once("cookbook/categoryindex.php");
 
-## pmwiki2 WikiCalendar
-	include_once("cookbook/wikilog.php");
-
 ## http://www.pmwiki.org/wiki/PmWiki/RefCount
 	include_once("scripts/refcount.php");
 
@@ -330,7 +327,6 @@ Diese Seite wurde am $now von [[~$Author]] als [[ApfelWiki.Loeschkandidaten#$Ful
 ## template Einblendung im Bearbeitenmodus
 	if ( $action == 'edit' || $action == 'postnewpage' ) {
 		$AwTemplates = array(
-				'Termine' => "Termine.Vorlage",
 				'Rezension' => "Rezension.Vorlage",
 				'Main' => "Site.Vorlage",
 				'CookBook' => "CookBook.Vorlage",
