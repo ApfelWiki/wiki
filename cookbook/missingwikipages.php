@@ -6,26 +6,32 @@
  * @param author Sebastian Siedentopf <schlaefer@macnews.de>
  * @param version 1.3
  */
-Markup('missingwikipagesshort','directives','/\(:missingwikipagesshort:\)/e' , "(missingwikipagesshortfct())");
+Markup('missingwikipagesshort','directives','/\(:missingwikipagesshort:\)/e' , "MissingWikiPagesShortFct()");
 
 function MissingWikiPagesShortFct(){
 
     StopWatch('MissingWikiPagesShortFct Start');
     
-    global $WikiLibDirs;    
+    global $WikiLibDirs;
     
-    # maximale Anzahl der auszugebenen Artikel
-    $maxpages = 10;
-    	
-	$Group = array('Main' => 1);
+    $Group = array('Main' => 1);
 
     # [performance] keine Verwendung von ListPages(), da wir nur das Verzeichnis wiki.d duchsuchen muessen
     # Filterung auf gewuenschte Gruppe bereits an dieser Stelle
     $pagelist = $WikiLibDirs[0]->ls("/^".implode("|", array_keys($Group))."\./");
 
-  	# [performance] Annahme, dass durchschnittlich fuenfmal die Anzahl der Seiten 
+    # maximale Anzahl der auszugebenen Artikel
+    $maxpages = 10;
+  	# [performance] Annahme, dass durchschnittlich fuenfmal die Anzahl der Seiten
   	# fuer die $maxpages fehlende Verweise benoetigt wird
-	$pagelist = rand_elementsOfArray_maxOutputElements($pagelist, $maxpages * 5);
+    $numberOfPagesToSearch = 5 * $numberOfPagesToSearch;
+    // limit search to number of pages available
+    $numberOfPagesAvailable = count($pagelist);
+    if ( $numberOfPagesAvailable < $numberOfPagesToSearch ) :
+      $numberOfPagesToSearch = $numberOfPagesAvailable;
+    endif;
+
+	$pagelist = rand_elementsOfArray_maxOutputElements($pagelist, $numberOfPagesToSearch);
 
     $outc = 0;
     
@@ -108,10 +114,11 @@ function rand_elementsOfArray_maxOutputElements ($array, $maxOutElements = FALSE
 	
 	if ($maxOutElements == FALSE)
 		$maxOutElements = $count + 1;
-	
+
+  $seen = array();
 	for ($i = 0; $i < $maxOutElements;){
 		$rand = rand(0, $count);
-	 	if ($seen[$rand] == FALSE) {
+	 	if (!isset($seen[$rand])) {
 			$seen[$rand] = TRUE;
 			$out[] = $array[$rand];
 			$i++; 
