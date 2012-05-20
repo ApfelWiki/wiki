@@ -1,0 +1,18 @@
+version=pmwiki-2.2.27 ordered=1 urlencoded=1
+agent=Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US) Speedy Spider (http://www.entireweb.com/about/search_tech/speedy_spider/)
+author=kt007
+charset=UTF-8
+csum=Neue TOC Begriffe
+host=88.131.106.22
+name=PmWikiDe/XLPageLocal
+pageviewcounterdaily=2
+pageviewcounterglobal=408
+pageviewcounterlastupdate=05
+rev=331
+targets=
+text=(:nogroupheader:)%0a%0aDiese Seite enthält nur ApfelWiki interne Strings für die deutschen Seiten.%0a%0a  [=%0a%0a##Editing strings%0a'summary' => 'Zusammenfassung',%0a'Save and edit' => 'Speichen und Bearbeiten',%0a'Cancel' => 'Abbrechen',%0a%0a### Diverses%0a'Imprint' => 'Impressum'%0a'Terms of Use' => 'Nutzungsbedingungen'%0a'Changes' => 'Änderungen'%0a'Contact' => 'Kontakt'%0a'Sandbox' => 'Sandkasten'%0a'Help' => 'Hilfe'%0a'Rename' => 'Umbenennen'%0a'New Page' => 'Neue Seite'%0a'Print' => 'Drucken'%0a'Send' => 'Versenden'%0a'Back References' => 'Hierher&nbsp;zeigt'%0a'Discussion' => 'Diskussion'%0a'Backlinks' => 'Hierher zeigt'%0a'show' => 'Einblenden'%0a'hide' => 'Ausblenden'%0a  =]
+time=1205254443
+author:1205254443=kt007
+csum:1205254443=Neue TOC Begriffe
+diff:1205254443:1169465189:=26,27d25%0a%3c 'show' => 'Einblenden'%0a%3c 'hide' => 'Ausblenden'%0a
+host:1205254443=85.181.222.232

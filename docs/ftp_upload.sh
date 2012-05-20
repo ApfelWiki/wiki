@@ -39,6 +39,9 @@ directories[5]='wikirev.d'
 
 wiki_d_files=(
   'Site.EditForm'
+  'PmWikiDe.XLPage'
+  'PmWikiDe.XLPageCookbook'
+  'PmWikiDe.XLPageLocal'
   'Main.AllRecentChangesShort'
   'Main.NeueSeite'
   )
