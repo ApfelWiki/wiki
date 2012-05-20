@@ -1,11 +1,40 @@
 /* ### GENERAL ### */
 * { margin: 0px; padding: 0px; }
-html, body { font-family: Tahoma, Geneva, Verdana, sans-serif; font-size: 12px; color: #545454; }
-input, select, textarea { font-family: Tahoma; font-size: 12px; color: #666; }
-body { background: #d4d5d7; }
+
+html, body { 
+  background: #d4d5d7;
+}
+body, input, select, textarea {
+  font: 12px/1.6 Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+input, select, textarea { 
+  line-height: 1.4;
+  color: #111;
+}
+
 img { border: 0px; display: inline-block; }
 a {outline: none;}
 ul,ol { margin-left:20px; }
+strong {
+  /*font-size: 0.9em;*/
+  font-weight: bolder;
+}
+em {
+  font-style: italic;
+}
+code {
+  font-size: 1em;
+}
+pre {
+  margin-top: 4px;
+  font-size: 12px;
+  color: #444444;
+  /*background-color: #effef1;*/
+  border: thin solid silver;
+  padding: 10px;
+}
+
 
 /* ### GLOBAL CLASSES ### */
 .clear { clear: both; height: 1px; }
@@ -45,7 +74,6 @@ ul,ol { margin-left:20px; }
 #wikiactions {
   float:right;
   bottom: auto;
-  font-family: sans-serif;
   font-size: 11px;
   color: #7A7A78;
   text-align: right;
@@ -91,7 +119,7 @@ ul,ol { margin-left:20px; }
 .serviceBox { padding: 0px 35px 20px 55px; overflow: hidden; width: 780px; }
 .serviceBox div.text { float: left; width: 520px; }
 .serviceBox div.test { float: right;  width: 220px; }
-.serviceBox p { padding-bottom: 10px; line-height: 18px; }
+.serviceBox p { padding-bottom: 10px;}
 .serviceBox h2 { padding-bottom: 10px; font: 18px 'Helvetica', Arial; color: #333; }
 .serviceBox h3 { padding: 15px 0px 10px 0px; font: 14px 'Helvetica', Arial; color: #2a4145; }
 .serviceBox div.test ul { list-style: none; }
@@ -145,13 +173,14 @@ table .groupfooter_ext_mo { background-color:#aaa; color:white;	padding:2px; fon
 table.groupfooter_ext td { padding:2px 4px; }
 table.groupfooter_ext .createlinktext { border-bottom:none; }
 
-/* ------ Linkformatierungen ------- */
+/*******************************************************************************
+ * Links
+ ******************************************************************************/
 
-a { color: #002bb8;
-    text-decoration: none;
+a {
+  color: #002bb8;
+  text-decoration: none;
 }
-
-
 a:visited {
   color: #5a3696;
 }
@@ -162,101 +191,34 @@ a:active {
   color: rgb(255,153,51);
 }
 
-
-
 a.createlinktext {
   color: #ba0000;
 }
-
 a.createlinktext:visited {
   color: #a55858;
 }
 
-
 a.urllink {
-  color: #002bb8;
-  background: url(external.png) right center no-repeat;
+  background: url(../images/external.png) right center no-repeat;
   padding-right: 12px;
 }
-a[href ^="mailto:"] {
-  background: url("mail_icon.gif") center right no-repeat;
-  padding-right: 18px;
-}
-
-a[href ^="webcal://"] {
+a.urllink[href*="apfelwiki.de"]  {
   background: transparent;
   padding-right: 0px;
-}
-
-a[href ^="aim:"] {
-  background: none;
-  padding-right: 18px;
-}
-
-a[href ^="gopher://"] {
-  background: url(external.png) center right no-repeat;
-  padding-right: 13px;
-}
-a[href ^="https://"]{
-  background: url("lock_icon.gif") center right no-repeat;
-  padding-right: 16px;
-}
-
-a[href ^="news://"] {
-  background: url("news_icon.png") center right no-repeat;
-  padding-right: 18px;
-}
-a[href ^="ftp://"]{
-  background: url("file_icon.gif") center right no-repeat;
-  padding-right: 18px;
-}
-a[href ^="irc://"]{
-  background: url("discussionitem_icon.gif")  center right no-repeat;
-  padding-right: 18px;
-}
-a.urllink[href ="http://www.apfelwiki.de"] {
-  background: transparent;
-  padding-right: 0px;
-}
-
-a.urllink[href ="http://apfelwiki.de"] {
-  background: transparent;
-  padding-right: 0px;
-}
-
-strong {
-  /*font-size: 0.9em;*/
-  font-weight: bolder;
-}
-
-em {
-  font-style: italic;
-}
-
-code {
-  font-size: 1em;
-}
-
-pre {
-  margin-top: 4px;
-  font-size: 12px;
-  color: #444444;
-  /*background-color: #effef1;*/
-  border: thin solid silver;
-  padding: 10px;
 }
 
 .a { margin-left:4ex; }
 
+/******************************************************************************/
+
 /* Edit Box */
 
 #wikiedit form { margin:0px; }
-#wikiedit textarea {color: black; width:98%; }
+#wikiedit textarea { width:98%; }
 .indent { margin-left:40px; }
 #wikiedit {margin:10px;}
 
 input, textarea {
-  color: #111111;
   border: 1px solid rgb(216,210,195);
   background: rgb(244,244,244);
   margin: 3px;
@@ -278,10 +240,6 @@ form label.left {
 
 form div.right {
   margin-left: 7.4em;
-}
-
-form {
-  line-height: 140%;
 }
 
 fieldset {
