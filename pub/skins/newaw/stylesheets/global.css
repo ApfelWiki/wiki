@@ -5,7 +5,7 @@ html, body {
   background: #d4d5d7;
 }
 body, input, select, textarea {
-  font: 12px/1.6 Tahoma, Geneva, Verdana, sans-serif;
+  font: 13px/1.5 Tahoma, Geneva, Verdana, sans-serif;
   color: #333;
 }
 input, select, textarea { 
@@ -34,6 +34,13 @@ pre {
   border: thin solid silver;
   padding: 10px;
 }
+hr {
+  height: 0px;
+  border: none;
+  border-top: 1px solid #D4D5D7;
+  border-bottom: 1px solid #fff;
+  margin: 1em 0;
+  }
 
 
 /* ### GLOBAL CLASSES ### */
@@ -68,7 +75,7 @@ pre {
 /* ### CONTENT CONTAINER ### */
 #contentCntr { width: 890px; background: url('../images/contentBg.gif') repeat-y; }
 #contentCntr div.cTop { overflow: hidden; width: 890px; background: url('../images/contentTop.gif') no-repeat top; }
-#contentCntr .head { padding-left: 20px; padding-right: 20px; padding-top: 10px; margin-left: 34px; margin-bottom: 0px; margin-right: 34px; margin-top: 0px; width: 782px; height: 60px; font: 18px 'Helvetica', Arial; color: #333; background: url('../images/titleBg.gif') no-repeat; }
+#contentCntr .head { padding-left: 20px; padding-right: 20px; padding-top: 10px; margin-left: 34px; margin-bottom: 0px; margin-right: 34px; margin-top: 0px; width: 782px; height: 66px; font: 18px 'Helvetica', Arial; color: #333; background: url('../images/titleBg.gif') no-repeat; }
 
 
 #wikiactions {
@@ -252,4 +259,7 @@ fieldset {
 
 table#main_apfelwiki td {
   vertical-align: top;
+}
+table#main_apfelwiki h1, table#main_apfelwiki h2 {
+  white-space: nowrap;
 }
