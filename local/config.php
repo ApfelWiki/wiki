@@ -364,8 +364,6 @@ Diese Seite wurde am $now von [[~$Author]] als [[ApfelWiki.Loeschkandidaten#$Ful
 ## sorgt fuer das Springen im Suchfeld
 	include_once("cookbook/complexvote.php");
 
-##Gaestebuch in der Seiten-Php eingebunden.
-##include_once("cookbook/commentboxstyled.php");
 ## Rezensionen (Wertung und Sortierung)
 	include_once("cookbook/rezensionen.php");
 
