@@ -41,7 +41,7 @@ function NumberOfSitesFct()
         $dfp = opendir($dir); 
         if (!$dfp) continue;
         while (($pagefile = readdir($dfp)) != false) {
-           # Ausschluﬂ von nicht in $gruppen definierten Wikigruppen      
+           # Ausschluss von nicht in $gruppen definierten Wikigruppen
            
            if(!@$gruppen[substr($pagefile,0,strpos($pagefile,'.'))]) continue;
            //Ignorieren von geloeschten Dateien
