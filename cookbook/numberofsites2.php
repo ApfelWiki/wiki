@@ -51,7 +51,7 @@ function NumberOfSitesFct()
         closedir($dfp);
     }
     StopWatch('NumberOfSite2 End');
-    return $zaehler; 
+    return number_format($zaehler, 0, ',', '.');
 }    
 
 ?>
