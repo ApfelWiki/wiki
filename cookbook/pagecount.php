@@ -2,14 +2,14 @@
 
 /**
  * @author Sebastian Siedentopf <schlaefer@macnews.de>
- * @version 1.3.3
+ * @version 1.3.4
  * @link 
- * @copyright by the authors 2005
+ * @copyright by the authors 2005-2012
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License
  * @package pagecount
  */
 
-define (PAGECOUNT, '1.3.3');
+define (PAGECOUNT, '1.3.4');
 
 $PageAttributes['pageviewcounterglobal'] = ('Pagecount: Global');
 $PageAttributes['pageviewcounterdaily'] = ('Pagecount: Daily');
@@ -63,42 +63,16 @@ if ($action == 'browse' && !preg_match("/$PageCountExcludeBots/i", @$_SERVER['HT
 	}
 }
 
-
-Markup("pagecount", "directives", "/\\(:pagecount:\\)/e", "globalPageViewCounter(\$pagename)");
-Markup("pagecountday", "directives", "/\\(:pagecountday:\\)/e", "dailyPageViewCounter(\$pagename)");
-
-/** 
- * Ouptputs the global view counter of a page
- * 
- * @param string $pagename the name of the page
- * @return string the int value of the global counter
- */
-function globalPageViewCounter($pagename) {
-	$page = ReadPage($pagename, READPAGE_CURRENT);
-	return $page['pageviewcounterglobal'];
-}
-
-/** 
- * Ouptputs the daily view counter of a page
- * 
- * @param string $pagename the name of the page
- * @return string the int value of the daily counter
- */
-function dailyPageViewCounter($pagename) {
-	$page = ReadPage($pagename, READPAGE_CURRENT);
-	return $page['pageviewcounterdaily'];
-}
-
-/** 
+/**
  * Gets the old values from the .count file and delete it afterwards
- * 
+ *
  * @param string $pagename the name of the page
  * @param array $page a complete page obtained by ReadPage()
  * @return array input array $page with old counter values
  */
 function getOldValues($pagename,$page) {
 	$counterfile = "wiki.d/.".str_replace("/", ".", $pagename).".count";
-	
+
 	if (file_exists($counterfile)) {
 		$file = fopen($counterfile, "r");
 		if ($file) {
@@ -112,8 +86,27 @@ function getOldValues($pagename,$page) {
 	return $page;
 }
 
+/*
+ * Markup for displaying the pagecounter value on a page
+ */
+Markup( "pagecount", "directives", "/\\(:pagecount:\\)/e",
+    "getPageViewCounter(\$pagename)");
+Markup("pagecountday", "directives", "/\\(:pagecountday:\\)/e", 
+    "getPageViewCounter(\$pagename, 'pageviewcounterdaily')");
 
- /**
+/**
+ * Reads and returns the pageview-counter of a page
+ * 
+ * @param type $pagename name of the page to read
+ * @param type $type global or daily counter
+ * @return string 
+ */
+function getPageViewCounter($pagename, $type = 'pageviewcounterglobal') {
+	$page = ReadPage($pagename, READPAGE_CURRENT);
+	return number_format($page[$type], 0, ',', '.');
+}
+
+/*
  * For the wiki form to show the current value in the input field
  */
 Markup('{$PopularPagesItems}', '>{$fmt}', '/{\\$PopularPagesItems}/', $_REQUEST['items'] ? $_REQUEST['items'] : 10 );
