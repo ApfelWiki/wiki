@@ -20,34 +20,50 @@ function blg($Status, $Message) {
 	return "<span style='clear:both;'></span><table $align cellspacing='0' ><tr ><td  align='center' style='background-color:#f9f9f9;'> $ss[0] </td></tr>	<tr ><td  align='center' style='background-color:#f9f9f9;'> [-$ss[1]-] </td></tr>	</table><span style='clear:both;'></span>";
 }
 
-
 ################ Einfuegen des Google Suchfeldes ################
 # Die googlesuche stellt ein Suchfeld identisch der Standardsuche zur Verfuegung
-
-Markup('googlesuchfeld', '>links', '/\\(:(googlesuche):\\)/i', FmtPageName("<form class='wikisearch' method='get' action='http://www.google.de/custom'>
-		<input class='wikisearchbox'    type='text' name='q' value='' size='40' /><input 
-    class='wikisearchbutton' type='submit' value='Suche' />
-		<input type='hidden' name='domains' value='apfelwiki.de' />
-		<input type='hidden' name='sitesearch' value='apfelwiki.de' /> 
-		</form>", $pagename));
+Markup('googlesuchfeld', '>links', '/\\(:(googlesuche):\\)/i', FmtPageName('<form
+action="Search" method="get" class="googleSearchForm">
+<input type="hidden" name="cx" value="013237906231695894092:-qr7cunyryk" />
+<input type="hidden" name="cof" value="FORID:9" />
+<input type="text" name="q" class="inputbox" value="'.$_GET['q'].'"/>
+<input type="submit" value="Suche" class="inputbutton" />
+</form>'
+    , $pagename));
 #value in input sollte '$[Search]' statt 'Suche' heissen. Die Lokalisierung funktioniert jedoch aus unbekannten Grund nicht
 
+Markup('googleergebnisse', '>links', '/\\(:(googleergebnisse):\\)/i', FmtPageName(<<<EOD
+<div id="cse" style="width: 100%;">Loading</div>
+<script src="http://www.google.com/jsapi" type="text/javascript"></script>
+<script type="text/javascript">
+  google.load('search', '1', {language : 'de', style : google.loader.themes.V2_DEFAULT});
+  google.setOnLoadCallback(function() {
+    var customSearchOptions = {};  var customSearchControl = new google.search.CustomSearchControl(
+      '013237906231695894092:-qr7cunyryk', customSearchOptions);
+    customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+    customSearchControl.draw('cse');
+    function parseParamsFromUrl() {
+      var params = {};
+      var parts = window.location.search.substr(1).split('\x26');
+      for (var i = 0; i < parts.length; i++) {
+        var keyValuePair = parts[i].split('=');
+        var key = decodeURIComponent(keyValuePair[0]);
+        params[key] = keyValuePair[1] ?
+            decodeURIComponent(keyValuePair[1].replace(/\+/g, ' ')) :
+            keyValuePair[1];
+      }
+      return params;
+    }
 
-############## Einfuegen des Google Coop Suchfeldes ###############
-# Die googlesuche stellt ein Suchfeld identisch der Standardsuche zur Verfuegung
-
-Markup('googlecoopsuchfeld', '>links', '/\\(:(googlecoop):\\)/i', FmtPageName("<form class='wikisearch' method='get' id='searchbox_013271604353590352065:pvntxplgwoy' action='http://www.google.com/cse'>
-		<input class='wikisearchbox'    type='text' name='q' value='' size='40' /><input 
-    class='wikisearchbutton' type='submit' value='Suche' />
-		 <input type='hidden' name='cx' value='013271604353590352065:pvntxplgwoy' />
-    <input type='hidden' name='cof' value='FORID:0' />
-    <input name='q' type='text' size='40' />
-    <input type='submit' name='sa' value='Search' /> 
-		</form>", $pagename));
-		
-		        
-#value in input sollte '$[Search]' statt 'Suche' heissen. Die Lokalisierung funktioniert jedoch aus unbekannten Grund nicht
-
+    var urlParams = parseParamsFromUrl();
+    var queryParamName = "q";
+    if (urlParams[queryParamName]) {
+      customSearchControl.execute(urlParams[queryParamName]);
+    }
+  }, true);
+</script>
+EOD
+    , $pagename));
 
 ################ CSS Definitionen direkt im Wikiquelltext ################
 # Identische Funktion von Pm geplant, aber noch nicht implementiert. Wegen seiner Nuetzlichkeit hier vorweggenommen
