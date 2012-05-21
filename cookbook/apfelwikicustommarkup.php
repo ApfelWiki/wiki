@@ -111,10 +111,13 @@ function BewertungsSterne($bewertung) {
 ##urchinTracker();
 ##</script>";
 
-########################## Badgets ################################    
+########################## Beta Badget ################################
 Markup('apfelwikibeta', 'directives',
       '/\\(:awbeta:\\)/e', "Keep(MakeLink(\"$pagename\",\"ApfelWiki.Beta\",\"<img src='$PubDirUrl/cookbook/awcustommarkup/ApfelWiki-beta.gif' alt='Beta'/>\"))");
       
+/**
+ * Rezension und Diskussion Buttons
+ */
 Markup('footerbadgets', 'directives','/\\(:(Rezension|Diskussion):\\)/e', "FooterBadgetsFct('$1')");
 
 function FooterBadgetsFct($option){
@@ -123,8 +126,11 @@ function FooterBadgetsFct($option){
 	if (PageExists($name)) 
 		return Keep(MakeLink($pagename,$name,"<img src='$PubDirUrl/cookbook/awcustommarkup/ApfelWiki-$option.gif' alt='$option'/>"));
 	else  {
-		
-		return Keep("<a href='http://www.apfelwiki.de/$option/".FmtPageName("\$Group-\$Name",$pagename)."'><img src='$PubDirUrl/cookbook/awcustommarkup/ApfelWiki-$option-sw.gif' alt='$option'/></a>");
+		return Keep(
+        "<a href='http://www.apfelwiki.de/$option/"
+        .FmtPageName("\$Group-\$Name",$pagename)
+        ."' rel='nofollow'><img src='$PubDirUrl/cookbook/awcustommarkup/ApfelWiki-$option-sw.gif' alt='$option'/></a>")
+      ;
 	}
 }
 
