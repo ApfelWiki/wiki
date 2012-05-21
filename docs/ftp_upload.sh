@@ -44,6 +44,7 @@ wiki_d_files=(
   'PmWikiDe.XLPageLocal'
   'Main.AllRecentChangesShort'
   'Main.NeueSeite'
+  'Main.GroupFooter'
   )
 
 ###############################################################################

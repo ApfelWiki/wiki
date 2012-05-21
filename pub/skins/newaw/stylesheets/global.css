@@ -137,16 +137,12 @@ h1, h2, h3, h4, .head, #menuCntr {
 }
 
 #groupname {
-
   font-size: 60%;
-
 }
-
 #pagename { padding-bottom: 0px; font-size: 120%;}
 
 #contentCntr h1 {  width: 782px; height: 36px; font: 18px 'Helvetica', Arial; color: #333; }
 #contentCntr h1 span { font: 14px 'Helvetica', Arial; color: #8b8b8b; }
-
 
 /* ### SERVICE BOX ### */
 /*.serviceBox { padding: 0px 35px 20px 55px; overflow: hidden; width: 780px; }*/
@@ -181,37 +177,17 @@ h1, h2, h3, h4, .head, #menuCntr {
   overflow: hidden;
 /*  width: 820px; */
   background: url('../images/footerBg.gif') no-repeat;
-  background-position: 35px 0
-    ;
-}
+  background-position: 35px 0 ;
+  }
 #footerCntr p { float: left; width: 300px; font-size: 11px; }
 #footerCntr p.right { float: right; text-align: right; }
 #footerCntr a { text-decoration: none; color: #666; }
 #footerCntr a:hover { color: #333; }
 
 .groupfooter {
-  border-top: solid silver 1px;
-  border-spacing: 0px;
-  padding:4px;
-  margin-top:0.5em;
   font-size: x-small;
   width:100%;
 }
-
-table.groupfooter_ext {
-  width:100%;
-  border: solid silver 1px;
-  border-spacing: 0px;
-  padding:0px;
-  margin-top:0.5em;
-  margin-bottom:-1em;
-  font-size: smaller;
-  background-color:#eee;
-  width:100%;
-}
-table .groupfooter_ext_mo { background-color:#aaa; color:white;	padding:2px; font-weight:bold; }
-table.groupfooter_ext td { padding:2px 4px; }
-table.groupfooter_ext .createlinktext { border-bottom:none; }
 
 /*******************************************************************************
  * Links

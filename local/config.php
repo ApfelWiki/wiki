@@ -398,6 +398,14 @@ Diese Seite wurde am $now von [[~$Author]] als [[ApfelWiki.Loeschkandidaten#$Ful
 
 	include_once("cookbook/tracetrail2.php");
 
+/**
+ * Setzt das Format für GroupFooter Seiten
+ *
+ * - Abgrenzung oben durch horizontale Linie
+ * - Einpacken in Style-Klasse `groupfooter`
+ */
+$GroupFooterFmt = '(:nl:)(:div1 class="groupfooter":)(:nl:)-----(:nl:)(:include {$Group}.GroupFooter self=0 basepage={*$FullName}:)(:nl:)(:div1end:)';
+
 ## Vorlagenmenü
 	$LinkPageCreateFmt = "<a class='createlinktext' rel='nofollow' href='\$LinkUrl'>\$LinkText</a>";
 
