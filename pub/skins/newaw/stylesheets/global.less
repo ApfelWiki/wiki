@@ -1,12 +1,24 @@
+/*******************************************************************************
+ * Basic Setup
+ ******************************************************************************/
+
+@color-text:                #333;
+@color-text-subtle:         #666;
+@color-bg-light:            #F7F7F7;
+@color-bg-neutral:          #E9E9E9;
+@color-bg-dark:             #D4D5D7;
+
+@borderRadius-large:        10px;
+
 /* ### GENERAL ### */
 * { margin: 0px; padding: 0px; }
 
 html, body { 
-  background: #d4d5d7;
+  background: @color-bg-dark;
 }
 body, input, select, textarea {
   font: 13px/1.5 Tahoma, Geneva, Verdana, sans-serif;
-  color: #333;
+  color: @color-text;
 }
 input, select, textarea { 
   line-height: 1.4;
@@ -39,7 +51,7 @@ pre {
 hr {
   height: 0px;
   border: none;
-  border-top: 1px solid #D4D5D7;
+  border-top: 1px solid @color-bg-dark;
   border-bottom: 1px solid #fff;
   margin: 1em 0;
   }
@@ -60,6 +72,7 @@ h1, h2, h3, h4, .head, #menuCntr {
 #headerCntr { 
   padding-top: 10px;
   padding-bottom: 10px;
+  .text-engraved;
 }
 #headerCntr .span-11 { position: relative; }
 #headerCntr h1 a { display: block; width: 180px; height: 43px; text-indent: -9999px; background: url('../newaw.png') no-repeat; }
@@ -88,7 +101,7 @@ h1, h2, h3, h4, .head, #menuCntr {
 
 /* ### CONTENT CONTAINER ### */
 #contentCntr {
-  background-color: inherit;
+  background-color: @color-bg-light;
   background: url('../images/contentBg.gif') repeat-y;
   background-position: 35px 0;
   }
@@ -97,44 +110,31 @@ h1, h2, h3, h4, .head, #menuCntr {
   background: url('../images/contentTop.gif') no-repeat top;
   background-position: 35px 0;
 }
-#contentCntr .head { 
+#contentCntr .head {
   font: 18px 'Helvetica', Arial; color: #333; background: url('../images/titleBg.gif') no-repeat;
   background-position: 30px 0;
   height: 66px;
   padding-top: 9px;
+  .text-engraved;
 }
 
 #wikiactions {
   float:right;
-  bottom: auto;
   font-size: 11px;
-  color: #7A7A78;
   text-align: right;
+
+  position: relative;
+  top: 18px;
+
+  .subtle;
 }
 
-#wikiactions a, #wikiactions a:visited{ 
-  text-decoration: none; color: #666;
-}
-
-#wikiactions a:hover {
-  text-decoration: underline;
-}
-#wikiactions a:active {
-  color: #333;
-}
-
-#pagetitle { vertical-align: top;}
-
-#pagetitle a, #pagetitle a:visited{ 
-  text-decoration: none; color:black;
-}
-
-#pagetitle a:hover {
-  text-decoration: underline;
-}
-#pagetile a:active {
-  color: #333;
-}
+#pagetitle {
+  vertical-align: top;
+  a {
+    color: @color-text;
+    }
+  }
 
 #groupname {
   font-size: 60%;
@@ -145,7 +145,6 @@ h1, h2, h3, h4, .head, #menuCntr {
 #contentCntr h1 span { font: 14px 'Helvetica', Arial; color: #8b8b8b; }
 
 /* ### SERVICE BOX ### */
-/*.serviceBox { padding: 0px 35px 20px 55px; overflow: hidden; width: 780px; }*/
 .serviceBox div.text { float: left; width: 520px; }
 .serviceBox div.test { float: right;  width: 220px; }
 .serviceBox p { padding-bottom: 10px;}
@@ -154,7 +153,6 @@ h1, h2, h3, h4, .head, #menuCntr {
 .serviceBox div.test ul { list-style: none; }
 .serviceBox div.test li { margin-bottom: 10px; padding-bottom: 10px; line-height: 18px; font-style: italic; border-bottom: 1px solid #dad9d9; }
 .serviceBox div.test li strong { display: block; font-style: normal; font-size: 11px; }
-
 
 /* ### CONTACT BOX ### */
 .contactBox { padding: 0px 35px 30px 55px; overflow: hidden; width: 780px; }
@@ -175,14 +173,13 @@ h1, h2, h3, h4, .head, #menuCntr {
   padding-top: 45px;
   padding-bottom: 35px;
   overflow: hidden;
-/*  width: 820px; */
   background: url('../images/footerBg.gif') no-repeat;
   background-position: 35px 0 ;
+  .subtle;
+  .text-engraved;
   }
 #footerCntr p { float: left; width: 300px; font-size: 11px; }
 #footerCntr p.right { float: right; text-align: right; }
-#footerCntr a { text-decoration: none; color: #666; }
-#footerCntr a:hover { color: #333; }
 
 .groupfooter {
   font-size: x-small;
@@ -267,22 +264,57 @@ fieldset {
   border: none;
 }
 
-table#main_apfelwiki td {
-  vertical-align: top;
-}
-table#main_apfelwiki h1, table#main_apfelwiki h2 {
-  white-space: nowrap;
-}
-
 .hp-element {
-  border: 1px solid white;
-  padding: 10px 20px;
   margin: 20px 0;
-  background-color: #E9E9E9;
-  border-radius: 10px;
-  box-shadow: #999 0px 1px 2px;
+  .box-style-1;
+
+  .sectionedit {
+    display: none;
+    }
+  }
+
+/*******************************************************************************
+ * Generic Modules
+ ******************************************************************************/
+
+.box-style-1 {
+  padding: 10px 20px;
+  border: 1px solid white;
+  box-shadow: #999 0px 1px 3px;
+  .text-engraved;
+  border-radius: @borderRadius-large;
+  background-color: @color-bg-neutral;
+  background-image: -webkit-gradient(linear,
+                               left top,
+                               left bottom,
+                               color-stop(0, rgba(0, 0, 0, 0.03)),
+                               color-stop(0.1, rgba(0, 0, 0, 0)),
+                               color-stop(0.9, rgba(255, 255, 255, 0)),
+                               color-stop(1, rgba(255, 255, 255, 0.3)));
+  background-image: -moz-linear-gradient(
+                               top,
+                               rgba(0, 0, 0, 0.03) 0%,
+                               rgba(0, 0, 0, 0) 10%,
+                               rgba(255, 255, 255, 0) 90%,
+                               rgba(255, 255, 255, 0.3) 100%);
+  background-image: linear-gradient(
+                               top,
+                               rgba(0, 0, 0, 0.03) 0%,
+                               rgba(0, 0, 0, 0) 10%,
+                               rgba(255, 255, 255, 0) 90%,
+                               rgba(255, 255, 255, 0.3) 100%);
+  }
+
+.text-engraved {
+  text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.8);
 }
 
-.hp-element .sectionedit {
-  display: none;
-}
+.subtle {
+  color: @color-text-subtle;
+  a {
+    color: @color-text-subtle;
+    &:active {
+        color: @color-text;
+      }
+    }
+  }
