@@ -23,10 +23,10 @@ function blg($Status, $Message) {
 ################ Einfuegen des Google Suchfeldes ################
 # Die googlesuche stellt ein Suchfeld identisch der Standardsuche zur Verfuegung
 Markup('googlesuchfeld', '>links', '/\\(:(googlesuche):\\)/i', FmtPageName('<form
-action="Search" method="get" class="googleSearchForm">
+action="'.$ScriptUrl.'/ApfelWiki/Search" method="get" class="googleSearchForm">
 <input type="hidden" name="cx" value="013237906231695894092:-qr7cunyryk" />
 <input type="hidden" name="cof" value="FORID:9" />
-<input type="text" name="q" class="inputbox" value="'.$_GET['q'].'"/>
+<input type="search" name="q" accesskey="f" class="inputbox" value="'.$_GET['q'].'"/>
 <input type="submit" value="Suche" class="inputbutton" />
 </form>'
     , $pagename));
