@@ -174,7 +174,7 @@ $WikiStyleCSS[] = 'list-style-type';
 
 ############ Robots Einstellung ################
 
-## Individuelle Robotseinträge auf einer Seite 
+## Individuelle Robotseintr√§ge auf einer Seite 
 
 Markup('robots', 'directives',
      '/\\(:robots\\s+(\\w[\\w\\s,]*):\\)/e',
