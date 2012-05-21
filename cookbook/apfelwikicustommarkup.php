@@ -121,13 +121,13 @@ Markup('apfelwikibeta', 'directives',
 Markup('footerbadgets', 'directives','/\\(:(Rezension|Diskussion):\\)/e', "FooterBadgetsFct('$1')");
 
 function FooterBadgetsFct($option){
-	global $PubDirUrl,$pagename;
+	global $PubDirUrl, $ScriptUrl, $pagename;
 	$name = FmtPageName("$option.\$Group-\$Name",$pagename);
 	if (PageExists($name)) 
 		return Keep(MakeLink($pagename,$name,"<img src='$PubDirUrl/cookbook/awcustommarkup/ApfelWiki-$option.gif' alt='$option'/>"));
 	else  {
 		return Keep(
-        "<a href='http://www.apfelwiki.de/$option/"
+        "<a href='$ScriptUrl/$option/"
         .FmtPageName("\$Group-\$Name",$pagename)
         ."' rel='nofollow'><img src='$PubDirUrl/cookbook/awcustommarkup/ApfelWiki-$option-sw.gif' alt='$option'/></a>")
       ;
