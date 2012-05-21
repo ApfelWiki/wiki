@@ -38,6 +38,7 @@ directories[4]='wikilib.d'
 directories[5]='wikirev.d'
 
 wiki_d_files=(
+  'ApfelWiki.Search'
   'Site.EditForm'
   'PmWikiDe.XLPage'
   'PmWikiDe.XLPageCookbook'
