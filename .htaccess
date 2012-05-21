@@ -37,6 +37,9 @@ RewriteRule ^index\.php$ pmwiki.php  [L]
 # Send requests to pmwiki.php, appending the query string part.
 RewriteRule ^([A-Z0-9\xa0-\xff].*)$ pmwiki.php?n=$1  [QSA,L]
 
+# Send requests to pmwiki.php, appending the query string part.
+# Convenient for local dev if no $ScriptUrl is set but $EnablePathInfo = 1 in config.php
+RewriteRule ^(index.php|pmwiki.php)/([A-Z0-9\xa0-\xff].*)$ pmwiki.php?n=$2  [QSA,L]
 
 
 ErrorDocument 403 http://www.apfelwiki.de/Site/Forbidden
