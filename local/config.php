@@ -404,7 +404,7 @@ Diese Seite wurde am $now von [[~$Author]] als [[ApfelWiki.Loeschkandidaten#$Ful
  * - Abgrenzung oben durch horizontale Linie
  * - Einpacken in Style-Klasse `groupfooter`
  */
-$GroupFooterFmt = '(:nl:)(:div1 class="groupfooter":)(:nl:)-----(:nl:)(:include {$Group}.GroupFooter self=0 basepage={*$FullName}:)(:nl:)(:div1end:)';
+$GroupFooterFmt = '(:nl:)(:div1 class="groupfooter":)(:nl:)-----(:nl:)(:include {$Group}.GroupFooter self=0 basepage={*$FullName}:)(:nl:)(:div1end:)(:nl:)(:div class="clearfix":)(:nl:)(:divend:)';
 
 ## Vorlagenmenü
 	$LinkPageCreateFmt = "<a class='createlinktext' rel='nofollow' href='\$LinkUrl'>\$LinkText</a>";

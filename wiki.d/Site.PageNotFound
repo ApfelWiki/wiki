@@ -1,0 +1,35 @@
+version=pmwiki-2.2.36 ordered=1 urlencoded=1
+agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_4) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1145.0 Safari/537.1
+author=Schlaefer
+charset=UTF-8
+csum=
+host=127.0.0.1
+name=Site/PageNotFound
+pageviewcounterdaily=127
+pageviewcounterglobal=6682900
+pageviewcounterlastupdate=22
+rev=6682948
+targets=Site.PageNotFound
+text=(:nolinkwikiwords:)%0a(:if name {$SiteGroup}.PageNotFound:)%0a-> %25green font-style:italic%25 This page contains the text to be displayed when PmWiki is unable to locate a requested page.  Administrators can edit this page to change the message.%0a(:if:)%0a%0a(:if !group Category:)Die Seite '''{$RequestedPage}''' existiert nicht: (:if auth edit:)%25rel=nofollow%25 [[{*$FullName}?action=edit | diese Seite jetzt neu anlegen anlegen]]. %0a(:if:)%0a%0a
+time=1337669310
+author:1337669310=Schlaefer
+diff:1337669310:1337669283:=6c6%0a%3c (:if !group Category:)Die Seite '''{$RequestedPage}''' existiert nicht: (:if auth edit:)%25rel=nofollow%25 [[{*$FullName}?action=edit | diese Seite jetzt neu anlegen anlegen]]. %0a---%0a> (:if !group Category:)Die Seite '''{$RequestedPage}''' existiert nicht: (:if auth edit:)%25rel=nofollow%25 [[{*$FullName}?action=edit | diese Seite jetzt neu anlegen anlegen]] %0a
+host:1337669310=127.0.0.1
+author:1337669283=Schlaefer
+diff:1337669283:1337669267:=6c6%0a%3c (:if !group Category:)Die Seite '''{$RequestedPage}''' existiert nicht: (:if auth edit:)%25rel=nofollow%25 [[{*$FullName}?action=edit | diese Seite jetzt neu anlegen anlegen]] %0a---%0a> (:if !group Category:)Die Seite '''{$RequestedPage}''' existiert nicht. (:if auth edit:)%25rel=nofollow%25 [[{*$FullName}?action=edit | Seite jetzt neu anlegen anlegen]] %0a
+host:1337669283=127.0.0.1
+author:1337669267=Schlaefer
+diff:1337669267:1337669254:=6c6%0a%3c (:if !group Category:)Die Seite '''{$RequestedPage}''' existiert nicht. (:if auth edit:)%25rel=nofollow%25 [[{*$FullName}?action=edit | Seite jetzt neu anlegen anlegen]] %0a---%0a> (:if !group Category:)Die Seite '''{$RequestedPage}''' existiert nicht. (:if auth edit:)%25rel=nofollow%25 ([[{*$FullName}?action=edit | Seite jetzt neu anlegen anlegen]]) %0a
+host:1337669267=127.0.0.1
+author:1337669254=Schlaefer
+diff:1337669254:1337669243:=6c6%0a%3c (:if !group Category:)Die Seite '''{$RequestedPage}''' existiert nicht. (:if auth edit:)%25rel=nofollow%25 ([[{*$FullName}?action=edit | Seite jetzt neu anlegen anlegen]]) %0a---%0a> (:if !group Category:)Die Seite ''{$RequestedPage}'' existiert nicht. (:if auth edit:)%25rel=nofollow%25 ([[{*$FullName}?action=edit | Seite jetzt neu anlegen anlegen]]) %0a
+host:1337669254=127.0.0.1
+author:1337669243=Schlaefer
+diff:1337669243:1245602593:=6c6,7%0a%3c (:if !group Category:)Die Seite ''{$RequestedPage}'' existiert nicht. (:if auth edit:)%25rel=nofollow%25 ([[{*$FullName}?action=edit | Seite jetzt neu anlegen anlegen]]) %0a---%0a> (:if !group Category:)Die Seite "{$RequestedPage}" ist nicht vorhanden.  %0a> (:if auth edit:)%25rel=nofollow%25 ([[{*$FullName}?action=edit | {*$FullName} anlegen]]) %0a
+host:1337669243=127.0.0.1
+author:1245602593=kt007
+diff:1245602593:1245601355:=9a10,33%0a> (:if4 auth edit:)%0a> (:if ! exists {*$Group}.RecentChanges:)%0a> (:include $[{$SiteGroup}.NewGroupWarning]:)%0a> (:if exists {*$Group}.EditTemplates:)%0a> %0a> '''Local ({*$Group}) templates'''%0a> (:pagelist fmt={$FullName}#linktemplates trail={*$Group}.Vorlage:)%0a> (:ifend:)%0a> %0a> '''Site edit templates'''%0a> (:pagelist fmt={$FullName}#linktemplates trail=Site.Vorlage:)%0a> (:if4end:)%0a> (:if false:)%0a> [[#linktemplates]]%0a> (:template first:)%0a> (:input form action={*$PageUrl}:)%0a> (:input hidden action edit:)(:input hidden n {*$FullName}:)%0a> (:template each:)%0a> (:input select template "{=$FullName}" "{=$Titlespaced}":)%0a> (:template last:)%0a> (:input submit go Create:)%0a> (:input end:)%0a> [[#linktemplatesend]]%0a> (:if:)%0a\ No newline at end of file%0a
+host:1245602593=85.181.208.132
+author:1245601355=kt007
+diff:1245601355:1206951520:=10,33d9%0a%3c (:if4 auth edit:)%0a%3c (:if ! exists {*$Group}.RecentChanges:)%0a%3c (:include $[{$SiteGroup}.NewGroupWarning]:)%0a%3c (:if exists {*$Group}.EditTemplates:)%0a%3c %0a%3c '''Local ({*$Group}) templates'''%0a%3c (:pagelist fmt={$FullName}#linktemplates trail={*$Group}.Vorlage:)%0a%3c (:ifend:)%0a%3c %0a%3c '''Site edit templates'''%0a%3c (:pagelist fmt={$FullName}#linktemplates trail=Site.Vorlage:)%0a%3c (:if4end:)%0a%3c (:if false:)%0a%3c [[#linktemplates]]%0a%3c (:template first:)%0a%3c (:input form action={*$PageUrl}:)%0a%3c (:input hidden action edit:)(:input hidden n {*$FullName}:)%0a%3c (:template each:)%0a%3c (:input select template "{=$FullName}" "{=$Titlespaced}":)%0a%3c (:template last:)%0a%3c (:input submit go Create:)%0a%3c (:input end:)%0a%3c [[#linktemplatesend]]%0a%3c (:if:)%0a\ No newline at end of file%0a
+host:1245601355=85.181.208.132

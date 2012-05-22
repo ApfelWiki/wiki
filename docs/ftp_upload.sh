@@ -40,6 +40,8 @@ directories[5]='wikirev.d'
 wiki_d_files=(
   'ApfelWiki.Search'
   'Site.EditForm'
+  'Site.PageNotFound'
+  'PmWikiDe.EditQuickReference'
   'PmWikiDe.XLPage'
   'PmWikiDe.XLPageCookbook'
   'PmWikiDe.XLPageLocal'
