@@ -9,6 +9,7 @@
 @color-bg-dark:             #D4D5D7;
 
 @borderRadius-large:        10px;
+@padding:                   10px;
 
 /* ### GENERAL ### */
 * { margin: 0px; padding: 0px; }
@@ -59,6 +60,21 @@ hr {
 h1, h2, h3, h4, .head, #menuCntr {
   letter-spacing: 1px;
   margin-bottom: 0;
+  }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  
+  margin-bottom:1.4em;
+  width:100%;
+  }
+th, td {
+  vertical-align: top;
+  padding: @padding;
+  }
+.ind1 {
+  background-color: darken(@color-bg-light, 5%)
   }
 
 /* ### GLOBAL CLASSES ### */
@@ -265,18 +281,11 @@ fieldset {
   border: none;
 }
 
-.hp-element {
-  margin: 20px 0;
-  .box-style-1;
-
-  .sectionedit {
-    display: none;
-    }
-  }
 
 /*******************************************************************************
  * Google Suche
  ******************************************************************************/
+
 #menuCntr .googleSearchForm {
   input[type='search'] {
     width: auto;
@@ -297,6 +306,19 @@ fieldset {
 .gsc-control-cse, .gsc-result {
     border-color: transparent !important;
     background-color: transparent !important;
+  }
+
+/*******************************************************************************
+ * Specific Modules
+ ******************************************************************************/
+
+.hp-element {
+  margin: 20px 0;
+  .box-style-1;
+
+  .sectionedit {
+    display: none;
+    }
   }
 
 /*******************************************************************************
