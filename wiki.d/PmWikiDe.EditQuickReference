@@ -1,0 +1,36 @@
+version=pmwiki-2.2.36 ordered=1 urlencoded=1
+agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_4) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1145.0 Safari/537.1
+author=Schlaefer
+charset=UTF-8
+csum=
+host=127.0.0.1
+name=PmWikiDe/EditQuickReference
+pageviewcounterdaily=5
+pageviewcounterglobal=47
+pageviewcounterlastupdate=22
+rev=54
+targets=PmWikiDe.PmWikiDeBasicEditing,PmWikiDe.PmWikiDeTextFormattingRules
+text=(:nogroupheader:)%0a(:table class='quickref':)%0a(:cellnr style='font-size:12px; font-family:Arial;' colspan='2':)%0a'''Absätze:''' Drücken Sie 2x ''Return'' für einen neuen Absatz; -> Einrückung \\%0a'''Listen:''' * Aufzählungsliste; # Nummerierte Liste; :Ausdruck: Definition \\%0a'''Hervorheben:''' [=''kursiv''=], [='''fett'''=], [='''''beides'''''=], [=@@Schreibmaschine@@=] \\%0a'''Verweise(Links):''' [=[[andere Seite]]=] oder URL [=[[http://www.beispiel.de]]=] oder [=VerbindeGrossGeschriebeneWoerter=] \\%0a'''Gruppen:''' [=[[Gruppe/Seite]]=] zeigt die Seite an, [=[[Gruppe.Seite]]=] zeigt Gruppe.Seite%0a(:cellnr style='font-size:12px; font-family:Arial;':)%0a'''Überschriften:''' !, !!, !!! für Überschriften; ---- Trennlinie \\%0a'''Größe ändern:''' [=[+...+]=] größer, [=[-...-]=] kleiner%0a(:cell style='font-size:12px; font-family:Arial;'  :)%0a'''Verhindere Formatierung:''' [=[=...=]=] \\%0a'''Zeilenumbruch:''' [=\\=] oder [=[[%3c%3c]]=]  %0a(:cellnr style='font-size:12px; font-family:Arial;' colspan='2':)%0aSiehe auch: [[PmWikiDe:BasicEditing |Bearbeitungsgrundlagen]] – [[PmWikiDe:TextFormattingRules |Textformatierungsregeln]] %0a(:tableend:)
+time=1337668306
+author:1337668306=Schlaefer
+diff:1337668306:1337668236:=1a2%0a> %0a
+host:1337668306=127.0.0.1
+author:1337668236=Schlaefer
+diff:1337668236:1337666576:=3c3%0a%3c (:table class='quickref':)%0a---%0a> (:table width='100%25' cellspacing='0' cellpadding='2' border='1' class='quickref':)%0a
+host:1337668236=127.0.0.1
+author:1337666576=Schlaefer
+csum:1337666576=added class quickref
+diff:1337666576:1141467372:=3c3%0a%3c (:table width='100%25' cellspacing='0' cellpadding='2' border='1' class='quickref':)%0a---%0a> (:table width='100%25' cellspacing='0' cellpadding='2' border='1' :)%0a
+host:1337666576=127.0.0.1
+author:1141467372=Schlaefer
+csum:1141467372=rsk
+diff:1141467372:1141467312:minor=17c17%0a%3c Siehe auch: [[PmWikiDe:BasicEditing |Bearbeitungsgrundlagen]] – [[PmWikiDe:TextFormattingRules |Textformatierungsregeln]] %0a---%0a> Siehe auch: [[PmWikiDe:GrundlagenDerBearbeitung |Bearbeitungsgrundlagen]] – [[PmWikiDe:TextFormattingRules |Textformatierungsregeln]] %0a
+host:1141467372=84.185.143.153
+author:1141467312=Schlaefer
+csum:1141467312=Links auf dt. Hilfe aktualisiert
+diff:1141467312:1141463982:=3,4c3,6%0a%3c (:table width='100%25' cellspacing='0' cellpadding='2' border='1' :)%0a%3c (:cellnr style='font-size:12px; font-family:Arial;' colspan='2':)%0a---%0a> %25comment%25(deutsche Übersetzung der Seite PmWiki.EditQuickReference, Stand 18.11.2004)%0a> (:table width='100%25' cellspacing='0' cellpadding='0' border='1':)%0a> (:cell style='font-size:12px; font-family:Arial;' colspan='2':)%0a> [[PmWikiDe/TextFormattingRules |Textformatierungsregeln]] - [[PmWikiDe/TipsForEditing |TippsZumEditieren]] \\%0a16,17d17%0a%3c (:cellnr style='font-size:12px; font-family:Arial;' colspan='2':)%0a%3c Siehe auch: [[PmWikiDe:GrundlagenDerBearbeitung |Bearbeitungsgrundlagen]] – [[PmWikiDe:TextFormattingRules |Textformatierungsregeln]] %0a
+host:1141467312=84.185.143.153
+author:1141463982=Schlaefer
+csum:1141463982=nogroupheader
+diff:1141463982:1102622300:minor=1,2d0%0a%3c (:nogroupheader:)%0a%3c %0a
+host:1141463982=84.185.143.153
