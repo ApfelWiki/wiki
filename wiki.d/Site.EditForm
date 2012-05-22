@@ -1,17 +1,20 @@
 version=pmwiki-2.2.36 ordered=1 urlencoded=1
-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_4) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1140.0 Safari/537.1
-author=kt007
+agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_4) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1145.0 Safari/537.1
+author=Schlaefer
 charset=UTF-8
 csum=
-host=::1
+host=127.0.0.1
 name=Site/EditForm
-pageviewcounterdaily=1
-pageviewcounterglobal=285
-pageviewcounterlastupdate=19
-rev=319
+pageviewcounterdaily=6
+pageviewcounterglobal=291
+pageviewcounterlastupdate=22
+rev=326
 targets=
-text=!$[Editing] {$FullName} %25block class=wikiaction%25%0a(:messages:)%0a%0a%0a(:if e_preview:)%0a!!$[Preview] {$FullName}%0a'''$[Page is unsaved]'''%0a(:e_preview:)%0a----%0a'''$[End of preview -- remember to save]!'''\\%0a[[#top | $[Top] ]]%0a(:if:)%0a(:div id='wikiedit':)%0a(:input e_form:)[[#top]](:e_guibuttons:)\\%0a(:input e_textarea:)\\%0a$[Summary]: (:input e_changesummary:)\\%0a$[Author]: (:input e_author:) (:input e_minorcheckbox:) $[This is a minor edit]\\%0aBitte Zahl eingeben: {$Captcha} (:input captcha:) \\%0a(:input e_savebutton:) (:input e_previewbutton:) (:input e_cancelbutton:)%0a(:input end:)%0a----%0a%25rfloat%25 [-(:input aw_template_switch:)-]%0a(:input aw_template:) %0a[[%3c%3c]]%0a----%0a(:divend:)%0a(:include $[PmWikiDe/EditQuickReference]:)%0a
-time=1311055806
+text=!$[Editing] {$FullName} %25block class=wikiaction%25%0a(:messages:)%0a%0a%0a(:if e_preview:)%0a!!$[Preview] {$FullName}%0a'''$[Page is unsaved]'''%0a(:e_preview:)%0a----%0a'''$[End of preview -- remember to save]!'''\\%0a[[#top | $[Top] ]]%0a(:if:)%0a(:div id='wikiedit':)%0a(:input e_form:)[[#top]](:e_guibuttons:)\\%0a(:input e_textarea:)\\%0a$[Summary]: (:input e_changesummary:)\\%0a$[Author]: (:input e_author:) (:input e_minorcheckbox:) $[This is a minor edit]\\%0aBitte Zahl eingeben: {$Captcha} (:input captcha:) \\%0a(:input e_savebutton:) (:input e_previewbutton:) (:input e_cancelbutton:)%0a(:input end:)%0a----%0a%25rfloat%25 [-(:input aw_template_switch:)-]%0a(:input aw_template:) %0a----%0a(:divend:)%0a(:include $[PmWikiDe/EditQuickReference]:)%0a
+time=1337666918
+author:1337666918=Schlaefer
+diff:1337666918:1311055806:=23a24%0a> [[%3c%3c]]%0a
+host:1337666918=127.0.0.1
 author:1311055806=kt007
 diff:1311055806:1311055722:=3,4c3,7%0a%3c %0a%3c %0a---%0a> (:if captcha:)%0a> %25green%25Captcha succeeded%25%25%0a> (:else:)%0a> %25red%25Captcha failed%25%25%0a> (:ifend:)%0a
 host:1311055806=85.180.2.148
@@ -76,7 +79,3 @@ author:1123660164=kt007
 csum:1123660164=test
 diff:1123660164:1123157207:=5a6%0a> (:e_preview:)%0a9d9%0a%3c (:e_preview:)%0a
 host:1123660164=145.254.195.82
-author:1123157207=Schlaefer
-csum:1123157207=test
-diff:1123157207:1123146920:=19a20%0a> %0a
-host:1123157207=192.168.0.3
