@@ -71,11 +71,20 @@ table {
   }
 th, td {
   vertical-align: top;
-  padding: @padding;
+  padding: @padding/2 @padding;
   }
 .ind1 {
   background-color: darken(@color-bg-light, 5%)
   }
+
+table.reset {
+  padding: 0;
+  margin: 0;
+  tr, th, td {
+    padding: 0;
+    margin: 0;
+  }
+}
 
 /* ### GLOBAL CLASSES ### */
 .clear { clear: both; height: 1px; }
