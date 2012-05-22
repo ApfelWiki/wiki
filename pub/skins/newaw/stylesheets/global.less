@@ -203,7 +203,7 @@ table.reset {
 #footerCntr p.right { float: right; text-align: right; }
 
 .groupfooter {
-  font-size: x-small;
+  font-size: smaller;
   width:100%;
   clear: both;
 }
@@ -321,6 +321,60 @@ fieldset {
     border-color: transparent !important;
     background-color: transparent !important;
   }
+
+/*******************************************************************************
+ * Buttons
+ ******************************************************************************/
+
+a.button {
+  text-decoration: none;
+  }
+
+input[type="button"], input[type="submit"], .button {
+  @color: black;
+
+  margin: 0 4px;
+  padding: 0.20em 0.5em;
+  border: 1px solid #999;
+  background-color: #E9E9E9;
+  color: @color;
+  cursor: pointer;
+  font-family: "Lucida Grande", Tahoma, Geneva, Verdana, sans-serif;
+
+  background-image:-moz-linear-gradient(50% 0% -90deg,rgb(255,255,255) 0%,rgb(243,243,243) 50%,rgb(236,236,236) 51%,rgb(242,242,242) 100%);
+  background-image:-webkit-gradient(linear,50% 0%,50% 100%,color-stop(0, rgb(255,255,255)),color-stop(0.5, rgb(243,243,243)),color-stop(0.51, rgb(236,236,236)),color-stop(1, rgb(242,242,242)));
+  background-image:-webkit-linear-gradient(-90deg,rgb(255,255,255) 0%,rgb(243,243,243) 50%,rgb(236,236,236) 51%,rgb(242,242,242) 100%);
+  background-image:-o-linear-gradient(-90deg,rgb(255,255,255) 0%,rgb(243,243,243) 50%,rgb(236,236,236) 51%,rgb(242,242,242) 100%);
+  background-image:-ms-linear-gradient(-90deg,rgb(255,255,255) 0%,rgb(243,243,243) 50%,rgb(236,236,236) 51%,rgb(242,242,242) 100%);
+  background-image:linear-gradient(-90deg,rgb(255,255,255) 0%,rgb(243,243,243) 50%,rgb(236,236,236) 51%,rgb(242,242,242) 100%);
+  border-color:rgb(187,187,187);
+  border-width:1px;
+  -moz-border-radius:6px;
+  -webkit-border-radius:6px;
+  border-radius:6px;
+  border-style:solid;
+  -moz-box-shadow:0px 1px 1px 0px rgba(144,144,144,0.24);
+  -webkit-box-shadow:0px 1px 1px 0px rgba(144,144,144,0.24);
+  box-shadow:0px 1px 1px 0px rgba(144,144,144,0.24);
+
+
+  &:visited, &:active {
+    color: @color;
+    }
+
+  &.missing {
+      color: #666;
+    }
+
+  &.primary {
+    font-weight: bold;
+    }
+  }
+
+
+
+/******************************************************************************/
+
 
 /*******************************************************************************
  * Specific Modules

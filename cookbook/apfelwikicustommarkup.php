@@ -139,15 +139,13 @@ Markup('footerbadgets', 'directives','/\\(:(Rezension|Diskussion):\\)/e', "Foote
 function FooterBadgetsFct($option){
 	global $PubDirUrl, $ScriptUrl, $pagename;
 	$name = FmtPageName("$option.\$Group-\$Name",$pagename);
-	if (PageExists($name)) 
-		return Keep(MakeLink($pagename,$name,"<img src='$PubDirUrl/cookbook/awcustommarkup/ApfelWiki-$option.gif' alt='$option'/>"));
-	else  {
-		return Keep(
-        "<a href='$ScriptUrl/$option/"
-        .FmtPageName("\$Group-\$Name",$pagename)
-        ."' rel='nofollow'><img src='$PubDirUrl/cookbook/awcustommarkup/ApfelWiki-$option-sw.gif' alt='$option'/></a>")
-      ;
-	}
+  $additionalClass = '';
+	if (!PageExists($name)) :
+    $additionalClass = 'missing';
+  endif;
+  return Keep(MakeLink($pagename,$name,"$option", NULL,
+        "<a class='button {$additionalClass}' href='\$LinkUrl' title='\$LinkAlt' rel='nofollow'>\$LinkText</a>"
+        ));
 }
 
 ########################## Firefox Search Plugin ###############################
