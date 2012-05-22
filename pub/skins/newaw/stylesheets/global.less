@@ -331,13 +331,11 @@ a.button {
   }
 
 input[type="button"], input[type="submit"], .button {
-  @color: black;
-
   margin: 0 4px;
   padding: 0.20em 0.5em;
   border: 1px solid #999;
   background-color: #E9E9E9;
-  color: @color;
+  color: @color-text;
   cursor: pointer;
   font-family: "Lucida Grande", Tahoma, Geneva, Verdana, sans-serif;
 
@@ -359,11 +357,11 @@ input[type="button"], input[type="submit"], .button {
 
 
   &:visited, &:active {
-    color: @color;
+    color: @color-text;
     }
 
   &.missing {
-      color: #666;
+      color: lighten(@color-text, 25%);
     }
 
   &.primary {
