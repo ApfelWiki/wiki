@@ -49,7 +49,7 @@ SDV($HandleAuth['markfordelete'], 'read');
 
 $FmtPV['$PageToDelete'] = "'{$_REQUEST['pagetodelete']}'";
 
-/*
+/**
  * Controler for markfordelete action
  * 
  * @param string $pagename
@@ -76,7 +76,7 @@ function HandleMarkForDelete($pagename, $auth = "read") {
 			Redirect($MarkForDeleteForm, '$PageUrl'."?pagetodelete=$pagename");
 }
 
-/*
+/**
  * Writes the summary page and calls the function to put a note on the marked page.
  * 
  * @param string $pagename
@@ -84,7 +84,9 @@ function HandleMarkForDelete($pagename, $auth = "read") {
  */
 function MarkForDelete($pagename, $auth) {
 	global $HandleActions, $ChangeSummary, $Now, $Author, $FmtV;
-	global $MarkForDeletePagename, $MarkForDeleteForm;
+	global $MarkForDeletePagename, $MarkForDeleteForm, $EditFunctions;
+
+  $EditFunctions = array_diff($EditFunctions, array('RequireCaptcha') );
 
 	if (!PageExists($MarkForDeletePagename))
 		Abort("Summary page for as marked for delete pages \"$MarkForDeletePagename\" not found.<br /><br />
@@ -120,7 +122,7 @@ function MarkForDelete($pagename, $auth) {
 
 }
 
-/*
+/**
  * Puts a note on the top of a wikipage that it is marked for deletion
  * 
  * @param string $pagetodelete the pagename of the the wikipage
@@ -149,7 +151,7 @@ function MarkForDeleteWriteNote($pagetodelete, $author) {
 	return;
 }
 
-/*
+/**
  * When <!--function:MarkForDeleteLink--> is put in the skin tmpl file
  * it returns an edit link if 
  * <ul>

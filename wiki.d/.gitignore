@@ -1,5 +1,7 @@
 *
 !.gitignore
+!ApfelWiki.Loeschkandidaten
+!ApfelWiki.LoeschkandidatenFormular
 !ApfelWiki.Search
 !Main.AllRecentChangesShort
 !Main.GroupFooter

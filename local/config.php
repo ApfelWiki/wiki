@@ -10,6 +10,16 @@
 		include('config_local.php');
 	endif;
 
+/*
+ * Debugmodus
+ */
+// Set 1 to activate debug modus. Set 0 in production!
+$EnableDiag = 0;
+// Activate Stopwatch output in debugmodus
+if ( $EnableDiag === 1 ) :
+  $EnableStopWatch = 1;
+  $HTMLFooterFmt['stopwatch'] = 'function:StopWatchHTML 1';
+endif;
 
 ################ Allgemein ################
 ## Wikititel
@@ -25,9 +35,6 @@
 	$PageUrlFmt = $DefaultWikiUrl . '$Group/$Title_';
 ##Header werden unterdrueckt - Was macht diese Funktion genau?
 	$MyHeader = '';
-## Ermoeglicht die Abfrage von ?action=phpinfo
-	# Nur zum Debuggen aktivieren!
-	$EnableDiag = 0;
 ## CamelCase Woerter werden nicht zu Wikilinks
 	$LinkWikiWords = 0;
 
@@ -167,10 +174,31 @@
 
 	$BlocklistDownloadRefresh = 86400 * 7;
 
-	##Captcha aktiviert
-	include_once("cookbook/captcha.php");
-	$EnablePostCaptchaRequired = 1;
-	$EnableCaptchaImage = 1;
+  /*
+   * Captcha aktivieren
+   *
+   * Falls der aktuelle Nutzer bereits einmal ein Captcha positiv beantwortet
+   * hat, wird Captcha für 24h nicht mehr aktiviert.
+   */
+  $CaptchaDisabled = 1;
+  if ( isset($_COOKIE['CaptchaDisabler']) === FALSE ) :
+    global $CaptchaDisabled;
+    include_once("cookbook/captcha.php");
+    $EnablePostCaptchaRequired = 1;
+    $EnableCaptchaImage = 1;
+    $CaptchaDisabled = 0;
+  endif;
+
+  $LogoutCookies[] = 'CaptchaDisabler';
+	if ( $action == 'edit' || $action == 'postnewpage' ) :
+    $EditFunctions[] = 'CaptchaDisabler';
+    function CaptchaDisabler() {
+      global $EnablePost;
+      if ( $EnablePost ) :
+        setcookie('CaptchaDisabler', '1', time()+86400, '/');
+      endif;
+    }
+  endif;
 
 ################ GUI-Buttons ################        
 	##Schaltet die Buttons ueber den Edittextfeld ein (gEdit)
@@ -398,7 +426,16 @@ Diese Seite wurde am $now von [[~$Author]] als [[ApfelWiki.Loeschkandidaten#$Ful
 
 	include_once("cookbook/tracetrail2.php");
 
-/**
+/*
+ * Einbinden Analytics
+ *
+ * Jedoch nur, wenn wirklich auf dem Produktionsserver läuft
+ */
+if ( $_SERVER['SERVER_NAME'] === 'www.apfelwiki.de' && $EnableDiag === 0 ) :
+  $HTMLHeaderFmt['javascript'][] = '<script src="/mint/?js" type="text/javascript"></script>';
+endif;
+
+/*
  * Setzt das Format für GroupFooter Seiten
  *
  * - Abgrenzung oben durch horizontale Linie

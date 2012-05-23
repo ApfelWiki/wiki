@@ -1,0 +1,19 @@
+version=pmwiki-2.2.36 ordered=1 urlencoded=1
+agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_4) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1147.0 Safari/537.1
+author=Schlaefer
+charset=UTF-8
+csum=
+ctime=1337767005
+host=127.0.0.1
+name=ApfelWiki/LoeschkandidatenFormular
+pageviewcounterdaily=1
+pageviewcounterglobal=1
+pageviewcounterlastupdate=23
+rev=2
+targets=ApfelWiki.Beta,ApfelWiki.Loeschkandidaten
+text=(:title Löschkandidat eintragen:)%0a%0a!Löschkandidat eintragen%0a%25rfloat%25(:awbeta:)%0aSie wollen die Seite "''[[{$PageToDelete}]]''" als Löschkandidat markieren. Damit wird:%0a%0a* Ein Hinweis darüber auf die Seite "''[[{$PageToDelete}]]''" gesetzt.%0a* Die Seite  "''[[{$PageToDelete}]]''" auf der [[ApfelWiki/Loeschkandidaten|Spezialseite Löschkandidaten]] eingetragen. %0a%0a(:input form "" post:)%0aEine kurze Erläuterung, warum die Seite gelöscht werden sollte: \\%0a(:input text shortexplain size=80 :)%0a(:input hidden action markfordelete :)%0a(:input hidden perform true :)%0a(:input hidden pagetodelete {$PageToDelete} :) %0a%0aNach dem Bestätigen werden sie zu [[ApfelWiki/Loeschkandidaten|Spezialseite Löschkandidaten]] weitergeleitet: (:input submit value="Als Löschkandidat markieren":)%0a(:input end:)%0a
+time=1337767005
+title=Löschkandidat eintragen
+author:1337767005=Schlaefer
+diff:1337767005:1337767005:=1,18d0%0a%3c (:title Löschkandidat eintragen:)%0a%3c %0a%3c !Löschkandidat eintragen%0a%3c %25rfloat%25(:awbeta:)%0a%3c Sie wollen die Seite "''[[{$PageToDelete}]]''" als Löschkandidat markieren. Damit wird:%0a%3c %0a%3c * Ein Hinweis darüber auf die Seite "''[[{$PageToDelete}]]''" gesetzt.%0a%3c * Die Seite  "''[[{$PageToDelete}]]''" auf der [[ApfelWiki/Loeschkandidaten|Spezialseite Löschkandidaten]] eingetragen. %0a%3c %0a%3c (:input form "" post:)%0a%3c Eine kurze Erläuterung, warum die Seite gelöscht werden sollte: \\%0a%3c (:input text shortexplain size=80 :)%0a%3c (:input hidden action markfordelete :)%0a%3c (:input hidden perform true :)%0a%3c (:input hidden pagetodelete {$PageToDelete} :) %0a%3c %0a%3c Nach dem Bestätigen werden sie zu [[ApfelWiki/Loeschkandidaten|Spezialseite Löschkandidaten]] weitergeleitet: (:input submit value="Als Löschkandidat markieren":)%0a%3c (:input end:)%0a
+host:1337767005=127.0.0.1
