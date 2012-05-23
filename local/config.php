@@ -10,6 +10,16 @@
 		include('config_local.php');
 	endif;
 
+/*
+ * Debugmodus
+ */
+// Set 1 to activate debug modus. Set 0 in production!
+$EnableDiag = 0;
+// Activate Stopwatch output in debugmodus
+if ( $EnableDiag === 1 ) :
+  $EnableStopWatch = 1;
+  $HTMLFooterFmt['stopwatch'] = 'function:StopWatchHTML 1';
+endif;
 
 ################ Allgemein ################
 ## Wikititel
@@ -25,9 +35,6 @@
 	$PageUrlFmt = $DefaultWikiUrl . '$Group/$Title_';
 ##Header werden unterdrueckt - Was macht diese Funktion genau?
 	$MyHeader = '';
-## Ermoeglicht die Abfrage von ?action=phpinfo
-	# Nur zum Debuggen aktivieren!
-	$EnableDiag = 0;
 ## CamelCase Woerter werden nicht zu Wikilinks
 	$LinkWikiWords = 0;
 
