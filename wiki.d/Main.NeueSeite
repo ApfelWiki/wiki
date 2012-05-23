@@ -1,41 +1,18 @@
 version=pmwiki-2.2.36 ordered=1 urlencoded=1
-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_4) AppleWebKit/536.5 (KHTML, like Gecko) Chrome/19.0.1084.46 Safari/536.5
-author=kt007
+agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_4) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1147.0 Safari/537.1
+author=Schlaefer
 charset=UTF-8
-csum=Neue Seite wiederhergestellt
-host=178.25.67.111
+csum=
+ctime=1337786795
+host=127.0.0.1
 name=Main/NeueSeite
-pageviewcounterdaily=21
-pageviewcounterglobal=26099
-pageviewcounterlastupdate=19
-passwdedit=$1$UBR7A8Jn$pksojXTg8UKNS7SG11RZt.
-rev=25228
-targets=ApfelWiki.Loeschkandidaten,Site.Vorlage,ApfelWiki.BeitragVerfassen
-text=!Neue Seite erstellen%0a%25spotlight%25 Um eine Seite zu erstellen bitte Gruppe und Seitennamen eingeben. Es dürfen keine Leerzeichen verwandt werden. Standardgruppe ist Main, so dass für ein Artikel in dieser Gruppe der Name nicht extra angegeben werden muss. Weitere Informationen zum Verfassen eines Beitrages gibt es [[ApfelWiki.BeitragVerfassen|hier]]. %25%25%0a%0a(:newpageform:)%0a%0a(:nogroupfooter:)
-time=1145690545
-author:1145690332=kt007
-csum:1145690332=Neue Seite wiederhergestellt
-diff:1145690332:1145659550:=1,6c1,7%0a%3c !Neue Seite erstellen%0a%3c %25spotlight%25 Um eine Seite zu erstellen bitte Gruppe und Seitennamen eingeben. Es dürfen keine Leerzeichen verwandt werden. Standardgruppe ist Main, so dass für ein Artikel in dieser Gruppe der Name nicht extra angegeben werden muss. Weitere Informationen zum Verfassen eines Beitrages gibt es [[ApfelWiki.BeitragVerfassen|hier]]. %25%25%0a%3c %0a%3c (:newpageform:)%0a%3c %0a%3c (:nogroupfooter:)%0a\ No newline at end of file%0a---%0a> (:noteblock color=pink float=right:)%0a> L&ouml;schkandidat%0a> (:notecontent:)%0a> Diese Seite wurde am 22 April 2006 00:45 Uhr von [[~]] als [[ApfelWiki.Loeschkandidaten#Main.NeueSeite|L&ouml;schkandidat]] markiert. %0a> (:noteblockend:)%0a> %0a> Wer macht denn hier immer diesen Blödsinn?%0a\ No newline at end of file%0a
-host:1145690332=84.165.190.180
-author:1145659550=
-csum:1145659550=Als Löschkandidat markiert
-diff:1145659550:1145659254:=1,6d0%0a%3c (:noteblock color=pink float=right:)%0a%3c L&ouml;schkandidat%0a%3c (:notecontent:)%0a%3c Diese Seite wurde am 22 April 2006 00:45 Uhr von [[~]] als [[ApfelWiki.Loeschkandidaten#Main.NeueSeite|L&ouml;schkandidat]] markiert. %0a%3c (:noteblockend:)%0a%3c %0a
-host:1145659550=89.55.37.123
-author:1145659254=
-diff:1145659254:1145657106:minor=1c1,6%0a%3c Wer macht denn hier immer diesen Blödsinn?%0a\ No newline at end of file%0a---%0a> !Neue Seite erstellen%0a> %25spotlight%25 Um eine Seite zu erstellen bitte Gruppe und Seitennamen eingeben. Es dürfen keine Leerzeichen verwandt werden. Standardgruppe ist Main, so dass für ein Artikel in dieser Gruppe der Name nicht extra angegeben werden muss. Weitere Informationen zum Verfassen eines Beitrages gibt es [[ApfelWiki.BeitragVerfassen|hier]]. %25%25%0a> %0a> (:newpageform:)%0a> %0a> (:nogroupfooter:)%0a\ No newline at end of file%0a
-host:1145659254=89.55.37.123
-author:1145657106=
-diff:1145657106:1129870067:=
-host:1145657106=80.122.59.18
-author:1123792926=Schlaefer
-csum:1123792926=Im Zuge des Wikiupdates angepaßt.
-diff:1123792926:1116152323:minor=3a4%0a> %0a5,6c6%0a%3c %0a%3c (:nogroupfooter:)%0a\ No newline at end of file%0a---%0a> (:include PmWikiDe.EditQuickReference:)%0a\ No newline at end of file%0a
-host:1123792926=84.185.152.236
-author:1116152323=kt007
-csum:1116152323=geht wieder
-diff:1116152323:1116152223:=4c4,5%0a%3c %0a---%0a> (:note Hinweis|Die Funktion "Neue Seite" wird zur Zeit überarbeitet.:)%0a> %0a6c7%0a%3c (:include PmWikiDe.EditQuickReference:)%0a\ No newline at end of file%0a---%0a> %25comment%25 :include PmWikiDe.EditQuickReference:)%0a\ No newline at end of file%0a
-host:1116152323=217.235.117.116
-author:1116152223=kt007
-csum:1116152223=
-diff:1116152223:1113294760:=6c6%0a%3c (:newpageform:)%0a---%0a> %25comment%25 (:newpageform:)%0a
-host:1116152223=217.235.117.116
+pageviewcounterdaily=1
+pageviewcounterglobal=1
+pageviewcounterlastupdate=23
+rev=2
+targets=ApfelWiki.BeitragVerfassen
+text=!Neue Seite erstellen%0a%0a(:input form :)%0a(:input hidden action postnewpage:)%0a(:input hidden group Main:)%0a$[Pagename]: (:input text newpagename:)%0a(:input submit value="$[submit new page]":)%0a(:input end:)%0a%0aInformationen zum Verfassen eines Beitrages gibt es [[ApfelWiki.BeitragVerfassen|hier]].%0a%0a(:nogroupfooter:)
+time=1337786795
+author:1337786795=Schlaefer
+diff:1337786795:1337786795:=1,12d0%0a%3c !Neue Seite erstellen%0a%3c %0a%3c (:input form :)%0a%3c (:input hidden action postnewpage:)%0a%3c (:input hidden group Main:)%0a%3c $[Pagename]: (:input text newpagename:)%0a%3c (:input submit value="$[submit new page]":)%0a%3c (:input end:)%0a%3c %0a%3c Informationen zum Verfassen eines Beitrages gibt es [[ApfelWiki.BeitragVerfassen|hier]].%0a%3c %0a%3c (:nogroupfooter:)%0a\ No newline at end of file%0a
+host:1337786795=127.0.0.1

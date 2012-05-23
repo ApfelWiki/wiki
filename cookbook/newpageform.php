@@ -39,6 +39,8 @@
    
 */
 
+/*
+ *
 $NewGroup = array('Main', 'Tests');
 
 markup('newpageform','inline','/\\(:newpageform:\\)/e',"Keep(NewPageForm(\$pagename))");
@@ -48,57 +50,63 @@ markup('newpageform','inline','/\\(:newpageform:\\)/e',"Keep(NewPageForm(\$pagen
 ## according to the normal editing code (i.e., there's no form-based
 ## editing yet).
 function NewPageForm($pagename) {
-global $NewGroup;
-    $out[] = "<form method='post'>
+  global $NewGroup;
+  $out[] = "<form method='post'>
     <input type='hidden' name='action' value='postnewpage' />
     <table>
-      <tr><td class='newpagefield'> $[Author]:</td>
-        <td><input type='text' name='author' value='\$Author' /></td></tr>
-      <tr><td class='seitenname'>$[Group]:</td>
-          <td><select name='group' >" ;
-        foreach($NewGroup as $k=>$v) {
-    $x = is_string($k) ? $k : $v;
-    $out[] = "<option value='$x'>$v</option>";
-  } 
-  $out [] = "
-         <tr><td class='gruppe'>$[Pagename]:</td>
+      <!-- <tr><td class='newpagefield'> $[Author]:</td>
+        <td><input type='text' name='author' value='\$Author' /></td></tr> -->
+      <!-- <tr><td>$[Group]:</td>
+          <td><select name='group' >";
+
+    foreach ( $NewGroup as $k => $v ) {
+      $x = is_string($k) ? $k : $v;
+      $out[] = "<option value='$x'>$v</option>";
+    }
+
+    $out [] = "
+         </td></tr> -->
+         <tr><td>$[Pagename]:</td>
         <td><input type='text' name='newpagename'></td></tr>";
 
-  $out[] = "
+    $out[] = "
          </table>
       <div align='left'><input type='submit' value='$[submit new page]' />
        </div>
-     </form>"; 
-  return FmtPageName(implode('',$out),$pagename);
+     </form>";
+    return FmtPageName(implode('', $out), $pagename);
 }
 
 $HTMLStylesFmt[] = ".pitsfield { text-align:right; font-weight:bold; }\n";
 
 include_once("$FarmD/scripts/author.php");
+ * 
+ */
 
-if ($action=='postnewpage') { 
-$pagename = "{$_REQUEST ['group']}."."{$_REQUEST ['newpagename']}";
-    if (!PageExists($pagename))
-  { 	 if ($_REQUEST ['group'] == "") {
-	   $pagename = "Main."."{$_REQUEST ['newpagename']}";}
-     if ($_REQUEST ['group'] == "PITS") {
-	   Abort("cannot create pages in PITS. Please use the PITS Form for a new issue. It's located at $ScriptUrl/PITS/PITS ");}
-	    if ($_REQUEST ['newpagename'] == "") {
-        $UrlPage="{$_REQUEST ['group']}";
-        Redirect($PageNotFound);}
-    else
-     Lock(2);
-	  $action = 'edit';
-	 // $_REQUEST['post'] = 1;
-	//  $CreateTime = strftime('%Y-%m-%d %H:%M',$Now);
+if ($action=='postnewpage') {
+  if ( empty($_REQUEST['group']) ):
+    $_REQUEST['group'] = 'Main';
+  endif;
+
+  $pagename = MakePageName('Main.Main', 
+      $_REQUEST['group'] . '.' . $_REQUEST ['newpagename']
+      );
+  if (!PageExists($pagename)) {
+    if ($_REQUEST ['group'] == "PITS") {
+	   Abort("cannot create pages in PITS. Please use the PITS Form for a new issue. It's located at $ScriptUrl/PITS/PITS ");
+    }
+	  if ($_REQUEST['newpagename'] == "") {
+      $UrlPage="{$_REQUEST ['group']}";
+      Redirect($PageNotFound);
+    }
+    $action = 'edit';
+	  $_REQUEST['post'] = 1;
+	  $CreateTime = strftime('%Y-%m-%d %H:%M', $Now);
 	//  $EditMessageFmt = "<p class='vspace'>Please review and make any edits 
 	//	to your issue below, then press 'Save'</p>";
-	}
-	
-    else
-  		{Redirect($pagename);}
-    
+	} else {
+  	Redirect($pagename);
+  }
 }
-
 
 ?>
