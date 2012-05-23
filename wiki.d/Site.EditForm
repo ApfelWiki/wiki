@@ -1,17 +1,20 @@
 version=pmwiki-2.2.36 ordered=1 urlencoded=1
-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_4) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1145.0 Safari/537.1
+agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_4) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1147.0 Safari/537.1
 author=Schlaefer
 charset=UTF-8
 csum=
 host=127.0.0.1
 name=Site/EditForm
-pageviewcounterdaily=15
-pageviewcounterglobal=300
-pageviewcounterlastupdate=22
-rev=342
+pageviewcounterdaily=1
+pageviewcounterglobal=301
+pageviewcounterlastupdate=23
+rev=344
 targets=
-text=!$[Editing] {$FullName} %25block class=wikiaction%25%0a(:messages:)%0a%0a%0a(:if e_preview:)%0a!!$[Preview] {$FullName}%0a'''$[Page is unsaved]'''%0a(:e_preview:)%0a----%0a'''$[End of preview -- remember to save]!'''\\%0a[[#top | $[Top] ]]%0a(:if:)%0a(:div id='wikiedit':)%0a(:input e_form:)[[#top]](:e_guibuttons:)\\%0a(:input e_textarea:)\\%0a$[Summary]: (:input e_changesummary:) $[Author]: (:input e_author:) %0aBitte Zahl eingeben: {$Captcha} (:input captcha:) (:input e_savebutton class='primary':)%0a&nbsp;&nbsp; | &nbsp;&nbsp; (:input e_previewbutton:) (:input e_cancelbutton:)%0a(:input end:)%0a----%0a!!$[Help]%0a(:include $[PmWikiDe/EditQuickReference]:)%0a%0a%25rfloat%25 [-(:input aw_template_switch:)-]%0a(:input aw_template:) %0a%0a(:divend:)
-time=1337705977
+text=!$[Editing] {$FullName} %25block class=wikiaction%25%0a(:messages:)%0a%0a(:if e_preview:)%0a!!$[Preview] {$FullName}%0a'''$[Page is unsaved]'''%0a(:e_preview:)%0a----%0a'''$[End of preview -- remember to save]!'''\\%0a[[#top | $[Top] ]]%0a(:if:)%0a(:div id='wikiedit':)%0a(:input e_form:)[[#top]](:e_guibuttons:)\\%0a(:input e_textarea:)\\%0a$[Summary]: (:input e_changesummary:) $[Author]: (:input e_author:) %0a(:if enabled CaptchaDisabled:)(:else:)Bitte Zahl eingeben: {$Captcha} (:input captcha:)(:ifend:)(:input e_savebutton class='primary':)%0a&nbsp;&nbsp; | &nbsp;&nbsp; (:input e_previewbutton:) (:input e_cancelbutton:)%0a(:input end:)%0a----%0a!!$[Help]%0a(:include $[PmWikiDe/EditQuickReference]:)%0a%0a%25rfloat%25 [-(:input aw_template_switch:)-]%0a(:input aw_template:) %0a%0a(:divend:)
+time=1337770350
+author:1337770350=Schlaefer
+diff:1337770350:1337705977:=3a4%0a> %0a16c17%0a%3c (:if enabled CaptchaDisabled:)(:else:)Bitte Zahl eingeben: {$Captcha} (:input captcha:)(:ifend:)(:input e_savebutton class='primary':)%0a---%0a> Bitte Zahl eingeben: {$Captcha} (:input captcha:) (:input e_savebutton class='primary':)%0a
+host:1337770350=127.0.0.1
 author:1337705977=Schlaefer
 diff:1337705977:1337670158:=17c17%0a%3c Bitte Zahl eingeben: {$Captcha} (:input captcha:) (:input e_savebutton class='primary':)%0a---%0a> Bitte Zahl eingeben: {$Captcha} (:input captcha:) (:input e_savebutton:)%0a
 host:1337705977=127.0.0.1
@@ -74,7 +77,3 @@ host:1131467241=84.185.145.140
 author:1131467176=Schlaefer
 diff:1131467176:1123796295:=18,21d17%0a%3c ----%0a%3c %25rfloat%25 [-(:input aw_template_switch:)-]%0a%3c (:input aw_template:) %0a%3c ----%0a
 host:1131467176=84.185.145.140
-author:1123796295=kt007
-csum:1123796295=Bearbeite String angepasst
-diff:1123796295:1123669150:=1c1%0a%3c !$[Editing] {$FullName} %25block class=wikiaction%25%0a---%0a> !$[Editing {$FullName}] %25block class=wikiaction%25%0a4c4%0a%3c !!$[Preview] {$FullName}%0a---%0a> !!$[Preview {$FullName}]%0a
-host:1123796295=145.254.195.165
