@@ -38,6 +38,7 @@ directories[4]='wikilib.d'
 directories[5]='wikirev.d'
 
 wiki_d_files=(
+  'ApfelWiki.LoeschkandidatenFormular'
   'ApfelWiki.Search'
   'Site.EditForm'
   'Site.PageNotFound'

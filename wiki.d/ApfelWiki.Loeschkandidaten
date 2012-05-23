@@ -1,0 +1,19 @@
+version=pmwiki-2.2.36 ordered=1 urlencoded=1
+agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_4) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1147.0 Safari/537.1
+author=Schlaefer
+charset=UTF-8
+csum=
+ctime=1337767035
+host=127.0.0.1
+name=ApfelWiki/Loeschkandidaten
+pageviewcounterdaily=1
+pageviewcounterglobal=1
+pageviewcounterlastupdate=23
+rev=2
+targets=
+text=(:title Löschkandidaten:)%0a%0aAuf dieser Seite werden Löschkandidaten vor ihrer Löschung für mindestens zwei Wochen zur Diskussion gestellt. Die Diskussion kann bei Offensichtlichkeit entfallen.%0a%0a
+time=1337767035
+title=Löschkandidaten
+author:1337767035=Schlaefer
+diff:1337767035:1337767035:=1,4d0%0a%3c (:title Löschkandidaten:)%0a%3c %0a%3c Auf dieser Seite werden Löschkandidaten vor ihrer Löschung für mindestens zwei Wochen zur Diskussion gestellt. Die Diskussion kann bei Offensichtlichkeit entfallen.%0a%3c %0a
+host:1337767035=127.0.0.1
