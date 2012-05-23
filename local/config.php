@@ -405,7 +405,16 @@ Diese Seite wurde am $now von [[~$Author]] als [[ApfelWiki.Loeschkandidaten#$Ful
 
 	include_once("cookbook/tracetrail2.php");
 
-/**
+/*
+ * Einbinden Analytics
+ *
+ * Jedoch nur, wenn wirklich auf dem Produktionsserver läuft
+ */
+if ( $_SERVER['SERVER_NAME'] === 'www.apfelwiki.de' && $EnableDiag === 0 ) :
+  $HTMLHeaderFmt['javascript'][] = '<script src="/mint/?js" type="text/javascript"></script>';
+endif;
+
+/*
  * Setzt das Format für GroupFooter Seiten
  *
  * - Abgrenzung oben durch horizontale Linie
