@@ -11,6 +11,21 @@
 @borderRadius-large:        10px;
 @padding:                   10px;
 
+/*******************************************************************************
+ *  Font definition
+ ******************************************************************************/
+
+@font-face {
+    font-family: 'CCIconsRegular';
+    src: url("../fonts/cc-icons/cc-icons-webfont.eot");
+    src: url("../fonts/cc-icons/cc-icons-webfont.eot?#iefix") format("embedded-opentype"),
+         url("../fonts/cc-icons/cc-icons-webfont.woff") format("woff"),
+         url("../fonts/cc-icons/cc-icons-webfont.ttf") format("truetype"),
+         url("../fonts/cc-icons/cc-icons-webfont.svg#CCIconsRegular") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+
 /* ### GENERAL ### */
 * { margin: 0px; padding: 0px; }
 
@@ -199,8 +214,10 @@ table.reset {
   .subtle;
   .text-engraved;
   }
-#footerCntr p { float: left; width: 300px; font-size: 11px; }
-#footerCntr p.right { float: right; text-align: right; }
+#footerCntr p { font-size: 11px; }
+#footerCntr p.left { float: left; width: 300px; }
+#footerCntr p.center { text-align: center; }
+#footerCntr p.right { float: right; width: 300px; text-align: right; }
 
 .groupfooter {
   font-size: smaller;
@@ -437,6 +454,13 @@ input[type="button"], input[type="submit"], .button {
     }
   }
 
+.cc-icons {
+  font-family: CCIconsRegular;
+  font-size: 25px;
+  margin-top: -10px;
+  letter-spacing: 3px;
+  display: inline-block;
+}
 /*******************************************************************************
  * Generic Modules
  ******************************************************************************/
