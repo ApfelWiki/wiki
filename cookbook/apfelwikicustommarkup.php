@@ -219,4 +219,8 @@ document.getElementById('{\$_PrevId_}').style.display = 'none';
 Markup('input-jumpbox', '<split',
   '/\\(:input\\s+jumpbox\\s.*?:\\)(?:\\s*\\(:input\\s+jumpbox\\s.*?:\\))*/ei',
   "InputSelect(\$pagename, 'jumpbox', PSS('$0'))");
+
+function currentYear() {
+  echo date('Y');
+}
 ?>
