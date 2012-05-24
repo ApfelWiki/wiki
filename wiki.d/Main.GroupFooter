@@ -1,17 +1,20 @@
 version=pmwiki-2.2.36 ordered=1 urlencoded=1
-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_4) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1145.0 Safari/537.1
+agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_4) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1150.0 Safari/537.1
 author=Schlaefer
 charset=UTF-8
 csum=
-host=127.0.0.1
+host=::1
 name=Main/GroupFooter
 pageviewcounterdaily=2
-pageviewcounterglobal=774
-pageviewcounterlastupdate=22
-rev=755
+pageviewcounterglobal=776
+pageviewcounterlastupdate=24
+rev=758
 targets=Diskussion.Main-GroupFooter,Rezension.Main-GroupFooter,Profiles.Schlaefer
-text=>>lfloat%3c%3c%0a(:Diskussion:) (:Rezension:)%0a>>%3c%3c%0a(:if exists {$FullName}:)%0a>>rfloat%3c%3c%0aZuletzt geändert am {$LastModified} %0a(:if equal {$LastModifiedBy} "":)%0a(:else:)%0avon [[~{$LastModifiedBy}]] ((:pagecount:) Besuche)%0a(:ifend:)%0a>>%3c%3c%0a(:ifend:)
-time=1337705948
+text=>>lfloat%3c%3c%0a(:Diskussion:) (:Rezension:)%0a>>%3c%3c%0a(:if exists {$FullName}:)%0a>>rfloat%3c%3c%0aZuletzt geändert am {$LastModified} %0a(:if equal {$LastModifiedBy} "":)%0a(:else:)%0avon [[~{$LastModifiedBy}]]%0a(:ifend:)%0a((:pagecount:) Besuche)%0a>>%3c%3c%0a(:ifend:)%0a%0a(:comment Achtung, diese Seite befindet sich im Wiki-Repository und wird dort gepflegt.:)
+time=1337876620
+author:1337876620=Schlaefer
+diff:1337876620:1337705948:=9c9%0a%3c von [[~{$LastModifiedBy}]]%0a---%0a> von [[~{$LastModifiedBy}]] ((:pagecount:) Besuche)%0a11d10%0a%3c ((:pagecount:) Besuche)%0a13,15c12%0a%3c (:ifend:)%0a%3c %0a%3c (:comment Achtung, diese Seite befindet sich im Wiki-Repository und wird dort gepflegt.:)%0a\ No newline at end of file%0a---%0a> (:ifend:)%0a\ No newline at end of file%0a
+host:1337876620=::1
 author:1337705948=Schlaefer
 diff:1337705948:1337694328:=1,3c1%0a%3c >>lfloat%3c%3c%0a%3c (:Diskussion:) (:Rezension:)%0a%3c >>%3c%3c%0a---%0a> %25lfloat%25(:Diskussion:) (:Rezension:)%25%25%0a
 host:1337705948=127.0.0.1
