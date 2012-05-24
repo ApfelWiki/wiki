@@ -6,14 +6,19 @@ SetOutputFilter DEFLATE
     SetHandler application/x-httpd-php
 </Files>
 
-RewriteEngine on
-RewriteRule ^wiki/(.*)$ /$1 [R=301,NC,L]
+RewriteEngine On 
 
-rewritecond %{http_host} ^apfelwiki.de [nc]
-rewriterule ^(.*)$ http://www.apfelwiki.de/$1 [L,R=301] 
-RewriteRule ^wiki/(.*)$ / [L]
+### Unterstuetzung fuer nicht mehr verwendete /wiki/ Struktur 
+# deactivate MultiViews or `wiki.d` will trigger it resulting in a 404
+Options -MultiViews
+RewriteRule ^wiki/?(.*)$ /$1 [R=301,NC,L]
+###
+
+RewriteCond %{http_host} ^apfelwiki.de [nc]
+RewriteRule ^(.*)$ http://www.apfelwiki.de/$1 [L,R=301] 
 
 RewriteRule (.*)suchen=(.*) http://www.apfelwiki.de/ApfelWiki/YahooSearch?q=$2
+
 #Sperren fuer Apfelwiki.de
 order allow,deny
 allow from all
@@ -40,7 +45,6 @@ RewriteRule ^([A-Z0-9\xa0-\xff].*)$ pmwiki.php?n=$1  [QSA,L]
 # Send requests to pmwiki.php, appending the query string part.
 # Convenient for local dev if no $ScriptUrl is set but $EnablePathInfo = 1 in config.php
 RewriteRule ^(index.php|pmwiki.php)/([A-Z0-9\xa0-\xff].*)$ pmwiki.php?n=$2  [QSA,L]
-
 
 ErrorDocument 403 http://www.apfelwiki.de/Site/Forbidden
 ErrorDocument 404 http://www.apfelwiki.de/Site/PageNotFound
