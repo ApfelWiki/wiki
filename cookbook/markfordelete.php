@@ -105,7 +105,7 @@ function MarkForDelete($pagename, $auth) {
 	$europeanstartofweek = (date('w') == 0) ? 7 : date('w');
 	$startofcurrentweek = date('d.m.Y', mktime(0, 0, 0, date('n'), ((date('j')) - $europeanstartofweek) + 1, date('Y')));
 	$endcurrentweek = date('d.m.Y', mktime(0, 0, 0, date('n'), ((date('j')) - $europeanstartofweek + 7), date('Y'))); 
-	$entry = "\n* [[#$pagetodelete]][[$pagetodelete]]\n** $shortexplain - [[~$Author]] $now";
+	$entry = "\n* [[$pagetodelete]]\n** $shortexplain - [[~$Author]] $now";
 
 	$text = preg_split("/(?=!!\\s*$weekstring)/", $page['text']);
 	preg_match("/$weekstring (\d\d\.\d\d\.\d\d\d\d)/", $text[1], $match);
