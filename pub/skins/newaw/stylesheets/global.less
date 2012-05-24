@@ -291,6 +291,13 @@ fieldset {
  * Google Suche
  ******************************************************************************/
 
+
+.googleSearchForm input[type='search'] {
+  width: 20em;
+  }
+
+// Search in Header
+// ---------------------
 #menuCntr .googleSearchForm {
   input[type='search'] {
     width: auto;
@@ -298,12 +305,58 @@ fieldset {
   input[type='submit']  {
     display: none;
     }
-}
+  }
 
-.googleSearchForm input[type='search'] {
-  width: 20em;
-}
+// Search on Frontpage
+// ---------------------
 
+.hero .googleSearchForm {
+  text-align: center;
+
+  input {
+    font-size: 16px;
+    height: 30px;
+  }
+
+  input[type='submit'] {
+    padding: 0.1em 2em;
+    margin-left: 0.5em;
+  }
+
+
+  input[type='search'] {
+    // make the search input scalable in webkit
+    -webkit-appearance: none;
+    &::-webkit-search-decoration,
+    &::-webkit-search-cancel-button,
+    &::-webkit-search-results-button,
+    &::-webkit-search-results-decoration {
+      display: none;
+    }
+    padding-left: 1em;
+    padding-right: 1em;
+
+    // don't show ugly huge outline on focus
+    outline: none;
+
+    width: 500px;
+
+    background-color: white;
+    border-color:rgb(156,157,158);
+    border-width:1px;
+    -moz-border-radius:26px;
+    -webkit-border-radius:26px;
+    border-radius:20px;
+    border-style:solid;
+    -moz-box-shadow:inset 0px 1px 5px 0px rgba(0,0,0,0.2);
+    -webkit-box-shadow:inset 0px 1px 5px 0px rgba(0,0,0,0.2);
+    box-shadow:inset 0px 1px 5px 0px rgba(0,0,0,0.2);
+    }
+
+  }
+
+// Result Page
+// ---------------------
 #cse .gsc-table-result {
   margin-left: 8px;
 }
@@ -311,8 +364,8 @@ fieldset {
   margin: 0;
   td {
     padding: 0 inherit;
+    }
   }
-}
 .gsib_a {
   padding: 0 6px !important;
   }
@@ -320,7 +373,7 @@ fieldset {
 .gsc-control-cse, .gsc-result {
     border-color: transparent !important;
     background-color: transparent !important;
-  }
+    }
 
 /*******************************************************************************
  * Buttons
@@ -368,11 +421,6 @@ input[type="button"], input[type="submit"], .button {
     font-weight: bold;
     }
   }
-
-
-
-/******************************************************************************/
-
 
 /*******************************************************************************
  * Specific Modules

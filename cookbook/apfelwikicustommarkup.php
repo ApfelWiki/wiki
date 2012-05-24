@@ -26,8 +26,8 @@ Markup('googlesuchfeld', '>links', '/\\(:(googlesuche):\\)/i', FmtPageName('<for
 action="'.$ScriptUrl.'/ApfelWiki/Search" method="get" class="googleSearchForm">
 <input type="hidden" name="cx" value="013237906231695894092:-qr7cunyryk" />
 <input type="hidden" name="cof" value="FORID:9" />
-<input type="search" name="q" accesskey="f" class="inputbox" value="'.$_GET['q'].'"/>
-<input type="submit" value="Suche" class="inputbutton" />
+<input type="search" tabindex=1 placeholder="$[Search]" name="q" accesskey="f" class="inputbox" value="'.$_GET['q'].'"/>
+<input type="submit" value="$[Search]" class="inputbutton" />
 </form>'
     , $pagename));
 #value in input sollte '$[Search]' statt 'Suche' heissen. Die Lokalisierung funktioniert jedoch aus unbekannten Grund nicht
