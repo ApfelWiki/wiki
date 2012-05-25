@@ -40,7 +40,7 @@ if ($action=='backup') {
     # FALSE = No, don't show the download link
     # TRUE = Yes, show the download link
 
-    SDV($ShowLink,FALSE);
+    SDV($ShowLink,TRUE);
 
 ###########################################################
 ###
@@ -354,7 +354,7 @@ class archive
 			else if(@file_exists($current))
 			{
 				$files[] = array('name'=>$current,'name2'=>$this->options['prepend'] .
-					preg_replace("/(\.+\/+)+/","",($this->options['storepaths'] == 0 && strstr($current,"/"))? 
+					preg_replace("/(\.+\/+)+/","",($this->options['storepaths'] == 0 && strstr($current,"/"))?
 					substr($current,strrpos($current,"/") + 1) : $current),'type'=>0,
 					'ext'=>substr($current,strrpos($current,".")),'stat'=>stat($current));
 			}
@@ -373,8 +373,8 @@ class archive
 	{
 		if($this->options['storepaths'] == 1 && !preg_match("/^(\.+\/*)+$/",$dirname))
 		{
-			$files = array(array('name'=>$dirname,'name2'=>$this->options['prepend'] . 
-				preg_replace("/(\.+\/+)+/","",($this->options['storepaths'] == 0 && strstr($dirname,"/"))? 
+			$files = array(array('name'=>$dirname,'name2'=>$this->options['prepend'] .
+				preg_replace("/(\.+\/+)+/","",($this->options['storepaths'] == 0 && strstr($dirname,"/"))?
 				substr($dirname,strrpos($dirname,"/") + 1) : $dirname),'type'=>5,'stat'=>stat($dirname)));
 		}
 		else
@@ -403,8 +403,8 @@ class archive
 			}
 			else if(@file_exists($dirname."/".$file))
 			{
-				$files[] = array('name'=>$dirname."/".$file,'name2'=>$this->options['prepend'] . 
-					preg_replace("/(\.+\/+)+/","",($this->options['storepaths'] == 0 && strstr($dirname."/".$file,"/"))? 
+				$files[] = array('name'=>$dirname."/".$file,'name2'=>$this->options['prepend'] .
+					preg_replace("/(\.+\/+)+/","",($this->options['storepaths'] == 0 && strstr($dirname."/".$file,"/"))?
 					substr($dirname."/".$file,strrpos($dirname."/".$file,"/") + 1) : $dirname."/".$file),'type'=>0,
 					'ext'=>substr($file,strrpos($file,".")),'stat'=>stat($dirname."/".$file));
 			}
@@ -784,14 +784,14 @@ class zip_file extends archive
 				continue;
 			}
 
-			$translate =  array('Ç'=>pack("C",128),'ü'=>pack("C",129),'é'=>pack("C",130),'â'=>pack("C",131),'ä'=>pack("C",132),
-								'à'=>pack("C",133),'å'=>pack("C",134),'ç'=>pack("C",135),'ê'=>pack("C",136),'ë'=>pack("C",137),
-								'è'=>pack("C",138),'ï'=>pack("C",139),'î'=>pack("C",140),'ì'=>pack("C",141),'Ä'=>pack("C",142),
-								'Å'=>pack("C",143),'É'=>pack("C",144),'æ'=>pack("C",145),'Æ'=>pack("C",146),'ô'=>pack("C",147),
-								'ö'=>pack("C",148),'ò'=>pack("C",149),'û'=>pack("C",150),'ù'=>pack("C",151),'_'=>pack("C",152),
-								'Ö'=>pack("C",153),'Ü'=>pack("C",154),'£'=>pack("C",156),'¥'=>pack("C",157),'_'=>pack("C",158),
-								'ƒ'=>pack("C",159),'á'=>pack("C",160),'í'=>pack("C",161),'ó'=>pack("C",162),'ú'=>pack("C",163),
-								'ñ'=>pack("C",164),'Ñ'=>pack("C",165));
+			$translate =  array('Ã‡'=>pack("C",128),'Ã¼'=>pack("C",129),'Ã©'=>pack("C",130),'Ã¢'=>pack("C",131),'Ã¤'=>pack("C",132),
+								'Ã '=>pack("C",133),'Ã¥'=>pack("C",134),'Ã§'=>pack("C",135),'Ãª'=>pack("C",136),'Ã«'=>pack("C",137),
+								'Ã¨'=>pack("C",138),'Ã¯'=>pack("C",139),'Ã®'=>pack("C",140),'Ã¬'=>pack("C",141),'Ã„'=>pack("C",142),
+								'Ã…'=>pack("C",143),'Ã‰'=>pack("C",144),'Ã¦'=>pack("C",145),'Ã†'=>pack("C",146),'Ã´'=>pack("C",147),
+								'Ã¶'=>pack("C",148),'Ã²'=>pack("C",149),'Ã»'=>pack("C",150),'Ã¹'=>pack("C",151),'_'=>pack("C",152),
+								'Ã–'=>pack("C",153),'Ãœ'=>pack("C",154),'Â£'=>pack("C",156),'Â¥'=>pack("C",157),'_'=>pack("C",158),
+								'Æ’'=>pack("C",159),'Ã¡'=>pack("C",160),'Ã­'=>pack("C",161),'Ã³'=>pack("C",162),'Ãº'=>pack("C",163),
+								'Ã±'=>pack("C",164),'Ã‘'=>pack("C",165));
 			$current['name2'] = strtr($current['name2'],$translate);
 
 			$timedate = explode(" ",date("Y n j G i s",$current['stat'][9]));
