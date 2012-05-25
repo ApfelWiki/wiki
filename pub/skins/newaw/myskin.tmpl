@@ -65,10 +65,25 @@
 			<div class="cTop prepend-1 span-22 append-1 last">
 			<div class="head prepend-1 span-20 append-3 last">
 			 <span id='wikiactions' style="float: right;">
-                <a href='$PageUrl?action=edit' accesskey='$[ak_edit]' title='Diese Seite bearbeiten ...' rel='nofollow'>$[Edit Page]</a> &middot;
-        <a href="$PageUrl?action=diff" accesskey='$[ak_history]' rel='nofollow'>$[Page History]</a> &middot;
-        <a href="$PageUrl?action=sendmail" rel='nofollow'>$[Send]</a> &middot;
-        <!--function:MarkForDeleteLink-->
+         <strong>
+          <a href='$PageUrl?action=edit' accesskey='$[ak_edit]' title='Diese Seite bearbeiten ...' rel='nofollow'>$[Edit Page]</a> &middot;
+         </strong>
+        <a href="$PageUrl?action=diff" accesskey='$[ak_history]' rel='nofollow'>$[Page History]</a>  &middot;
+        <div id='test' class="drop-down">
+            <a href="#" onclick="$('.drop-down-content').fadeToggle(200); event.preventDefault();" >
+              $[mehr…]
+            </a>
+            <div class="drop-down-content">
+            <ul>
+                  <li>
+                    <a href="$PageUrl?action=sendmail" rel='nofollow'>$[Send]</a>
+                  </li>
+                  <li>
+                    <!--function:MarkForDeleteLink-->
+                  </li>
+            </ul>
+          </div>
+        </div>
         |
         <a href="$ScriptUrl/$[Main/AllRecentChangesShort]" accesskey='$[ak_recentchanges]' title="Letzte &Auml;nderungen" rel='nofollow'>$[Changes]</a> &middot;
          <a href="$ScriptUrl/$[Main/NeueSeite]" rel='nofollow'>$[New Page]</a>
