@@ -95,16 +95,14 @@ Markup('magnet:?xt=urn:btih:', '<links',
       
 ####################### Diskussions Backlinks #############################
 $FmtPV['$BaseName'] = 'str_replace("-", ".", $name)';
+$FmtPV['$BaseTitle'] = "AWBacklinks('$pagename')";
 
-Markup('{$BaseTitle}', '>{$fmt}',
-      '/{\\$BaseTitle}/e',"AWBacklinks('$pagename')");
-      
 function AWBacklinks($pagename) {
 	global $PCache;
 	$orgpagename = preg_replace('/-/', '.', FmtPageName('$Name', $pagename), 1);
 	if( !isset( $PCache[$orgpagename]['title'] ) ) 
     		PCache($orgpagename, ReadPage($orgpagename, READPAGE_CURRENT));
-	return FmtPageName("\$Title",$orgpagename);
+	return FmtPageName('$Title',$orgpagename);
 }
       
 ########################## Bewertungssterne ################################    
