@@ -3,139 +3,30 @@
 /**
  * This script generates different types of little yellow note stickies.
  * 
+ * <http://www.pmwiki.org/wiki/Cookbook/PostItNotes>
+ *
+ * For more information see the readme.md
+ * 
  * @author Patrick R. Michaud <pmichaud@pobox.com> 
  * @author John Rankin <john.rankin@affinity.co.nz>
- * @author Sebastian Siedentopf <schlaefer@macnews.de>
+ * @author Sebastian Siedentopf <openmail+sourcecode@siezi.com>
  * @version 2.0.4
  * @link http://www.pmwiki.org/wiki/Cookbook/PostItNotes the postitnotes cookbook on pmwiki.org
- * @copyright by the respective authors 2004-2006
+ * @copyright by the respective authors 2004-2012
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License
  * @package postitnotes
  */
 
-/* *************************************************************************
-File: postitnotes.php
-
-For the Admins
-==============
-Requirements
-------------
-* Requires probably PmWiki 2.0 and higher
-* Last tested on PmWiki 2.1beta24
-
-Install
--------
-1. put this script into your cookbook folder
-2. include it into your config.php: 
-
-    include_once("$FarmD/cookbook/postitnotes.php");
-
-3. if you want to use fancy notes download [this package][pdl] and put it into pub/cookbook/postitnotes
-
-[pdl]: http://schlaefer.macbay.de/uploads/Main.StickySandbox/fancynoteimages.zip
-    
-
-Customization
--------------
-* [optional] $PostItNotesEditLink = <true|false>
-** default = true 
-** shows an edit link
-
-* [optional] $PostItNotesSkinDirUrl
-** default = /cookbook/postitnotes
-** path to the images relative to the pub directory
-
-
-For the Users
-=============
-Normal
-------
-### Simple
-Simple notes are only intended to hold one paragraph with no advanced markup.
-    (:note Title | Content:)
-
-### Simple Hidden
-the hidden note is a normal note that only shows the title of the note until you clicked on the title
-    (:notehidden Title | Content:)
-
-### Block
-The block note allows as many wiki markup as you want in Title and Content
-
-	(:noteblock <color=argument> <float=right(default)|left> <hidden=false(default)|true>:)
-	Title
-	(:notecontent:)
-	Content
-	(:noteblockend:)
-
-The color argument can be:
-* yellow(default)|blue|gray|pink|purple|green - predefined colors in script
-* a hex color value like #cceecc
-* a websafe colorname in capitals like YELLOW, BLACK ... 
-
-Fancy
------
-Fancy notes have a nice background image. Click on the pen to edit the note. 
-
-### Simple Fancy
-    (:notefancy Title | Content:)
-
-### Block Fancy
-    (:noteblockfancy <float=right(default)|left>:)
-    Content
-    (:noteblockend:)
-
-   
-
-For Developers
-==============
-Version History
----------------
-* 2.0.4 - 2009-07-20 - Rik Blok
-** [bugfix] compatibility with TableEdit recipe (postitnotes.php needs to be "included" after tabledit.php)
-* 2.0.3 - 2006-02-12 - Schlaefer
-** [feature] argument "width" for blocknotes
-* 2.0 - 2006-02-09 - Schlaefer
-** Major Rewrite - Unifies all note types in one Markup
-* 1.8.3 - 2005-10-24 - Schlaefer
-** [feature] $PostItNotesEditLink
-* 1.8.2 
-* 1.8.1 - 2005-09-04 - Schlaefer
-** [bugfix] in HandleEditNote
-* 1.8 - 2005-08-30 - Schlaefer
-** [feature] edit links in simple and hidden notes
-* 1.7 - 2005-08-30 - Schlaefer
-** [feature] edit links in fancy notes
-* 1.6.2 - 2005-08-30 - Schlaefer
-** [code] phpdoc code comments 
-** [feature] $PostItNotesSkinDirUrl defines where the images for the fancy style life
-* 1.6.1 - 2005-08-23 - Schlaefer
-** [bugfix] sometimes websafe colors were wiki links in noteblock 
-* 1.6 - 2005-08-23 - Schlaefer
-** [feature] hidden option for block notes 
-* 1.5 - 2005-08-23 - Schlaefer
-** [feature] hidden simple note
-** [change] fancy images have to be in the skin folder
-** code cleanup and comments
-* 1.4 Schlaefer August 12, 2005, at 05:48 AM
-** Fancy style 
-* 1.2 Schlaefer March 24, 2005, at 06:32 AM
-** Inspired by mailinglist discussion added block mode with OS X sticky colors and float parameter 
-* 1.1 Schlaefer 19 November 2004 17:23 Uhr
-** Bug fixed caused by wikilinks with vertical bar | 
-* 1.0 First Release for apfelwiki.de - Schlaefer 
-
-***************************************************************************/
-
 if (!defined('PmWiki'))
 	exit ();
 
-$RecipeInfo['PostItNotes']['Version'] = '2.0.4';
+$RecipeInfo['PostItNotes']['Version'] = '2012-05-25';
 
 /**
  * cookbook postitnotes is included
  * and running on this pmwiki installation
  */
-define(POSTITNOTES, "2.0.4");
+define(POSTITNOTES, $RecipeInfo['PostItNotes']['Version']);
 
 # see http://schlaefer.macbay.de/index.php/PmWikiCookbook/AutoUpdate
 SDVA($PmWikiAutoUpdate['PostItNotes'] , array( 
@@ -146,32 +37,32 @@ SDVA($PmWikiAutoUpdate['PostItNotes'] , array(
 
 //the overall note style
 SDV($HTMLStylesFmt['note'], "
-table.widenote
-{	position: relative;
+div.widenote {
+  position: relative;
 	z-index:50;
 	font-size: smaller;
 	clear:both;
 	color: #3C3528;
 	float: right;
-	margin-right: 1em;
-	margin-bottom: 1ex;
-	margin-left: 1em;
-	margin-top: 2ex;
-	border: 1px solid #74664E;
+  margin: 0 1em 1em 1em;
+	border: 1px solid #ccc;
 	width: 200px;
-	font-family: Gill Sans, Helvetica, Arial;
-	line-height: 110%;
+	line-height: 1.4;
 	background-color: #ffffa1; 
+  box-shadow: 0px 1px 1px #ccc;
+  border-radius: 2px;
+  }
+div.widenote p {
+    padding: 0.5em 1em;
 }
-td.noteheader
-{
+div.widenote-header {
 	background-color: #FFE53E;
-	margin: 0 0 9px 0px;
-}
-td.noteheader a{
+  border-radius: 2px;
+  }
+div.widenote-header a {
 	color:#3C3528;
-	text-decoration: underline;
-}
+	text-decoration: none;
+  }
 
 ");
 
@@ -195,25 +86,30 @@ SDV($PostItNotesEditLink, true);
 SDVA($PostItNotesImageNames, array("top" => "sticky_top.png", 'middle' => "sticky_middle.png", "bottom" => "sticky_bottom.png", "edit" => "sticky_edit.png") );
 $PostItNodesID = 0;
 
+/*
 $PostItNoteFmt['fancy'] = '
 (:table id="$PINID" class="widenote" style="border:0px; width:213px; background:none; border-collapse:collapse; $PINTS" :)
-(:cell class="noteheader" style="background: transparent url('.Keep("$PostItNotesSkinDirUrl/{$PostItNotesImageNames['top']}").') no-repeat; height: 33px;":)
+(:cell class="widenote-header" style="background: transparent url('.Keep("$PostItNotesSkinDirUrl/{$PostItNotesImageNames['top']}").') no-repeat; height: 33px;":)
 (:cellnr style="background: transparent url('.Keep("$PostItNotesSkinDirUrl/{$PostItNotesImageNames['middle']}").') repeat-y; min-height: 35px;" :)'.Keep("<div style='padding:5px 0px 0px 15px;width:180px;overflow:hidden;'>") . '$PINSCC.' . Keep("</div>").'
 (:cellnr style="background: transparent url('.Keep("$PostItNotesSkinDirUrl/{$PostItNotesImageNames['bottom']}").') no-repeat; height: 35px; text-align:right;":)
 $PINEditLink
 (:tableend:)';
+*/
 
 $PostItNoteFmt['normal'] = '
-(:table id="$PINID" class="widenote" style="$PINTS" :)
-(:cell class="noteheader" style="$PINFCS":) $PINEditLink
+(:div1 id="$PINID" class="widenote" style="$PINTS" :)
+(:div2 class="widenote-header"style="$PINFCS":) $PINEditLink
 $PINFCC
-(:cellnr:)
+(:div2end:)
+(:div3:)
 $PINSCC
-(:tableend:)';
+(:div3end:)
+(:div1end:)
+';
 
 // compatibility with TableEdit recipe
 if (is_array($RecipeInfo['TableEdit'])) {
-	$PostItNoteFmt['fancy'] = '(:notabledit:)'.$PostItNoteFmt['fancy'].'(:tabledit:)';
+	/* $PostItNoteFmt['fancy'] = '(:notabledit:)'.$PostItNoteFmt['fancy'].'(:tabledit:)'; */
 	$PostItNoteFmt['normal'] = '(:notabledit:)'.$PostItNoteFmt['normal'].'(:tabledit:)';
 }
 
@@ -240,21 +136,21 @@ function PostItNotesC($pagename, $noteblock, $notecontent, $noteall){
 	return FmtPostItNotes ($pagename, $notetitle, $notecontent, $pargs);
 }
 
-/*
- * formats the the note
+/**
+ * formats the note
  */
 function FmtPostItNotes ($pagename, $notetitle, $notecontent, $pargs) {
-    global $FmtV;
+  global $FmtV;
 	global $PostItNoteFmt, $PostItNodesID, $PostItNotesImageNames, $PostItNotesSkinDirUrl, $PostItNotesEditLink;
 
-    $PostItNoteFmt['normal'] ;
+  $PostItNoteFmt['normal'] ;
 
-    $FmtV['$PINTS'] = "";
-    $FmtV['$PINFCS'] = "";
-    $FmtV['$PINEditLink'] = "";
+  $FmtV['$PINTS'] = "";
+  $FmtV['$PINFCS'] = "";
+  $FmtV['$PINEditLink'] = "";
 
-    $FmtV['$PINID'] = $PostItNodesID++;     
-    $FmtV['$PINFCC'] = $notetitle;    
+  $FmtV['$PINID'] = $PostItNodesID++;
+  $FmtV['$PINFCC'] = $notetitle;
 	$FmtV['$PINSCC'] = $notecontent;
 
 	if($pargs['color']) {
@@ -271,20 +167,36 @@ function FmtPostItNotes ($pagename, $notetitle, $notecontent, $pargs) {
     
     if ($pargs['float']) $FmtV['$PINTS'] .= "float:{$pargs['float']};"; 
     if ($pargs['width']) $FmtV['$PINTS'] .= "width:{$pargs['width']};";
+
+    $format = $PostItNoteFmt['normal'];
         
+    if ($PostItNotesEditLink) :
+      $FmtV['$PINEditLink'] = Keep(FmtPageName(
+              "<a name='note{$FmtV['$PINID']}'></a>"
+              . "<a href='\$PageUrl?action=edit&amp;note={$FmtV['$PINID']}' style='float:right; color:{$style['color']}'>"
+              . "$[(&#x2193;)]"
+              . "</a>",
+              $pagename));
+    endif;
+
+    /*
     if ($pargs['fancy']) {
-        if ($PostItNotesEditLink)
-    		 $FmtV['$PINEditLink'] = Keep(FmtPageName("<a name='note{$FmtV['$PINID']}'></a><a href='\$PageUrl?action=edit&amp;note={$FmtV['$PINID']}'>" .
-    					"<img src='$PostItNotesSkinDirUrl/{$PostItNotesImageNames['edit']}'></a>", $pagename));
-        if ($notetitle) 
-            $FmtV['$PINSCC'] = Keep("<strong>").$FmtV['$PINFCC'].Keep("</strong><br /><br />"). $FmtV['$PINSCC'];
-         return FmtPageName ($PostItNoteFmt['fancy'], $pagename);
+        if ($PostItNotesEditLink) :
+          $FmtV['$PINEditLink'] = Keep(FmtPageName(
+                  "<a name='note{$FmtV['$PINID']}'></a>"
+                    . "<a href='\$PageUrl?action=edit&amp;note={$FmtV['$PINID']}'>"
+                    . "<img src='$PostItNotesSkinDirUrl/{$PostItNotesImageNames['edit']}'>"
+                    . "</a>",
+                  $pagename));
+        endif;
+        if ($notetitle) :
+          $FmtV['$PINSCC'] = Keep("<strong>").$FmtV['$PINFCC'].Keep("</strong><br /><br />"). $FmtV['$PINSCC'];
+        endif;
+        $format = $PostItNoteFmt['fancy'];
     }
-    
-    if ($PostItNotesEditLink)
-		$FmtV['$PINEditLink'] = Keep(FmtPageName("<a name='note{$FmtV['$PINID']}'></a><a href='\$PageUrl?action=edit&amp;note={$FmtV['$PINID']}' style='float:right; color:{$style['color']}'>$[(&#x2193;)]</a>", $pagename));
-    
-    return FmtPageName ($PostItNoteFmt['normal'], $pagename);
+    */
+
+    return FmtPageName ($format, $pagename);
 }
 
 /**
