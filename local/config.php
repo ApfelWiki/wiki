@@ -213,11 +213,14 @@ endif;
 	$GUIButtons['sig'] = array( 460, ' ~~~~ ', '', '', '$FarmPubDirUrl/cookbook/awguibuttons/sig.gif"$[Autorkürzel und Zeitstempel]"' );
 	/* $GUIButtons['stickyNote'] = array(700, '(:note Hinweis |', ':)\\n', '$[Text]',
 	  '$FarmPubDirUrl/cookbook/awguibuttons/sticky.gif"$[Hinweiszettel]"'); */
-	$GUIButtons['maccommand'] = array( 600, '%taste%[[Main.Befehlstaste|&#x2318;]]%% ', '', '',
+	$GUIButtons['maccommand'] = array(
+      600, '[[Main.Befehlstaste|&#x2318;]]', '', '',
 			'$PubDirUrl/cookbook/awguibuttons/command.gif"$[Befehlstaste]"' );
-	$GUIButtons['macalt'] = array( 605, '%taste%[[Main.Wahltaste|&#x2325;]]%% ', '', '',
+	$GUIButtons['macalt'] = array(
+      605, '[[Main.Wahltaste|&#x2325;]]', '', '',
 			'$PubDirUrl/cookbook/awguibuttons/alt.gif"$[Wahltaste]"' );
-	$GUIButtons['macshift'] = array( 610, '%taste%[[Main.Umschalttaste|&#x21E7;]]%% ', '', '',
+	$GUIButtons['macshift'] = array( 
+      610, '[[Main.Umschalttaste|&#x21E7;]]', '', '',
 			'$PubDirUrl/cookbook/awguibuttons/shift.gif"$[Umschalttaste]"' );
 
 	################ Coobook ################
