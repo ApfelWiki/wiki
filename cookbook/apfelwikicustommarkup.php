@@ -125,10 +125,6 @@ function BewertungsSterne($bewertung) {
 ##urchinTracker();
 ##</script>";
 
-########################## Beta Badget ################################
-Markup('apfelwikibeta', 'directives',
-      '/\\(:awbeta:\\)/e', "Keep(MakeLink(\"$pagename\",\"ApfelWiki.Beta\",\"<img src='$PubDirUrl/cookbook/awcustommarkup/ApfelWiki-beta.gif' alt='Beta'/>\"))");
-      
 /**
  * Rezension und Diskussion Buttons
  */
