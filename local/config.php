@@ -407,14 +407,14 @@ Diese Seite wurde am $now von [[~$Author]] als [[ApfelWiki.Loeschkandidaten#$Ful
 ## Javascript Counter (:jscounter:)
 	#$JSYear=2006;$JSMonth=1;$JSDay=10;$JSHour=18;$JSMinute=00;
 	#include_once("$FarmD/cookbook/jscountdown.php");
-## legt fest, dass die RecentChanges den Title statt den Seitennamen anzeigen
-#	$RecentChangesFmt['$SiteGroup.AllRecentChanges'] = 
-#		'* [[$Group.$Name | $Titlespaced ($Group)]]  . . . $CurrentTime $[by] #$AuthorLink: [=$ChangeSummary=]';
-#	$RecentChangesFmt['$Group.RecentChanges'] = 
-#		'* [[$Group/$Name | $Titlespaced]]  . . . $CurrentTime $[by] #$AuthorLink: [=$ChangeSummary=]';
-#Erstellt die RecentChanges mit Verlauf
+
+/**
+ * Format AllRecentChanges Seiten
+ * 
+ * Vor ". . ." müssen zwei Leerstellen sein (Default $RCDelimPattern = '  '!!!
+ */
 	$RecentChangesFmt['$SiteGroup.AllRecentChanges'] =
-			'* [[$Group.$Name]] [-([[$Group.$Name?action=diff|Verlauf]])-]  . . . $CurrentTime $[by] $AuthorLink: [=$ChangeSummary=]';
+			'* [[$Group.$Name | $Title [- – $Group-]]] [-([[$Group.$Name?action=diff|Verlauf]])-]  . . . $CurrentTime $[by] $AuthorLink: [=$ChangeSummary=] ';
 
 ## laegt an und aktualisiert die Wikiseite RecentPages beim generieren von RecentChanges. RecentPages zeigt auf der Homepage die letzten Aenderungen mittels include
 	## Achtung: Zwei Leerstellen nach dem Wikilink!
