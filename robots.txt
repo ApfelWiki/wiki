@@ -123,6 +123,7 @@ Disallow: */search
 Disallow: SearchWiki
 Disallow: *RecentChanges
 Disallow: RecentChanges
+Disallow: *RecentPages
 Disallow: *action=
 Disallow: action=
 Disallow: /ApfelWiki/Impressum
