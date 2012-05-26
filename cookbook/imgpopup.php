@@ -10,11 +10,11 @@
  * </ul>
  *  
  * @author Patrick R. Michaud <pmichaud@pobox.com> 
- * @author Sebastian Siedentopf <schlaefer@macnews.de>
+ * @author Sebastian Siedentopf <openmail+sourcecode@siezi.com>
  * @autor Laurent Meister <meister@apfelwiki.de>
- * @version 1.2.8
+ * @version 1.2.10
  * @link http://www.pmwiki.org/wiki/Cookbook/ImgPopUp http://www.pmwiki.org/wiki/Cookbook/ImgPopUp
- * @copyright by the authors 2005, 2009
+ * @copyright by the authors 2005 – 2012
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License
  * @package imgpopup
  */
@@ -71,6 +71,10 @@ Customization
 ** default = 1.0
 ** sets an treshold for showing the zoom link. Set it to 1.1 means a image will get a zoom link if it is $ImgPopUpMaxImgWidth * 1.1 pixels wide. This prevents images with only a few pixels wider than $ImgPopUpMaxImgWidth to get displayed as zoomable
 
+* [optional] $ImgPopUpRemoveChrome = <true|false>
+** default = false
+** removes PmWiki chrome (header, footer, sidebar …)
+
 ### XLPage Strings
  'Zoom Image' => '',
  'Upload this image again' => '',
@@ -96,6 +100,8 @@ For Developers
 
 Version History
 ---------------
+* 1.2.10 - 2012-05-26 - Schlaefer
+ * Remove PmWiki chrome optional with flag $ImgPopUpRemoveChrome
 *1.2.9 
 ** [bugfix] solved problem regarding the reupload of pictures.
 * 1.2.8
@@ -152,6 +158,7 @@ SDV($ImgPopUpShowZoomLinkTreshold, 1.0);
 SDV($ImgPopUpIgnoreUnscaledImages,false);
 SDV($ImgPopUpSameWindow,false);
 SDV($ImgPopUpNoZoomLink, false);
+SDV($ImgPopUpRemoveChrome, FALSE);
 SDV($ImgPopUpSkinDirUrl,"cookbook/imgpopup");
 SDV($ImgPopUpMaxImgWidth, 200);
 SDV($HTMLStylesFmt['imgpopup'] , "
@@ -234,7 +241,8 @@ function ImgPopUpFct($wholestring, $imagename) {
  * @param string $pagename 
  */
 function HandleImgPopUp($pagename) {
-	global $PageStartFmt, $PageEndFmt, $PageUrl,$ImgPopUpProvideUploadLink,$ImgPopUpSameWindow;
+	global $PageStartFmt, $PageEndFmt, $PageUrl,
+      $ImgPopUpProvideUploadLink,$ImgPopUpSameWindow, $ImgPopUpRemoveChrome;
 	
 	$imagename = $_REQUEST['image'];
 	$names = imgpopuph1fct($imagename, $pagename);
@@ -248,7 +256,9 @@ function HandleImgPopUp($pagename) {
 		$textgoto = "$[Close window]";
 	}
 		
-	$text[] = "(:noheader:)(:nofooter:)(:notitle:)(:noleft:)";
+  if ( $ImgPopUpRemoveChrome ) :
+    $text[] = "(:noheader:)(:nofooter:)(:notitle:)(:noleft:)";
+  endif;
 	$text[] = "(:div style='text-align:center;':)";
 	$text[] = "'''[=".$names['image']."=]''' \n ";
 	$text[] = Keep("<a href='".$jsgoto."' class='imgpopupimg'>")."Attach:".$names['image'].Keep("</a>")."\n";

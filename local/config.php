@@ -364,6 +364,7 @@ Diese Seite wurde am $now von [[~$Author]] als [[ApfelWiki.Loeschkandidaten#$Ful
 	$ImgPopUpShowZoomLinkTreshold = 1.1;
 	$ImgPopUpSameWindow = true;
 	$ImgPopUpMaxImgWidth = 300;
+  $ImgPopUpRemoveChrome = FALSE;
 	include_once("cookbook/imgpopup.php");
 
 ## sorgt fuer das Springen im Suchfeld
