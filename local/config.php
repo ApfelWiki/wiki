@@ -46,8 +46,15 @@ endif;
 	ini_set('arg_separator.output', '&amp;');
 ## Anzahl der Eitraege in RecentChanges
 	$RCLinesMax = 2000;
-## Beschraenkung der Seitenhistorie auf ein Jahr
+
+/**
+ * Verlaufeinträge einer Seite älter als 1 Jahr werden entfernt.
+ *
+ * Es werden jedoch mindestens $DiffKeepNum (default 20) Verlaufeinträge vorgehalten,
+ * auch wenn sie älter als $DiffKeepDays sind.
+ */
 	$DiffKeepDays = 360;
+
 ## Php 5.2.x Modifikationen für RecentChanges etc.
 	ini_set('pcre.backtrack_limit', 1000000);
 	ini_set('pcre.recursion_limit', 1000000);
