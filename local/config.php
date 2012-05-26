@@ -411,10 +411,11 @@ Diese Seite wurde am $now von [[~$Author]] als [[ApfelWiki.Loeschkandidaten#$Ful
 /**
  * Format AllRecentChanges Seiten
  * 
- * Vor ". . ." müssen zwei Leerstellen sein (Default $RCDelimPattern = '  '!!!
+ * Nach "%hide%…%%" müssen zwei Leerstellen stehen!!!
+ * Siehe default value for $RCDelimPattern = '  '
  */
 	$RecentChangesFmt['$SiteGroup.AllRecentChanges'] =
-			'* [[$Group.$Name | $Title [- – $Group-]]] [-([[$Group.$Name?action=diff|Verlauf]])-]  . . . $CurrentTime $[by] $AuthorLink: [=$ChangeSummary=] ';
+			'* %hide%[[$Group.$Name]]%%  [[$Group.$Name | $Title [- – $Group-]]] [-([[$Group.$Name?action=diff|Verlauf]])-] . . . $CurrentTime $[by] $AuthorLink: [=$ChangeSummary=] ';
 
 ## laegt an und aktualisiert die Wikiseite RecentPages beim generieren von RecentChanges. RecentPages zeigt auf der Homepage die letzten Aenderungen mittels include
 	## Achtung: Zwei Leerstellen nach dem Wikilink!
