@@ -445,10 +445,10 @@ Diese Seite wurde am $now von [[~$Author]] als [[ApfelWiki.Loeschkandidaten#$Ful
  */
 if ( $_SERVER['SERVER_NAME'] === 'www.apfelwiki.de' && $EnableDiag === 0 ) :
   // mint
-  $HTMLHeaderFmt['mint'] = '<script src="/mint/?js" type="text/javascript"></script>';
+  $HTMLFooterFmt['mint'] = '<script src="/mint/?js" type="text/javascript"></script>';
 
   // google
-  $HTMLHeaderFmt['googletracking'] = "<script type='text/javascript'>
+  $HTMLFooterFmt['googletracking'] = "<script type='text/javascript'>
     var _gaq = _gaq || [];
     _gaq.push(['_setAccount', 'UA-74322-1']);
     _gaq.push(['_setDomainName', 'apfelwiki.de']);
