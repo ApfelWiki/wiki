@@ -12,6 +12,8 @@
 @borderRadius-button:       6px;
 @padding:                   10px;
 
+@line-height:               19px;
+
 /*******************************************************************************
  *  Font definition
  ******************************************************************************/
@@ -34,7 +36,9 @@ html, body {
   background: @color-bg-dark;
 }
 body, input, select, textarea {
-  font: 13px/1.5 Tahoma, Geneva, Verdana, sans-serif;
+  font-family: Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 13px;
+  line-height: @line-height;
   color: @color-text;
 }
 input, select, textarea { 
@@ -65,6 +69,7 @@ pre {
   border: thin solid silver;
   padding: 10px;
 }
+
 hr {
   height: 0px;
   border: none;
@@ -72,10 +77,31 @@ hr {
   margin: 1em 0;
   }
 
-h1, h2, h3, h4, .head, #menuCntr {
+p.vspace {
+  margin-top: @line-height;
+  }
+
+h1, h2, h3, h4, .head {
   letter-spacing: 1px;
   margin-bottom: 0;
+  font: 20px 'Helvetica', Arial, sans-serif;
+  line-height: 36px;
+  padding-top: 0px;
   }
+h1 {
+  font-weight: bold;
+  }
+h2 {
+  font-size: 18px;
+  }
+h3 {
+  font-size: 16px;
+  font-weight: bold;
+}
+h4 {
+  font-size: 16px;
+}
+
 
 table {
   border-collapse: collapse;
@@ -178,15 +204,9 @@ table.reset {
 }
 #pagename { padding-bottom: 0px; font-size: 120%;}
 
-#contentCntr h1 {  width: 782px; height: 36px; font: 18px 'Helvetica', Arial; color: #333; }
-#contentCntr h1 span { font: 14px 'Helvetica', Arial; color: #8b8b8b; }
-
 /* ### SERVICE BOX ### */
 .serviceBox div.text { float: left; width: 520px; }
 .serviceBox div.test { float: right;  width: 220px; }
-.serviceBox p { padding-bottom: 10px;}
-.serviceBox h2 { padding-bottom: 10px; font: 18px 'Helvetica', Arial; color: #333; }
-.serviceBox h3 { padding: 15px 0px 10px 0px; font: 14px 'Helvetica', Arial; color: #2a4145; }
 .serviceBox div.test ul { list-style: none; }
 .serviceBox div.test li { margin-bottom: 10px; padding-bottom: 10px; line-height: 18px; font-style: italic; border-bottom: 1px solid #dad9d9; }
 .serviceBox div.test li strong { display: block; font-style: normal; font-size: 11px; }
@@ -195,7 +215,6 @@ table.reset {
 .contactBox { padding: 0px 35px 30px 55px; overflow: hidden; width: 780px; }
 .contactBox div.form { float: left; width: 320px; }
 .contactBox div.adres { float: right;  width: 380px; }
-.contactBox h3 { padding-bottom: 10px; font: 18px 'Helvetica', Arial; color: #333; }
 .contactBox address { padding-top: 10px; line-height: 18px; font-style: normal; }
 .contactBox p { padding-bottom: 20px; line-height: 18px; }
 .contactBox fieldset { overflow: hidden; width: 320px; border: 0px; }
