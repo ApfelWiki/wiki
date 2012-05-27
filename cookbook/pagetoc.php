@@ -232,7 +232,8 @@ function TableOfContents($pagename,$number,$float,$title,$includeq,$text) {
     } elseif ($float=='hide') { return '';
     } else {
         $tocid = ($float=='page') ? 'ptocid' : 'tocid';  // remote toc?
-        $toggle = " (<a id=\"{$tocid}tog\" href=\"javascript:toggle('$tocid');\">{$ToggleText[0]}</a>)";
+        // disabled to declutter the interface – Schlaefer 2012-05-27
+        // $toggle = " (<a id=\"{$tocid}tog\" href=\"javascript:toggle('$tocid');\">{$ToggleText[0]}</a>)";
         $l = 'li'; $s = ($NumberToc) ? 'ol' : 'ul'; 
         $sc = "$s class='toc'";
         $f = ($TocFloat) ? 'float' : '';
