@@ -444,9 +444,6 @@ Diese Seite wurde am $now von [[~$Author]] als [[ApfelWiki.Loeschkandidaten#$Ful
  * Jedoch nur, wenn wirklich auf dem Produktionsserver läuft
  */
 if ( $_SERVER['SERVER_NAME'] === 'www.apfelwiki.de' && $EnableDiag === 0 ) :
-  // mint
-  $HTMLFooterFmt['mint'] = '<script src="/mint/?js" type="text/javascript"></script>';
-
   // google
   $HTMLFooterFmt['googletracking'] = "<script type='text/javascript'>
     var _gaq = _gaq || [];
