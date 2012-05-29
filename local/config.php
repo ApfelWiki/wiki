@@ -472,6 +472,11 @@ endif;
  */
 $GroupFooterFmt = '(:nl:)(:div1 class="groupfooter":)(:nl:)-----(:nl:)(:include {$Group}.GroupFooter self=0 basepage={*$FullName}:)(:nl:)(:div1end:)(:nl:)(:div class="clearfix":)(:nl:)(:divend:)';
 
+/**
+ * Versteckt "Kleinere Änderungen" Schalter in ?action=diff
+ */
+$DiffMinorFmt = '';
+
 ## Vorlagenmenü
 	$LinkPageCreateFmt = "<a class='createlinktext' rel='nofollow' href='\$LinkUrl'>\$LinkText</a>";
 
