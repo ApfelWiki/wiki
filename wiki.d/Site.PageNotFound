@@ -1,17 +1,21 @@
 version=pmwiki-2.2.36 ordered=1 urlencoded=1
-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_4) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1145.0 Safari/537.1
+agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_4) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1156.1 Safari/537.1
 author=Schlaefer
 charset=UTF-8
-csum=
-host=127.0.0.1
+csum=typo
+host=::1
 name=Site/PageNotFound
-pageviewcounterdaily=127
-pageviewcounterglobal=6682900
-pageviewcounterlastupdate=22
-rev=6682948
+pageviewcounterdaily=2
+pageviewcounterglobal=6682902
+pageviewcounterlastupdate=31
+rev=6682951
 targets=Site.PageNotFound
-text=(:nolinkwikiwords:)%0a(:if name {$SiteGroup}.PageNotFound:)%0a-> %25green font-style:italic%25 This page contains the text to be displayed when PmWiki is unable to locate a requested page.  Administrators can edit this page to change the message.%0a(:if:)%0a%0a(:if !group Category:)Die Seite '''{$RequestedPage}''' existiert nicht: (:if auth edit:)%25rel=nofollow%25 [[{*$FullName}?action=edit | diese Seite jetzt neu anlegen anlegen]]. %0a(:if:)%0a%0a
-time=1337669310
+text=(:nolinkwikiwords:)%0a(:if name {$SiteGroup}.PageNotFound:)%0a-> %25green font-style:italic%25 This page contains the text to be displayed when PmWiki is unable to locate a requested page.  Administrators can edit this page to change the message.%0a(:if:)%0a%0a(:if !group Category:)Die Seite '''{$RequestedPage}''' existiert nicht: (:if auth edit:)%25rel=nofollow%25 [[{*$FullName}?action=edit | diese Seite jetzt neu anlegen]]. %0a(:if:)%0a%0a
+time=1338488381
+author:1338488381=Schlaefer
+csum:1338488381=typo
+diff:1338488381:1337669310:=6c6%0a%3c (:if !group Category:)Die Seite '''{$RequestedPage}''' existiert nicht: (:if auth edit:)%25rel=nofollow%25 [[{*$FullName}?action=edit | diese Seite jetzt neu anlegen]]. %0a---%0a> (:if !group Category:)Die Seite '''{$RequestedPage}''' existiert nicht: (:if auth edit:)%25rel=nofollow%25 [[{*$FullName}?action=edit | diese Seite jetzt neu anlegen anlegen]]. %0a
+host:1338488381=::1
 author:1337669310=Schlaefer
 diff:1337669310:1337669283:=6c6%0a%3c (:if !group Category:)Die Seite '''{$RequestedPage}''' existiert nicht: (:if auth edit:)%25rel=nofollow%25 [[{*$FullName}?action=edit | diese Seite jetzt neu anlegen anlegen]]. %0a---%0a> (:if !group Category:)Die Seite '''{$RequestedPage}''' existiert nicht: (:if auth edit:)%25rel=nofollow%25 [[{*$FullName}?action=edit | diese Seite jetzt neu anlegen anlegen]] %0a
 host:1337669310=127.0.0.1
