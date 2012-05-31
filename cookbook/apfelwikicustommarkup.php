@@ -136,40 +136,6 @@ function FooterBadgetsFct($option){
         ));
 }
 
-########################## Firefox Search Plugin ###############################
-
-Markup('firefoxsearchpluginscript','style','/\(:firefoxsearchpluginscript:\)/e', "firefoxsearchpluginscriptfunction()");
-
-function firefoxsearchpluginscriptfunction()
-{
- $l='<script type="text/javascript">
-<!--
-function errorMsg()
-{
-  alert("Netscape 6 or Mozilla is needed to install a search plugin");
-}
-function addEngine(name,ext,cat)
-{
-  if ((typeof window.sidebar == "object") && (typeof
-  window.sidebar.addSearchEngine == "function"))
-  {
-    window.sidebar.addSearchEngine(
-      "http://apfelwiki.de/pub/cookbook/firefox/"+name+".src",
-      "http://apfelwiki.de/pub/cookbook/firefox/"+name+"."+ext,
-      name,
-      cat );
-  }
-  else
-  {
-    errorMsg();
-  }
-}
-//-->
-</script>';
-
-	return $l;
-}
-
 ########################## Qualitaetsoffensive ###############################
 ## Siehe dazu auch http://apfelwiki.de/forum/viewtopic.php?t=511
 
