@@ -208,4 +208,14 @@ Markup('input-jumpbox', '<split',
 function currentYear() {
   echo date('Y');
 }
+
+/**
+ * Abildung von 'center' auf deutsche Bezeichnungen
+ */
+  foreach(
+      array(
+          'mitte'  => 'center',
+          'zentriert'  => 'center',
+          ) as $deutsch => $english)
+    SDV($WikiStyle[$deutsch],array('apply'=>'block','text-align'=>$english));
 ?>
