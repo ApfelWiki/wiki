@@ -17,8 +17,6 @@ RewriteRule ^wiki/?(.*)$ /$1 [R=301,NC,L]
 RewriteCond %{http_host} ^apfelwiki.de [nc]
 RewriteRule ^(.*)$ http://www.apfelwiki.de/$1 [L,R=301] 
 
-RewriteRule (.*)suchen=(.*) http://www.apfelwiki.de/ApfelWiki/YahooSearch?q=$2
-
 #Sperren fuer Apfelwiki.de
 order allow,deny
 allow from all

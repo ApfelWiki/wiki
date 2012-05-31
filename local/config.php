@@ -377,19 +377,6 @@ Diese Seite wurde am $now von [[~$Author]] als [[ApfelWiki.Loeschkandidaten#$Ful
 ## sorgt fuer das Springen im Suchfeld
 	include_once("cookbook/jumpnsearch.php");
 
-## yahoo Suche
-## Auskommentiert, da nicht mit PHP5 kompatibel
-
-	/* 	$YahooSearchLocalSiteURI = "apfelwiki.de";
-	  $YahooSearchAPPID = "apfelwiki";
-	  $YahooSearchNoSearchResultsFmt = '<strong>Kein Suchergebnis.</strong><br /><br />' .
-	  'Es wurden keine &Uuml;bereinstimmungen mit "<em>'.$_REQUEST['q'].'"</em> gefunden. <br />' .
-	  '<br />Bitte versuchen Sie einen einen anderen Suchbegriff.';
-	  $YahooSearchNoSearchTermFmt = "<strong>Kein Suchergebnis.</strong><br /><br />" .
-	  "Es wurde kein Suchtext eingegeben.<br /><br />" .
-	  "Bitte geben sie einen zu suchenden Text in das Suchfeld ein.";
-	  include_once("cookbook/yahoosearch.php"); */
-
 ## sorgt fuer das Springen im Suchfeld
 	include_once("cookbook/complexvote.php");
 
