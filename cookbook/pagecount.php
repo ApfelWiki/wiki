@@ -119,7 +119,8 @@ function popularpagesfct($pagename) {
 	global $GroupPattern, $WikiWordPattern;
 	$Ignorepattern = "Recent|Blocklist|Group|PageNotFound|PITS";
 	if(!$maxitems = $_REQUEST['items']) $maxitems = 10;
-  	$pagelist = ListPages();
+  $pagelist = ListPages();
+  StopWatch('* popularpagesfct');
  	foreach($pagelist as $pname) {
  		if (preg_match('/^.*'.$Ignorepattern.'.*$/',$pname)) continue;
       	$page = ReadPage($pname,READPAGE_CURRENT); 
@@ -131,6 +132,7 @@ function popularpagesfct($pagename) {
       		$pgnamed[] = $pname;  	 
  		}
     }
+    StopWatch('† popularpagesfct');
     arsort( $counterg);
     $pagesg = array_keys($counterg);
     foreach ($pagesg as $index => $name) $pagesg[$index] = $pgnameg[$name]; 
@@ -147,6 +149,7 @@ function popularpagesfct($pagename) {
     for ($i=0;$i<$maxitems;$i++) {
     		$out[] = "|| " .($i+1). " || " .$counterg[$i].  "||[[" .$pagesg[$i]. "|+]] || || ".($i+1). " || " .$counterd[$i].  "||[[" .$pagesd[$i]. "|+]] ||"; 	
     } 
+
     return implode("\n",$out);
 }
 
