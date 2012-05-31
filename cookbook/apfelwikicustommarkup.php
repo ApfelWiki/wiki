@@ -2,7 +2,10 @@
 if (!defined('PmWiki'))
 	exit ();
 	
-# Die Datei sammelt kleinere Markup Anpassungen, um das unuebersichtliche Zumuellen des Cookbookverzeichnisses zu vermeiden.
+/**
+ * Diese Datei sammelt kleinere Markup() Anpassungen, um das unuebersichtliche
+ * Zumuellen des Cookbookverzeichnisses zu vermeiden.
+ */
 
 ################ (:bildlinks, rechts, mitte markup:) ################
 Markup('bildlinks', 'directives', '/^\(:(bildlinks)(\s.*):\)/e', "blg('$1','$2')");
