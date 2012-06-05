@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @author Sebastian Siedentopf <schlaefer@macnews.de>
+ * @author Sebastian Siedentopf <openmail+sourcecode@siezi.com>
  * @version 1.3.4
  * @link 
  * @copyright by the authors 2005-2012
@@ -112,45 +112,90 @@ function getPageViewCounter($pagename, $type = 'pageviewcounterglobal') {
 Markup('{$PopularPagesItems}', '>{$fmt}', '/{\\$PopularPagesItems}/', $_REQUEST['items'] ? $_REQUEST['items'] : 10 );
 
 Markup('popularpages','<split','/\\(:popularpages:\\)/e', "popularpagesfct('$pagename')");
+Markup('popularpagesDailyList','<split','/\\(:popularpagesDailyList:\\)/e', "popularpagesprintDaily('$pagename')");
 /**
  * Shows the most visited pages
  */
 function popularpagesfct($pagename) {
-	global $GroupPattern, $WikiWordPattern;
-	$Ignorepattern = "Recent|Blocklist|Group|PageNotFound|PITS";
-	if(!$maxitems = $_REQUEST['items']) $maxitems = 10;
-  $pagelist = ListPages();
-  StopWatch('* popularpagesfct');
- 	foreach($pagelist as $pname) {
- 		if (preg_match('/^.*'.$Ignorepattern.'.*$/',$pname)) continue;
-      	$page = ReadPage($pname,READPAGE_CURRENT); 
-      	if (!$page) continue;
-      	$counterg[] = $page['pageviewcounterglobal'];
-      	$pgnameg[] = $pname;  
-      	if ($page['pageviewcounterlastupdate'] == date("d")) {
-      		$counterd[] = $page['pageviewcounterdaily'];
-      		$pgnamed[] = $pname;  	 
- 		}
-    }
-    StopWatch('† popularpagesfct');
-    arsort( $counterg);
-    $pagesg = array_keys($counterg);
-    foreach ($pagesg as $index => $name) $pagesg[$index] = $pgnameg[$name]; 
-    $counterg = array_merge($counterg);
-    
-    arsort( $counterd);
-    $pagesd = array_keys($counterd);
-    foreach ($pagesd as $index => $name) $pagesd[$index] = $pgnamed[$name]; 
-    $counterd = array_merge($counterd);
-    
-    $out[] = "\n||cellspacing=0 cellpadding=3";
-    $out[] = "||!Gesamt|| || || ||!Heute|| || ||";
-	$out[] = "|| ''Platz'' || ''Besuche'' ||''Seite'' || || ''Platz'' || ''Besuche'' ||''Seite'' ||";
-    for ($i=0;$i<$maxitems;$i++) {
-    		$out[] = "|| " .($i+1). " || " .$counterg[$i].  "||[[" .$pagesg[$i]. "|+]] || || ".($i+1). " || " .$counterd[$i].  "||[[" .$pagesd[$i]. "|+]] ||"; 	
-    } 
-
-    return implode("\n",$out);
+  return PopularPages::printList();
 }
+function popularpagesPrintDaily($pagename) {
+  return PopularPages::printDaily();
+}
+
+include_once($FarmD . DIRECTORY_SEPARATOR . 'cookbook' . DIRECTORY_SEPARATOR . 'lib' . DIRECTORY_SEPARATOR . 'PmWikiFileCache.php');
+
+  class PopularPages {
+
+    public static function popularpagesBuildIndex() {
+      StopWatch('* popularpagesfct');
+
+      $Cache = new PmWikiFileCache('PopularPages');
+      $cache = $Cache->read();
+      if ($cache) :
+        return $cache;
+      endif;
+
+      $Ignorepattern = "Recent|Blocklist|Group|PageNotFound|PITS";
+      $pagelist = ListPages();
+      foreach ( $pagelist as $pname ) {
+        if ( preg_match('/^.*' . $Ignorepattern . '.*$/', $pname) )
+          continue;
+        $page = ReadPage($pname, READPAGE_CURRENT);
+        if ( !$page )
+          continue;
+        $counterg[] = $page['pageviewcounterglobal'];
+        $pgnameg[] = $pname;
+        if ( $page['pageviewcounterlastupdate'] == date("d") ) {
+          $counterd[] = $page['pageviewcounterdaily'];
+          $pgnamed[] = $pname;
+        }
+      }
+
+      list($counterg, $pagesg) = self::sort($counterg, $pgnameg);
+      list($counterd, $pagesd) = self::sort($counterd, $pgnamed);
+
+      $out = array( $pagesd, $counterd, $pagesg, $counterg );
+      $Cache->write($out);
+
+      StopWatch('† popularpagesfct');
+      return $out;
+    }
+
+    public static function printDaily() {
+      list($pagesd, $counterd, $pagesg, $counterg) = self::popularpagesBuildIndex();
+      $maxitems = 10;
+      for ( $i = 0; $i < $maxitems; $i++ ) :
+        $out[] = "* [[" . $pagesd[$i] . "|+]]";
+      endfor; 
+
+      return implode("\n", $out);
+    }
+
+    public static function printList() {
+      list($pagesd, $counterd, $pagesg, $counterg) = self::popularpagesBuildIndex();
+      if ( !$maxitems = $_REQUEST['items'] )
+        $maxitems = 10;
+      $out[] = "\n||cellspacing=0 cellpadding=3";
+      $out[] = "||!Gesamt|| || || ||!Heute|| || ||";
+      $out[] = "|| ''Platz'' || ''Besuche'' ||''Seite'' || || ''Platz'' || ''Besuche'' ||''Seite'' ||";
+      for ( $i = 0; $i < $maxitems; $i++ ) {
+        $out[] = "|| " . ($i + 1) . " || " . $counterg[$i] . "||[[" . $pagesg[$i] . "|+]] || || " . ($i + 1) . " || " . $counterd[$i] . "||[[" . $pagesd[$i] . "|+]] ||";
+      }
+
+      return implode("\n", $out);
+    }
+
+    protected static function sort($counter, $pagenames) {
+      arsort($counter);
+      $pages = array_keys($counter);
+      foreach ( $pages as $index => $name ) :
+        $pages[$index] = $pagenames[$name];
+      endforeach;
+      $counter = array_values($counter);
+      return array( $counter, $pages );
+    }
+
+  }
 
 ?>
