@@ -136,7 +136,7 @@ include_once($FarmD . DIRECTORY_SEPARATOR . 'cookbook' . DIRECTORY_SEPARATOR . '
         return $cache;
       endif;
 
-      $Ignorepattern = "Recent|Blocklist|Group|PageNotFound|PITS";
+      $Ignorepattern = "Recent|Blocklist|Group|PageNotFound|PITS|ApfelWiki|PmWiki|Forbidden";
       $pagelist = ListPages();
       foreach ( $pagelist as $pname ) {
         if ( preg_match('/^.*' . $Ignorepattern . '.*$/', $pname) )
