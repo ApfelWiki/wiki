@@ -17,16 +17,12 @@ RewriteRule ^wiki/?(.*)$ /$1 [R=301,NC,L]
 RewriteCond %{http_host} ^apfelwiki.de [nc]
 RewriteRule ^(.*)$ http://www.apfelwiki.de/$1 [L,R=301] 
 
-#Sperren fuer Apfelwiki.de
-order allow,deny
-allow from all
-deny from 141.89.96.195 
-deny from .tr
-deny from .br
-deny from .ru
-deny from .cn
-deny from .us
-deny from 85.98.0.0/17
+### Sperren fuer Apfelwiki.de
+# order allow,deny
+# allow from all
+# deny from 141.89.96.195 
+# deny from 85.98.10.
+# deny from .ru
 
 
 # Use mod_rewrite to enable "Clean URLs" for a PmWiki installation.

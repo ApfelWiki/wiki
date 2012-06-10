@@ -151,8 +151,17 @@ endif;
 			'/&lt;(\/?(' . $AllowedHTML . ')(?![a-z!])(([\'"]).*?\4|.*?)*?)&gt;/ie',
 			'\'<:block>\'.Keep(PSS(\'<$1>\'))');
 
+/*******************************************************************************
+ * Spam Blocking
+ ******************************************************************************/
 
-################ Spam Block #############
+/**
+ * Blocklist
+ * 
+ * Deaktiviert seit 2012-06-06, zum test, ob Captcha ausreicht.
+ * Bei beginnenden Spambefall wieder einbinden
+ */
+/*
 ## Blockliste aktivieren
 	$EnableBlocklist = 10;
 //  Verschiedene Listen aktivieren
@@ -180,8 +189,9 @@ endif;
 	$BlocklistActions['postdata'] = 1;
 
 	$BlocklistDownloadRefresh = 86400 * 7;
+*/
 
-  /*
+  /**
    * Captcha aktivieren
    *
    * Falls der aktuelle Nutzer bereits einmal ein Captcha positiv beantwortet
@@ -463,4 +473,10 @@ $DiffMinorFmt = '';
 ## Vorlagenmenü
 	$LinkPageCreateFmt = "<a class='createlinktext' rel='nofollow' href='\$LinkUrl'>\$LinkText</a>";
 
+/**
+ * Unterbinden abspeichern IP-Adressen
+ *
+ * Kann sich negativ auf's aktivierte Blocklist-Feature auswirken
+ */
+$_SERVER['REMOTE_ADDR'] = 'Anonym';
 ?>
