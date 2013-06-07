@@ -1,0 +1,21 @@
+version=pmwiki-2.2.36 ordered=1 urlencoded=1
+agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1531.0 Safari/537.36
+author=
+charset=UTF-8
+csum=
+ctime=1337619231
+host=::1
+name=Diskussion/GroupFooter
+pageviewcounterdaily=5
+pageviewcounterglobal=7
+pageviewcounterlastupdate=07
+rev=9
+targets=Diskussion.GroupFooter,Profiles.Schlaefer
+text=%25lfloat%25[[{$BacklinkName}|Zurück zum Artikel: "{$BacklinkTitle}"]]%25%25 %0a(:if exists {$FullName}:)%0a%25rfloat%25''Zuletzt geändert am {$LastModified} von [[~{$LastModifiedBy}]] ((:pagecount:) Besuche)''%25%25%0a(:ifend:)
+time=1370605717
+author:1370605717=
+diff:1370605717:1337619231:=1c1%0a%3c %25lfloat%25[[{$BacklinkName}|Zurück zum Artikel: "{$BacklinkTitle}"]]%25%25 %0a---%0a> %25lfloat%25[[{$BaseName}|Zurück zum Artikel: "{$BaseName}"]]%25%25 %0a
+host:1370605717=Anonym
+author:1337619231=Schlaefer
+diff:1337619231:1337619231:=1,4d0%0a%3c %25lfloat%25[[{$BaseName}|Zurück zum Artikel: "{$BaseName}"]]%25%25 %0a%3c (:if exists {$FullName}:)%0a%3c %25rfloat%25''Zuletzt geändert am {$LastModified} von [[~{$LastModifiedBy}]] ((:pagecount:) Besuche)''%25%25%0a%3c (:ifend:)%0a\ No newline at end of file%0a
+host:1337619231=::1

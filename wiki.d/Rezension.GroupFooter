@@ -1,0 +1,24 @@
+version=pmwiki-2.2.36 ordered=1 urlencoded=1
+agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1531.0 Safari/537.36
+author=
+charset=UTF-8
+csum=
+ctime=1337619803
+host=::1
+name=Rezension/GroupFooter
+pageviewcounterdaily=2
+pageviewcounterglobal=5
+pageviewcounterlastupdate=07
+rev=8
+targets=Rezension.GroupFooter,Profiles.Schlaefer
+text=%25lfloat%25[[{$BacklinkName}|Zurück zum Artikel: "{$BacklinkName}"]]%25%25 %0a(:if exists {$FullName}:)%0a%25rfloat%25''Zuletzt geändert am {$LastModified} von [[~{$LastModifiedBy}]] ((:pagecount:) Besuche)''%25%25%0a(:ifend:)
+time=1370605797
+author:1370605797=
+diff:1370605797:1337619880:=1c1%0a%3c %25lfloat%25[[{$BacklinkName}|Zurück zum Artikel: "{$BacklinkName}"]]%25%25 %0a---%0a> %25lfloat%25[[{$BaseName}|Zurück zum Artikel: "{$BaseName}"]]%25%25 %0a
+host:1370605797=Anonym
+author:1337619880=Schlaefer
+diff:1337619880:1337619803:=1,4c1%0a%3c %25lfloat%25[[{$BaseName}|Zurück zum Artikel: "{$BaseName}"]]%25%25 %0a%3c (:if exists {$FullName}:)%0a%3c %25rfloat%25''Zuletzt geändert am {$LastModified} von [[~{$LastModifiedBy}]] ((:pagecount:) Besuche)''%25%25%0a%3c (:ifend:)%0a\ No newline at end of file%0a---%0a> (:include Diskussion.GroupFooter:)%0a\ No newline at end of file%0a
+host:1337619880=::1
+author:1337619803=Schlaefer
+diff:1337619803:1337619803:=1d0%0a%3c (:include Diskussion.GroupFooter:)%0a\ No newline at end of file%0a
+host:1337619803=::1

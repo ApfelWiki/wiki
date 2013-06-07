@@ -97,8 +97,8 @@ Markup('magnet:?xt=urn:btih:', '<links',
       '/magnet:?xt=urn:btih:S+/e');
       
 ####################### Diskussions Backlinks #############################
-$FmtPV['$BaseName'] = 'str_replace("-", ".", $name)';
-$FmtPV['$BaseTitle'] = "AWBacklinks('$pagename')";
+$FmtPV['$BacklinkName'] = 'preg_replace("/-/", ".", $name, 1)';
+$FmtPV['$BacklinkTitle'] = "AWBacklinks('$pagename')";
 
 function AWBacklinks($pagename) {
 	global $PCache;
