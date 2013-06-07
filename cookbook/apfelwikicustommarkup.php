@@ -1,7 +1,7 @@
 <?php
 if (!defined('PmWiki'))
 	exit ();
-	
+
 /**
  * Diese Datei sammelt kleinere Markup() Anpassungen, um das unuebersichtliche
  * Zumuellen des Cookbookverzeichnisses zu vermeiden.
@@ -81,21 +81,21 @@ function addHTMLStylesFmt($string) {
 ######### Kleine in Klammern gesetzte Signatur bei fuenf Tilden  #########
 	$ROSPatterns['/(?<!~)~~~~~(?!~)/'] = '[-([[~$Author]] $CurrentTime)-]';
   	Markup('~~~~~','<links','/(?<!~)~~~~~(?!~)/',"[-([[~$Author]] $CurrentTime)-]");
-  	
+
 ######### Einfacher Timestamp  #########
 	$ROSPatterns['/~~time/'] = strftime("[-%d.%m.%Y %H:%M Uhr-]", $Now);
   	Markup('~~time','<[-','/~~time/', strftime("[-%d.%m.%Y %H:%M Uhr-]", $Now));
-  	
-	
+
+
 ######################### edonkey links ####################################
-  Markup('edonkey:', '<links', 
+  Markup('edonkey:', '<links',
       '/edonkey:\\S+/e',
       "str_replace('|', '%7c', '$0')");
-            
+
 ######################## azureus links #####################################
-Markup('magnet:?xt=urn:btih:', '<links', 
+Markup('magnet:?xt=urn:btih:', '<links',
       '/magnet:?xt=urn:btih:S+/e');
-      
+
 ####################### Diskussions Backlinks #############################
 $FmtPV['$BacklinkName'] = 'preg_replace("/-/", ".", $name, 1)';
 $FmtPV['$BacklinkTitle'] = "AWBacklinks('$pagename')";
@@ -103,12 +103,12 @@ $FmtPV['$BacklinkTitle'] = "AWBacklinks('$pagename')";
 function AWBacklinks($pagename) {
 	global $PCache;
 	$orgpagename = preg_replace('/-/', '.', FmtPageName('$Name', $pagename), 1);
-	if( !isset( $PCache[$orgpagename]['title'] ) ) 
+	if( !isset( $PCache[$orgpagename]['title'] ) )
     		PCache($orgpagename, ReadPage($orgpagename, READPAGE_CURRENT));
 	return FmtPageName('$Title',$orgpagename);
 }
-      
-########################## Bewertungssterne ################################    
+
+########################## Bewertungssterne ################################
 Markup('bewertungssterne', 'directives',
       '/\\(:(\\*{1,5}|-|\\d\\*):\\)/e', "BewertungsSterne('$1')");
 
@@ -148,7 +148,7 @@ $WikiStyleCSS[] = 'list-style-type';
 
 ############ Robots Einstellung ################
 
-## Individuelle Robotseinträge auf einer Seite 
+## Individuelle Robotseinträge auf einer Seite
 
 Markup('robots', 'directives',
      '/\\(:robots\\s+(\\w[\\w\\s,]*):\\)/e',
