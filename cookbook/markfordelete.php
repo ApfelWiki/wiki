@@ -106,6 +106,12 @@ function MarkForDelete($pagename, $auth) {
 	$startofcurrentweek = date('d.m.Y', mktime(0, 0, 0, date('n'), ((date('j')) - $europeanstartofweek) + 1, date('Y')));
 	$endcurrentweek = date('d.m.Y', mktime(0, 0, 0, date('n'), ((date('j')) - $europeanstartofweek + 7), date('Y'))); 
 	$entry = "\n* [[$pagetodelete]]\n** $shortexplain - [[~$Author]] $now";
+	if(empty($Author)) {
+		$author = '$[Anonymous]';
+	} else {
+		$author  = "[[~$Author]]";
+	}
+	$entry = "\n* [[$pagetodelete]]\n** $shortexplain - $author $now";
 
 	$text = preg_split("/(?=!!\\s*$weekstring)/", $page['text']);
 	preg_match("/$weekstring (\d\d\.\d\d\.\d\d\d\d)/", $text[1], $match);
