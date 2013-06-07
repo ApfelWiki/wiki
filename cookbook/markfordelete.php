@@ -3,7 +3,7 @@ if (!defined('PmWiki'))
 	exit ();
 /**
  * Mark pages for deletion and collect them on a singe summary page
- *  
+ *
  * @author Sebastian Siedentopf <schlaefer@macnews.de>
  * @version 0.3.3
  * @link http://apfelwiki.de/ http://apfelwiki.de/
@@ -25,12 +25,12 @@ Localization
 define(MARKFORDELETE, "0.3.3");
 
 SDVA($PmWikiAutoUpdate['MarkForDelete'], array(
-    'version' => MARKFORDELETE, 
+    'version' => MARKFORDELETE,
     'updateurl' => 'http://www.pmwiki.org/wiki/Cookbook/MarkForDelete'
 ));
 
 
-// use term1|term2|...|termX 
+// use term1|term2|...|termX
 SDV($MarkForDeleteExcludePattern, $KeepToken);
 SDV($MarkForDeletePagename, 'Site.MarkForDelete');
 SDV($MarkForDeleteForm, 'Site.MarkForDeleteForm');
@@ -51,15 +51,15 @@ $FmtPV['$PageToDelete'] = "'{$_REQUEST['pagetodelete']}'";
 
 /**
  * Controler for markfordelete action
- * 
+ *
  * @param string $pagename
  * @param string $auth
  */
 function HandleMarkForDelete($pagename, $auth = "read") {
 	global $MarkForDeletePagename, $MarkForDeleteForm, $MarkForDeleteAllreadyOnPage;
-	
+
 	$page = RetrieveAuthPage($MarkForDeletePagename, "read");
-	
+
 	if (preg_match("/\[\[".$_REQUEST['pagetodelete']."\]\]/", $page['text'])) {
 		if (PageExists($MarkForDeleteAllreadyOnPage))
 			Redirect($MarkForDeleteAllreadyOnPage, '$PageUrl'."?pagetoaadelete=$pagename");
@@ -78,7 +78,7 @@ function HandleMarkForDelete($pagename, $auth = "read") {
 
 /**
  * Writes the summary page and calls the function to put a note on the marked page.
- * 
+ *
  * @param string $pagename
  * @param string $auth
  */
@@ -96,16 +96,15 @@ function MarkForDelete($pagename, $auth) {
 	$pagetodelete = $_REQUEST['pagetodelete'];
 	$shortexplain = stripmagic($_REQUEST['shortexplain']);
 	$now = strftime($GLOBALS["TimeFmt"], $Now);
-	
+
 	$page = RetrieveAuthPage($MarkForDeletePagename, "read");
-	
+
 	MarkForDeleteWriteNote($pagetodelete, $Author);
 
 	$weekstring = FmtPageName("\$[Week from]",$MarkForDeleteForm);
 	$europeanstartofweek = (date('w') == 0) ? 7 : date('w');
 	$startofcurrentweek = date('d.m.Y', mktime(0, 0, 0, date('n'), ((date('j')) - $europeanstartofweek) + 1, date('Y')));
-	$endcurrentweek = date('d.m.Y', mktime(0, 0, 0, date('n'), ((date('j')) - $europeanstartofweek + 7), date('Y'))); 
-	$entry = "\n* [[$pagetodelete]]\n** $shortexplain - [[~$Author]] $now";
+	$endcurrentweek = date('d.m.Y', mktime(0, 0, 0, date('n'), ((date('j')) - $europeanstartofweek + 7), date('Y')));
 	if(empty($Author)) {
 		$author = '$[Anonymous]';
 	} else {
@@ -130,7 +129,7 @@ function MarkForDelete($pagename, $auth) {
 
 /**
  * Puts a note on the top of a wikipage that it is marked for deletion
- * 
+ *
  * @param string $pagetodelete the pagename of the the wikipage
  * @param string $Author the author name who marked the page for delete
  */
@@ -159,12 +158,12 @@ function MarkForDeleteWriteNote($pagetodelete, $author) {
 
 /**
  * When <!--function:MarkForDeleteLink--> is put in the skin tmpl file
- * it returns an edit link if 
+ * it returns an edit link if
  * <ul>
  * <li> the current page is not allready on the delete summary page</li>
  * <li> the current page is not in the $MarkForDeleteExcludePattern </li>
  * </ul>
- * 
+ *
  * @param string $pagetodelete the pagename of the the wikipage
  * @param string $Author the author name who marked the page for delete
  * @param string $now the human time when the page was marked in human readable format
